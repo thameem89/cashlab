@@ -29,10 +29,8 @@ export const siteConfig = {
 export const publicationClaimsToVerify = [
   "Current trader or customer counts",
   "Displayed account balances, profit figures, and performance percentages",
-  "Daily and monthly earnings targets for Free, Pro, and Elite plans",
   "The availability and terms of Cash Lab Wallet",
-  "Plan prices, limits, included accounts, support levels, and 0% fee claims",
-  "20% lifetime affiliate commission and payout terms",
+  "The calculation, settlement timing, and exclusions for the 60/40 realized-profit commission split",
   "24/7 automated trading and support availability",
   "AI analysis frequency, protection behavior, and market-score methodology",
   "MT4/MT5, broker, prop-firm, payment, and withdrawal compatibility",

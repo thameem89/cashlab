@@ -1,13 +1,3 @@
-export type Plan = {
-  name: string;
-  monthly: string;
-  yearly: string;
-  yearlyNote?: string;
-  badge?: string;
-  features: string[];
-  cta: string;
-};
-
 export const steps = [
   {
     title: "Connect Your Broker",
@@ -49,7 +39,7 @@ export const results = [
     country: "China",
     platform: "MT4",
     broker: "OneRoyal",
-    plan: "Pro Plan",
+    plan: "Managed Account",
     balance: "$13,300",
     profit: "+$15,847.15",
     gain: "+119.2%",
@@ -60,7 +50,7 @@ export const results = [
     country: "Saudi Arabia",
     platform: "MT4",
     broker: "IC Markets",
-    plan: "Pro Plan",
+    plan: "Managed Account",
     balance: "$68,000",
     profit: "+$63,296.82",
     gain: "+93.1%",
@@ -71,7 +61,7 @@ export const results = [
     country: "Pakistan",
     platform: "MT5",
     broker: "OctaFX",
-    plan: "Pro Plan",
+    plan: "Managed Account",
     balance: "$98,000",
     profit: "+$92,921.95",
     gain: "+94.8%",
@@ -82,71 +72,11 @@ export const results = [
     country: "Ghana",
     platform: "MT5",
     broker: "OctaFX",
-    plan: "Pro Plan",
+    plan: "Managed Account",
     balance: "$37,500",
     profit: "+$41,494.12",
     gain: "+110.7%",
   },
-] as const;
-
-export const plans: Plan[] = [
-  {
-    name: "Free",
-    monthly: "$0",
-    yearly: "$0",
-    cta: "Get Started Free",
-    features: [
-      "Cash Lab Wallet Access",
-      "AI Gold Trading Bot (XAUUSD)",
-      "0% Fee",
-      "Min $10 Deposit",
-      "Up to $5,000 Balance",
-      "24/7 Support",
-    ],
-  },
-  {
-    name: "Pro",
-    monthly: "$299",
-    yearly: "$1,799",
-    yearlyNote: "~$150/mo — save 50%",
-    badge: "Recommended",
-    cta: "Unlock Pro Access",
-    features: [
-      "Cash Lab Wallet + 1 MT4/MT5",
-      "AI Gold Trading Bot (XAUUSD)",
-      "0% Fee",
-      "Up to $20,000 Balance",
-      "Premium Risk Management",
-      "Priority Support",
-    ],
-  },
-  {
-    name: "Elite",
-    monthly: "$999",
-    yearly: "$5,999",
-    yearlyNote: "~$500/mo — save 50%",
-    badge: "★ Elite Access",
-    cta: "Unlock Elite Access",
-    features: [
-      "Cash Lab Wallet + 2 MT4/MT5",
-      "AI Gold Trading Bot (XAUUSD)",
-      "0% Fee",
-      "Unlimited Balance",
-      "Premium Risk Management",
-      "VIP Support & Account Manager",
-    ],
-  },
-];
-
-export const comparisonRows = [
-  ["Cash Lab Wallet Account", "✓", "✓", "✓"],
-  ["Any Broker MT4/MT5 Account", "—", "1 account", "2 accounts"],
-  ["AI Gold Trading Bot", "✓", "✓", "✓"],
-  ["Fee", "0 Free", "0 Free", "0 Free"],
-  ["Max Managed Balance", "$5,000", "$20,000", "Unlimited"],
-  ["Min Deposit", "$10", "$500", "$1,000"],
-  ["Risk Management", "Standard", "Premium", "Premium"],
-  ["Support", "24/7", "Priority", "VIP + Account Manager"],
 ] as const;
 
 export const faqs = [
@@ -156,7 +86,7 @@ export const faqs = [
   ],
   [
     "What is the minimum deposit to get started?",
-    "It depends on your plan:\n\n• Free Plan — minimum $10\n• Pro Plan — minimum $500\n• Elite Plan — minimum $1,000\n\nThe Free plan is the easiest way to start. A higher balance means larger position sizes and bigger returns in dollar terms.",
+    "Cash Lab confirms minimum account-funding requirements during onboarding. Funding requirements may depend on the connected broker, account configuration, and agreed risk profile.",
   ],
   [
     "How does the AI decide when to trade?",
@@ -172,7 +102,7 @@ export const faqs = [
   ],
   [
     "How much can I earn per month?",
-    "Estimated daily targets by plan (gold trades Mon–Fri only, 22 trading days/month):\n\n• Free — up to 2%/day → up to 44%/month\n• Pro — up to 5%/day → up to 110%/month\n• Elite — up to 10%/day → up to 220%/month\n\nExample at $1,000 balance: Free = up to $440/month · Pro = up to $1,100/month · Elite = up to $2,200/month. These are estimated targets — actual results depend on live market conditions.",
+    "Trading returns are variable and cannot be guaranteed. Results depend on market conditions, account size, broker execution, and risk settings. When commissionable realized profit is generated, the customer receives 60% and Cash Lab receives 40% as its performance commission.",
   ],
   [
     "Do I need trading experience?",
@@ -187,7 +117,7 @@ export const faqs = [
     "The reference website states that its results reflect real trading performance. Cash Lab must independently verify any performance examples before publication. Past performance does not guarantee future results.",
   ],
   [
-    "What is the difference between Free, Pro, and Elite?",
-    "The key differences are daily profit targets and trading channels:\n\n• Free — up to 2%/day · Wallet only · up to $5,000 balance\n• Pro — up to 5%/day · Wallet + 1 MT4/MT5 account · up to $20,000 balance\n• Elite — up to 10%/day · Wallet + 2 MT4/MT5 accounts · Unlimited balance\n\nAll plans are described as charging 0% fee; Cash Lab must verify this before publication.",
+    "How does the 60/40 commission split work?",
+    "The customer keeps 60% of commissionable realized trading profit. Cash Lab receives the remaining 40% as its performance commission. The final customer agreement defines calculation periods, settlement timing, eligible profit, and any exclusions.",
   ],
 ] as const;

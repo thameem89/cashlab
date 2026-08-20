@@ -7,8 +7,7 @@ import { useState } from "react";
 
 const nav = [
   ["Features", "/#features"],
-  ["Pricing", "/#pricing"],
-  ["Affiliate", "/#affiliate"],
+  ["Commission", "/#commission"],
   ["FAQ", "/#faq"],
 ] as const;
 

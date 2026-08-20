@@ -6,9 +6,7 @@ import {
   Bot,
   BrainCircuit,
   BriefcaseBusiness,
-  Check,
   ChevronDown,
-  CircleDollarSign,
   Link2,
   ShieldCheck,
   SlidersHorizontal,
@@ -16,14 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { useState } from "react";
-import {
-  comparisonRows,
-  faqs,
-  features,
-  plans,
-  results,
-  steps,
-} from "@/lib/content";
+import { faqs, features, results, steps } from "@/lib/content";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
@@ -49,7 +40,6 @@ function SectionHeading({
 }
 
 export function LandingPage() {
-  const [yearly, setYearly] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
@@ -269,17 +259,16 @@ export function LandingPage() {
             <div className="agent-message">
               <BrainCircuit size={19} />
               <div>
-                <strong>Compare Free vs Pro vs Elite earnings</strong>
+                <strong>How is realized profit shared?</strong>
                 <p>
-                  Here’s a plan-by-plan breakdown using the reference targets.
-                  Any live projection should be independently verified.
+                  Customers retain 60% of commissionable realized profit, while
+                  Cash Lab receives 40% as its performance commission.
                 </p>
               </div>
             </div>
-            <div className="agent-plans">
-              <span>Free · up to 2%</span>
-              <span>Pro · up to 5%</span>
-              <span>Elite · up to 10%</span>
+            <div className="agent-split">
+              <span>Customer share · 60%</span>
+              <span>Cash Lab share · 40%</span>
             </div>
             <div className="agent-input">
               Ask Trading Agent anything… <b>↗</b>
@@ -365,161 +354,67 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="pricing" className="section pricing-section">
+      <section id="commission" className="section commission-section">
         <div className="container">
           <SectionHeading
-            eyebrow="Plans"
+            eyebrow="Commission model"
             title={
               <>
-                Choose Your <span>Trading Plan</span>
+                A Transparent <span>60/40 Profit Split</span>
               </>
             }
+            copy="Customers keep 60% of commissionable realized profit. Cash Lab receives 40% as its performance commission."
           />
-          <div
-            className="billing-toggle"
-            role="group"
-            aria-label="Billing frequency"
-          >
-            <button
-              className={!yearly ? "active" : ""}
-              onClick={() => setYearly(false)}
+          <div className="commission-panel">
+            <div
+              className="commission-bar"
+              role="img"
+              aria-label="Profit split: 60 percent customer and 40 percent Cash Lab"
             >
-              Monthly
-            </button>
-            <button
-              className={yearly ? "active" : ""}
-              onClick={() => setYearly(true)}
-            >
-              Yearly <b>Save ~50%</b>
-            </button>
-          </div>
-          <div className="pricing-grid">
-            {plans.map((plan) => (
-              <article
-                className={`pricing-card ${plan.name.toLowerCase()}`}
-                key={plan.name}
-              >
-                {plan.badge && <span className="plan-badge">{plan.badge}</span>}
-                <h3>{plan.name}</h3>
-                <div className="price">
-                  {yearly ? plan.yearly : plan.monthly}
-                  <small>
-                    {plan.name === "Free"
-                      ? "free forever"
-                      : yearly
-                        ? "/ Year"
-                        : "/ Month"}
-                  </small>
-                </div>
-                {yearly && plan.yearlyNote && (
-                  <p className="yearly-note">{plan.yearlyNote}</p>
-                )}
-                <Link
-                  className={`plan-button ${plan.name === "Pro" ? "primary" : ""}`}
-                  href="/auth?tab=register"
-                >
-                  {plan.cta}
-                </Link>
-                {plan.name !== "Free" && (
-                  <p className="activation">
-                    Instant activation after payment, No manual setup
-                  </p>
-                )}
-                <ul>
-                  {plan.features.map((feature) => (
-                    <li key={feature}>
-                      <Check size={15} /> {feature}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <div className="claim-warning">
-            <ShieldCheck size={18} /> Prices, limits, performance targets, fees,
-            activation, and support claims are carried over from the reference
-            and must be verified by Cash Lab.
-          </div>
-          <div className="comparison">
-            <h3>Plan Comparison</h3>
-            <div className="table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Feature</th>
-                    <th>Free</th>
-                    <th>Pro</th>
-                    <th>Elite</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row) => (
-                    <tr key={row[0]}>
-                      {row.map((cell, i) => (
-                        <td
-                          key={`${i}-${cell}`}
-                          data-label={
-                            i ? ["Free", "Pro", "Elite"][i - 1] : undefined
-                          }
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="customer-share">
+                <strong>60%</strong>
+                <span>Customer</span>
+              </div>
+              <div className="cashlab-share">
+                <strong>40%</strong>
+                <span>Cash Lab</span>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="affiliate" className="section affiliate-section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Affiliate"
-            title={
-              <>
-                Earn <span>20% Lifetime Commission</span>
-              </>
-            }
-            copy="Invite traders to Cash Lab and earn recurring commissions every time they subscribe."
-          />
-          <div className="steps-grid">
-            {[
-              [
-                BriefcaseBusiness,
-                "Share Your Referral Link",
-                "Get your unique link from the dashboard and share it anywhere.",
-              ],
-              [
-                Users,
-                "Traders Subscribe",
-                "When traders sign up and subscribe through your link, you earn.",
-              ],
-              [
-                CircleDollarSign,
-                "Earn 20% Lifetime",
-                "Receive 20% of every payment your referrals make — forever.",
-              ],
-            ].map(([Icon, title, copy], i) => (
-              <article className="step-card" key={String(title)}>
-                <div className="number-badge">{i + 1}</div>
+            <div className="commission-details">
+              <article>
                 <div className="feature-icon">
-                  <Icon size={22} />
+                  <Users size={22} />
                 </div>
-                <h3>{String(title)}</h3>
-                <p>{String(copy)}</p>
+                <div>
+                  <h3>60% Customer Share</h3>
+                  <p>
+                    The customer receives the majority share of commissionable
+                    realized trading profit.
+                  </p>
+                </div>
               </article>
-            ))}
+              <article>
+                <div className="feature-icon">
+                  <BriefcaseBusiness size={22} />
+                </div>
+                <div>
+                  <h3>40% Cash Lab Commission</h3>
+                  <p>
+                    Cash Lab receives 40% of commissionable realized profit as
+                    its performance commission.
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
           <div className="section-action">
             <Link className="button" href="/auth?tab=register">
-              Join Affiliate Program <ArrowUpRight size={17} />
+              Get Started With Cash Lab <ArrowUpRight size={17} />
             </Link>
           </div>
           <p className="tiny-note">
-            Commission terms require Cash Lab verification before publication.
+            The split applies to commissionable realized profit under the final
+            Cash Lab customer agreement.
           </p>
         </div>
       </section>

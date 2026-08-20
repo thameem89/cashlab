@@ -22,7 +22,11 @@ test("server-renders the Cash Lab landing page", async () => {
   const html = await response.text();
   assert.match(html, /Cash Lab/);
   assert.match(html, /AI Gold Scalping Trading Platform/);
-  assert.match(html, /Choose Your/);
+  assert.match(html, /60\/40 Profit Split/);
+  assert.doesNotMatch(
+    html,
+    /Choose Your Trading Plan|id="pricing"|20% Lifetime Commission/,
+  );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
 
