@@ -1,0 +1,592 @@
+"use client";
+
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  Bot,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Check,
+  ChevronDown,
+  CircleDollarSign,
+  Link2,
+  ShieldCheck,
+  SlidersHorizontal,
+  Sparkles,
+  Users,
+} from "lucide-react";
+import { useState } from "react";
+import {
+  comparisonRows,
+  faqs,
+  features,
+  plans,
+  results,
+  steps,
+} from "@/lib/content";
+import { SiteHeader } from "./SiteHeader";
+import { SiteFooter } from "./SiteFooter";
+
+const featureIcons = [BrainCircuit, ShieldCheck, SlidersHorizontal, Users];
+const stepIcons = [Link2, Bot, ArrowUpRight];
+
+function SectionHeading({
+  eyebrow,
+  title,
+  copy,
+}: {
+  eyebrow?: string;
+  title: React.ReactNode;
+  copy?: string;
+}) {
+  return (
+    <div className="section-heading">
+      {eyebrow && <span className="section-eyebrow">{eyebrow}</span>}
+      <h2>{title}</h2>
+      {copy && <p>{copy}</p>}
+    </div>
+  );
+}
+
+export function LandingPage() {
+  const [yearly, setYearly] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  return (
+    <main>
+      <SiteHeader />
+      <section className="hero">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-glow" aria-hidden="true" />
+        <div className="container hero-inner">
+          <div className="eyebrow">
+            <span /> AI-Powered Gold Trading Infrastructure
+          </div>
+          <h1>
+            AI Gold Scalping Trading Platform for <em>MT4 and MT5</em>
+          </h1>
+          <p className="hero-copy">
+            Deploy AI-powered gold trading in minutes. The system analyzes
+            real-time market conditions and executes trades on MT4 and MT5 with
+            built-in risk protection.
+          </p>
+          <Link className="button hero-button" href="/auth?tab=register">
+            Start Trading With AI <ArrowUpRight size={17} />
+          </Link>
+          <div className="trust-row" aria-label="Platform highlights">
+            <span>✓ MT4 &amp; MT5 Compatible</span>
+            <span>✓ AI Risk Protection</span>
+            <span>✓ Instant Setup</span>
+          </div>
+          <div className="verified-note">
+            <span className="pulse-dot" /> Reference-derived product claims
+            require Cash Lab verification before publication.
+          </div>
+          <div
+            className="market-stage"
+            aria-label="Illustrative trading dashboard preview"
+          >
+            <div className="market-card market-card-side">
+              <span className="live-dot">DEMO</span>
+              <strong>MT4</strong>
+              <p>Risk profile</p>
+              <b>Balanced</b>
+            </div>
+            <div className="market-card market-card-main">
+              <div className="market-card-top">
+                <span>Cash Lab AI Gold Scalping Bot</span>
+                <span className="live-dot">● INTERFACE PREVIEW</span>
+              </div>
+              <div className="market-stats">
+                <div>
+                  <small>Starting balance</small>
+                  <strong>$13,300</strong>
+                </div>
+                <div>
+                  <small>30-day example</small>
+                  <strong className="positive">+$15,847.15</strong>
+                </div>
+                <div>
+                  <small>Market score</small>
+                  <strong>84 / 100</strong>
+                </div>
+              </div>
+              <div
+                className="chart"
+                role="img"
+                aria-label="Decorative rising performance chart"
+              >
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+            <div className="market-card market-card-side">
+              <span className="live-dot">DEMO</span>
+              <strong>MT5</strong>
+              <p>AI protection</p>
+              <b>Active</b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="performance"
+        className="results-strip"
+        aria-label="Reference performance examples"
+      >
+        <div className="results-note">
+          Reference examples — not verified Cash Lab results
+        </div>
+        <div className="results-track">
+          {[...results, ...results].map((item, i) => (
+            <article className="result-card" key={`${item.name}-${i}`}>
+              <div className="result-top">
+                <span>{item.platform}</span>
+                <b>● DEMO</b>
+              </div>
+              <div className="result-user">
+                <span>{item.flag}</span>
+                <div>
+                  <strong>{item.name}</strong>
+                  <small>
+                    {item.country} · {item.broker}
+                  </small>
+                </div>
+                <em>{item.plan}</em>
+              </div>
+              <div className="result-values">
+                <div>
+                  <small>Starting Balance</small>
+                  <strong>{item.balance}</strong>
+                </div>
+                <div>
+                  <small>30-Day Example</small>
+                  <strong>{item.profit}</strong>
+                  <b>{item.gain}</b>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section steps-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Quick setup"
+            title={
+              <>
+                Start Automated Trading in <span>3 Simple Steps</span>
+              </>
+            }
+          />
+          <div className="steps-grid">
+            {steps.map((step, i) => {
+              const Icon = stepIcons[i];
+              return (
+                <article className="step-card" key={step.title}>
+                  <div className="number-badge">{i + 1}</div>
+                  <div className="feature-icon">
+                    <Icon size={22} />
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.copy}</p>
+                </article>
+              );
+            })}
+          </div>
+          <div className="section-action">
+            <Link className="button" href="/auth?tab=register">
+              Start Trading Now <ArrowUpRight size={17} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="section surface-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Platform"
+            title={
+              <>
+                A Complete <span>AI Trading Platform</span>
+              </>
+            }
+          />
+          <div className="feature-grid">
+            {features.map((feature, i) => {
+              const Icon = featureIcons[i];
+              return (
+                <article className="feature-card" key={feature.title}>
+                  <div className="feature-icon">
+                    <Icon size={23} />
+                  </div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.copy}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section intelligence-section">
+        <div className="container intelligence-grid">
+          <div>
+            <span className="section-eyebrow">Live context</span>
+            <h2>
+              Your <span>AI Trading Intelligence</span>
+            </h2>
+            <p>
+              Ask the AI anything about your account, performance, or market
+              conditions — and get instant, personalised answers. The system
+              continuously analyzes the market and explains decisions clearly.
+            </p>
+            <ul className="check-list">
+              <li>Understand current market risk in real time</li>
+              <li>Get insights based on volatility, trend, and news</li>
+              <li>Know when trading is safe or risky</li>
+              <li>Ask anything about your account or performance</li>
+            </ul>
+            <Link className="button" href="/auth?tab=register">
+              Try the Trading Agent <ArrowUpRight size={17} />
+            </Link>
+          </div>
+          <div className="agent-panel">
+            <div className="agent-bar">
+              <span>
+                <Sparkles size={15} /> Cash Lab AI Agent
+              </span>
+              <em>Online</em>
+            </div>
+            <div className="agent-message">
+              <BrainCircuit size={19} />
+              <div>
+                <strong>Compare Free vs Pro vs Elite earnings</strong>
+                <p>
+                  Here’s a plan-by-plan breakdown using the reference targets.
+                  Any live projection should be independently verified.
+                </p>
+              </div>
+            </div>
+            <div className="agent-plans">
+              <span>Free · up to 2%</span>
+              <span>Pro · up to 5%</span>
+              <span>Elite · up to 10%</span>
+            </div>
+            <div className="agent-input">
+              Ask Trading Agent anything… <b>↗</b>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section risk-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Dynamic protection"
+            title={
+              <>
+                AI <span>Market Score Engine</span>
+              </>
+            }
+            copy="Every 10 minutes, the system analyzes the full market and assigns a score from 0–100. This score determines how the system trades."
+          />
+          <div className="risk-grid">
+            <article>
+              <i className="green" />
+              <div>
+                <strong>
+                  Low Risk <em>Aggressive</em>
+                </strong>
+                <p>
+                  Market conditions are calm. System trades at full capacity.
+                </p>
+              </div>
+            </article>
+            <article>
+              <i className="blue" />
+              <div>
+                <strong>
+                  Normal Risk <em>Moderate</em>
+                </strong>
+                <p>Moderate conditions. System trades with balanced risk.</p>
+              </div>
+            </article>
+            <article>
+              <i className="yellow" />
+              <div>
+                <strong>
+                  High Risk <em>Conservative</em>
+                </strong>
+                <p>
+                  Elevated risk detected. System reduces exposure automatically.
+                </p>
+              </div>
+            </article>
+            <article>
+              <i className="red" />
+              <div>
+                <strong>
+                  Extreme Risk <em>Off</em>
+                </strong>
+                <p>
+                  Dangerous conditions. All trading paused to protect capital.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div className="score-factors">
+            <small>Score is based on</small>
+            <div>
+              {[
+                "Economic News Events",
+                "Market Volatility",
+                "Trend Direction",
+                "Spread Conditions",
+                "Trading Session",
+                "RSI Momentum",
+                "Drawdown",
+              ].map((x) => (
+                <span key={x}>{x}</span>
+              ))}
+            </div>
+            <p>
+              No fixed rules. The AI evaluates everything together in real time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="section pricing-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Plans"
+            title={
+              <>
+                Choose Your <span>Trading Plan</span>
+              </>
+            }
+          />
+          <div
+            className="billing-toggle"
+            role="group"
+            aria-label="Billing frequency"
+          >
+            <button
+              className={!yearly ? "active" : ""}
+              onClick={() => setYearly(false)}
+            >
+              Monthly
+            </button>
+            <button
+              className={yearly ? "active" : ""}
+              onClick={() => setYearly(true)}
+            >
+              Yearly <b>Save ~50%</b>
+            </button>
+          </div>
+          <div className="pricing-grid">
+            {plans.map((plan) => (
+              <article
+                className={`pricing-card ${plan.name.toLowerCase()}`}
+                key={plan.name}
+              >
+                {plan.badge && <span className="plan-badge">{plan.badge}</span>}
+                <h3>{plan.name}</h3>
+                <div className="price">
+                  {yearly ? plan.yearly : plan.monthly}
+                  <small>
+                    {plan.name === "Free"
+                      ? "free forever"
+                      : yearly
+                        ? "/ Year"
+                        : "/ Month"}
+                  </small>
+                </div>
+                {yearly && plan.yearlyNote && (
+                  <p className="yearly-note">{plan.yearlyNote}</p>
+                )}
+                <Link
+                  className={`plan-button ${plan.name === "Pro" ? "primary" : ""}`}
+                  href="/auth?tab=register"
+                >
+                  {plan.cta}
+                </Link>
+                {plan.name !== "Free" && (
+                  <p className="activation">
+                    Instant activation after payment, No manual setup
+                  </p>
+                )}
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>
+                      <Check size={15} /> {feature}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <div className="claim-warning">
+            <ShieldCheck size={18} /> Prices, limits, performance targets, fees,
+            activation, and support claims are carried over from the reference
+            and must be verified by Cash Lab.
+          </div>
+          <div className="comparison">
+            <h3>Plan Comparison</h3>
+            <div className="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Free</th>
+                    <th>Pro</th>
+                    <th>Elite</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row) => (
+                    <tr key={row[0]}>
+                      {row.map((cell, i) => (
+                        <td
+                          key={`${i}-${cell}`}
+                          data-label={
+                            i ? ["Free", "Pro", "Elite"][i - 1] : undefined
+                          }
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="affiliate" className="section affiliate-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Affiliate"
+            title={
+              <>
+                Earn <span>20% Lifetime Commission</span>
+              </>
+            }
+            copy="Invite traders to Cash Lab and earn recurring commissions every time they subscribe."
+          />
+          <div className="steps-grid">
+            {[
+              [
+                BriefcaseBusiness,
+                "Share Your Referral Link",
+                "Get your unique link from the dashboard and share it anywhere.",
+              ],
+              [
+                Users,
+                "Traders Subscribe",
+                "When traders sign up and subscribe through your link, you earn.",
+              ],
+              [
+                CircleDollarSign,
+                "Earn 20% Lifetime",
+                "Receive 20% of every payment your referrals make — forever.",
+              ],
+            ].map(([Icon, title, copy], i) => (
+              <article className="step-card" key={String(title)}>
+                <div className="number-badge">{i + 1}</div>
+                <div className="feature-icon">
+                  <Icon size={22} />
+                </div>
+                <h3>{String(title)}</h3>
+                <p>{String(copy)}</p>
+              </article>
+            ))}
+          </div>
+          <div className="section-action">
+            <Link className="button" href="/auth?tab=register">
+              Join Affiliate Program <ArrowUpRight size={17} />
+            </Link>
+          </div>
+          <p className="tiny-note">
+            Commission terms require Cash Lab verification before publication.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" className="section faq-section">
+        <div className="container faq-container">
+          <SectionHeading
+            eyebrow="Support"
+            title={
+              <>
+                Frequently Asked <span>Questions</span>
+              </>
+            }
+          />
+          <div className="faq-list">
+            {faqs.map(([question, answer], i) => {
+              const open = openFaq === i;
+              return (
+                <article
+                  className={`faq-item ${open ? "open" : ""}`}
+                  key={question}
+                >
+                  <h3>
+                    <button
+                      onClick={() => setOpenFaq(open ? null : i)}
+                      aria-expanded={open}
+                      aria-controls={`faq-answer-${i}`}
+                    >
+                      {question}
+                      <ChevronDown size={18} />
+                    </button>
+                  </h3>
+                  <div
+                    id={`faq-answer-${i}`}
+                    className="faq-answer"
+                    hidden={!open}
+                  >
+                    <p>{answer}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div className="container">
+          <span className="section-eyebrow">Ready when you are</span>
+          <h2>
+            Start Your AI Trading System <span>Today</span>
+          </h2>
+          <p>
+            Deploy automated gold trading with intelligent AI risk protection
+            and real-time trading insights.
+          </p>
+          <div>
+            <Link className="button" href="/auth?tab=register">
+              Create Your Account <ArrowUpRight size={17} />
+            </Link>
+            <a className="secondary-button" href="#performance">
+              View Performance Examples
+            </a>
+          </div>
+        </div>
+      </section>
+      <SiteFooter />
+    </main>
+  );
+}

@@ -1,0 +1,49 @@
+{
+  "faqs": [
+    {
+      "card": "Is this compatible with MT4 and MT5?\nYes. The system works with both MT4 and MT5 accounts. Simply connect your account and everything runs automatically.",
+      "question": "Is this compatible with MT4 and MT5?"
+    },
+    {
+      "card": "What is the minimum deposit to get started?\nIt depends on your plan:\n\n• Free Plan — minimum $10\n• Pro Plan — minimum $500\n• Elite Plan — minimum $1,000\n\nThe Free plan is the easiest way to start. A higher balance means larger position sizes and bigger returns in dollar terms.",
+      "question": "What is the minimum deposit to get started?"
+    },
+    {
+      "card": "How does the AI decide when to trade?\nThe system analyzes real-time market conditions including news, volatility, trend, spread, and session timing. It then generates a score (0–100) to guide trading decisions.",
+      "question": "How does the AI decide when to trade?"
+    },
+    {
+      "card": "What do the risk levels mean?\nThe system automatically adjusts trading based on market conditions:\n\n• Low Risk — Aggressive\n• Normal Risk — Moderate\n• High Risk — Conservative\n• Extreme Risk — Off",
+      "question": "What do the risk levels mean?"
+    },
+    {
+      "card": "Why does the system sometimes stop trading?\nTrading is paused automatically during high-risk conditions such as major news events or unstable markets to protect your capital.",
+      "question": "Why does the system sometimes stop trading?"
+    },
+    {
+      "card": "How much can I earn per month?\nEstimated daily targets by plan (gold trades Mon–Fri only, 22 trading days/month):\n\n• Free — up to 2%/day → up to 44%/month\n• Pro — up to 5%/day → up to 110%/month\n• Elite — up to 10%/day → up to 220%/month\n\nExample at $1,000 balance: Free = up to $440/month · Pro = up to $1,100/month · Elite = up to $2,200/month. These are estimated targets — actual results depend on live market conditions.",
+      "question": "How much can I earn per month?"
+    },
+    {
+      "card": "Do I need trading experience?\nNo. The system is fully automated and handles analysis, decision-making, and execution for you.",
+      "question": "Do I need trading experience?"
+    },
+    {
+      "card": "Can I test with a demo account?\nYes. You can test the system using a demo account before switching to a live account.",
+      "question": "Can I test with a demo account?"
+    },
+    {
+      "card": "Are the results shown on the website real?\nYes. Results reflect real trading performance. However, past performance does not guarantee future results.",
+      "question": "Are the results shown on the website real?"
+    },
+    {
+      "card": "What is the difference between Free, Pro, and Elite?\nThe key differences are daily profit targets and trading channels:\n\n• Free — up to 2%/day · Wallet only · up to $5,000 balance\n• Pro — up to 5%/day · Wallet + 1 MT4/MT5 account · up to $20,000 balance\n• Elite — up to 10%/day · Wallet + 2 MT4/MT5 accounts · Unlimited balance\n\nAll plans charge 0% fee — you keep 100% of every profitable trade.",
+      "question": "What is the difference between Free, Pro, and Elite?"
+    }
+  ],
+  "yearlyPricing": "Choose Your Trading Plan\nMonthly\nYearly🔥 Save ~50%\nFree\n$0\nfree forever\nGet Started Free\nMevTrading Wallet Access\nAI Gold Trading Bot (XAUUSD)\n0% Fee\nMin $10 Deposit\nUp to $5,000 Balance\n24/7 Support\nRecommended\nPro\n$1,799\n/ Year\n\n~$150/mo — save 50%\n\nUnlock Pro Access\n\nInstant activation after payment, No manual setup\n\nMevTrading Wallet + 1 MT4/MT5\nAI Gold Trading Bot (XAUUSD)\n0% Fee\nUp to $20,000 Balance\nPremium Risk Management\nPriority Support\n★ Elite Access\nElite\n$5,999\n/ Year\n\n~$500/mo — save 50%\n\nUnlock Elite Access\n\nInstant activation after payment, No manual setup\n\nMevTrading Wallet + 2 MT4/MT5\nAI Gold Trading Bot (XAUUSD)\n0% Fee\nUnlimited Balance\nPremium Risk Management\nVIP Support & Account Manager\nPlan Comparison\nFeature\tFree\tPro\tElite\nMevTrading Wallet Account\t✓\t✓\t✓\nAny Broker MT4/MT5 Account\t—\t1 account\t2 accounts\nAI Gold Trading Bot\t✓\t✓\t✓\nFee\t0 Free\t0 Free\t0 Free\nMax Managed Balance\t$5,000\t$20,000\tUnlimited\nMin Deposit\t$10\t$500\t$1,000\nRisk Management\tStandard\tPremium\tPremium\nSupport\t24/7\tPriority\tVIP + Account Manager",
+  "mobileMenu": ["Features", "Pricing", "Affiliate", "FAQ", "Login", "Theme"],
+  "notes": [
+    "Homepage contains duplicated responsive-rendered section groups in the live reference."
+  ]
+}

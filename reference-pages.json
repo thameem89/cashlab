@@ -1,0 +1,1371 @@
+{
+  "homepage": {
+    "buttons": [
+      "",
+      "",
+      "Get Started",
+      "",
+      "Start Trading With AI",
+      "Start Trading Now",
+      "Try the Trading Agent",
+      "Monthly",
+      "Yearly🔥 Save ~50%",
+      "Get Started Free",
+      "Unlock Pro Access",
+      "Unlock Elite Access",
+      "Join Affiliate Program",
+      "Is this compatible with MT4 and MT5?",
+      "What is the minimum deposit to get started?",
+      "How does the AI decide when to trade?",
+      "What do the risk levels mean?",
+      "Why does the system sometimes stop trading?",
+      "How much can I earn per month?",
+      "Do I need trading experience?",
+      "Can I test with a demo account?",
+      "Are the results shown on the website real?",
+      "What is the difference between Free, Pro, and Elite?",
+      "Create Your Account",
+      "View Live Performance"
+    ],
+    "forms": [],
+    "headings": [
+      {
+        "tag": "H1",
+        "text": "AI Gold Scalping Trading Platform for MT4 and MT5"
+      },
+      {
+        "tag": "H2",
+        "text": "Start Automated Trading in 3 Simple Steps"
+      },
+      {
+        "tag": "H3",
+        "text": "Connect Your Broker"
+      },
+      {
+        "tag": "H3",
+        "text": "Deploy the AI Bot"
+      },
+      {
+        "tag": "H3",
+        "text": "AI Executes Trades Automatically"
+      },
+      {
+        "tag": "H2",
+        "text": "A Complete AI Trading Platform"
+      },
+      {
+        "tag": "H3",
+        "text": "AI Trading Intelligence"
+      },
+      {
+        "tag": "H3",
+        "text": "AI Risk Protection System"
+      },
+      {
+        "tag": "H3",
+        "text": "Smart Trading Configuration"
+      },
+      {
+        "tag": "H3",
+        "text": "Multi-Account Trading"
+      },
+      {
+        "tag": "H2",
+        "text": "Your AI Trading Intelligence"
+      },
+      {
+        "tag": "H2",
+        "text": "AI Market Score Engine"
+      },
+      {
+        "tag": "H2",
+        "text": "Choose Your Trading Plan"
+      },
+      {
+        "tag": "H2",
+        "text": "Earn 20% Lifetime Commission"
+      },
+      {
+        "tag": "H3",
+        "text": "Share Your Referral Link"
+      },
+      {
+        "tag": "H3",
+        "text": "Traders Subscribe"
+      },
+      {
+        "tag": "H3",
+        "text": "Earn 20% Lifetime"
+      },
+      {
+        "tag": "H2",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "tag": "H3",
+        "text": "Is this compatible with MT4 and MT5?"
+      },
+      {
+        "tag": "H3",
+        "text": "What is the minimum deposit to get started?"
+      },
+      {
+        "tag": "H3",
+        "text": "How does the AI decide when to trade?"
+      },
+      {
+        "tag": "H3",
+        "text": "What do the risk levels mean?"
+      },
+      {
+        "tag": "H3",
+        "text": "Why does the system sometimes stop trading?"
+      },
+      {
+        "tag": "H3",
+        "text": "How much can I earn per month?"
+      },
+      {
+        "tag": "H3",
+        "text": "Do I need trading experience?"
+      },
+      {
+        "tag": "H3",
+        "text": "Can I test with a demo account?"
+      },
+      {
+        "tag": "H3",
+        "text": "Are the results shown on the website real?"
+      },
+      {
+        "tag": "H3",
+        "text": "What is the difference between Free, Pro, and Elite?"
+      },
+      {
+        "tag": "H2",
+        "text": "Start Your AI Trading System Today"
+      },
+      {
+        "tag": "H3",
+        "text": "Quick Links"
+      },
+      {
+        "tag": "H3",
+        "text": "Info"
+      },
+      {
+        "tag": "H3",
+        "text": "Follow Us"
+      }
+    ],
+    "links": [
+      {
+        "href": "https://mevtrading.com/",
+        "text": ""
+      },
+      {
+        "href": "https://mevtrading.com/#features",
+        "text": "Features"
+      },
+      {
+        "href": "https://mevtrading.com/#pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "https://mevtrading.com/#affiliate",
+        "text": "Affiliate"
+      },
+      {
+        "href": "https://mevtrading.com/#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Get Started"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=login",
+        "text": "Login"
+      },
+      {
+        "href": "https://mevtrading.com/#features",
+        "text": "Features"
+      },
+      {
+        "href": "https://mevtrading.com/#pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "https://mevtrading.com/#affiliate",
+        "text": "Affiliate"
+      },
+      {
+        "href": "https://mevtrading.com/#faq",
+        "text": "FAQ"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=login",
+        "text": "Login"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Start Trading With AI"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Start Trading Now"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Try the Trading Agent"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Get Started Free"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Unlock Pro Access"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Unlock Elite Access"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Join Affiliate Program"
+      },
+      {
+        "href": "https://mevtrading.com/auth?tab=register",
+        "text": "Create Your Account"
+      },
+      {
+        "href": "https://mevtrading.com/#performance",
+        "text": "View Live Performance"
+      },
+      {
+        "href": "https://mevtrading.com/about",
+        "text": "About"
+      },
+      {
+        "href": "https://mevtrading.com/blog",
+        "text": "Blog"
+      },
+      {
+        "href": "https://mevtrading.com/#affiliate",
+        "text": "Affiliate Program"
+      },
+      {
+        "href": "https://mevtrading.com/changelog",
+        "text": "Changelog"
+      },
+      {
+        "href": "https://mevtrading.com/user-guide",
+        "text": "User Guide"
+      },
+      {
+        "href": "https://mevtrading.com/terms",
+        "text": "Terms of Service"
+      },
+      {
+        "href": "https://mevtrading.com/privacy",
+        "text": "Privacy Policy"
+      },
+      {
+        "href": "https://www.tiktok.com/@mevtradingofficial",
+        "text": ""
+      },
+      {
+        "href": "https://www.youtube.com/@MevTradingOfficial",
+        "text": ""
+      },
+      {
+        "href": "https://www.instagram.com/mevtradingofficial",
+        "text": ""
+      },
+      {
+        "href": "https://t.me/MevTrading",
+        "text": ""
+      },
+      {
+        "href": "https://my.roboforex.com/en/?a=xajs",
+        "text": "RoboForex"
+      }
+    ],
+    "meta": [
+      {
+        "content": null,
+        "name": null,
+        "property": null
+      },
+      {
+        "content": "width=device-width, initial-scale=1.0",
+        "name": "viewport",
+        "property": null
+      },
+      {
+        "content": "MevTrading",
+        "name": null,
+        "property": "og:title"
+      },
+      {
+        "content": "MevTrading",
+        "name": null,
+        "property": "og:site_name"
+      },
+      {
+        "content": "MevTrading",
+        "name": "twitter:title",
+        "property": null
+      },
+      {
+        "content": "https://depsell.com/cdn-cgi/image/width=512,height=512,fit=pad,background=%2316181d,format=auto/https://assets.depsell.com/stores/e3ec89a5-dbb0-4f91-a3f7-386f997118d6/branding/1e50e3e7_clone_logo_1784047166669.png",
+        "name": null,
+        "property": "og:image"
+      },
+      {
+        "content": "512",
+        "name": null,
+        "property": "og:image:width"
+      },
+      {
+        "content": "512",
+        "name": null,
+        "property": "og:image:height"
+      },
+      {
+        "content": "https://depsell.com/cdn-cgi/image/width=512,height=512,fit=pad,background=%2316181d,format=auto/https://assets.depsell.com/stores/e3ec89a5-dbb0-4f91-a3f7-386f997118d6/branding/1e50e3e7_clone_logo_1784047166669.png",
+        "name": "twitter:image",
+        "property": null
+      },
+      {
+        "content": "summary_large_image",
+        "name": "twitter:card",
+        "property": null
+      }
+    ],
+    "title": "MevTrading"
+  },
+  "pages": [
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "About MevTrading"
+        },
+        {
+          "tag": "H2",
+          "text": "Our Mission"
+        },
+        {
+          "tag": "H3",
+          "text": "AI-Powered"
+        },
+        {
+          "tag": "H3",
+          "text": "Automated"
+        },
+        {
+          "tag": "H3",
+          "text": "Optimized"
+        },
+        {
+          "tag": "H2",
+          "text": "Comprehensive Risk Management"
+        },
+        {
+          "tag": "H4",
+          "text": "SL/TP Management"
+        },
+        {
+          "tag": "H4",
+          "text": "Lot Size Management"
+        },
+        {
+          "tag": "H4",
+          "text": "Max Position Control"
+        },
+        {
+          "tag": "H4",
+          "text": "Risk Profile"
+        },
+        {
+          "tag": "H4",
+          "text": "Time & News Filter"
+        },
+        {
+          "tag": "H4",
+          "text": "Telegram Alerts"
+        },
+        {
+          "tag": "H2",
+          "text": "Easy Bot Management"
+        },
+        {
+          "tag": "H3",
+          "text": "Enable/Disable Bot"
+        },
+        {
+          "tag": "H3",
+          "text": "Connection Status"
+        },
+        {
+          "tag": "H3",
+          "text": "MT4/MT5 Accounts"
+        },
+        {
+          "tag": "H2",
+          "text": "Why Choose MevTrading?"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Automate Your Trading?"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Back to Home"
+        },
+        {
+          "href": "https://mevtrading.com/auth?tab=register",
+          "text": "Get Started Today"
+        }
+      ],
+      "text": "Back to Home\nAbout MevTrading\n\nThe Forex AI Gold Scalper Trading Bot built for real profits. Let our AI engine analyze the market, execute trades, and manage risk automatically on your MT4/MT5 account.\n\nOur Mission\n\nTo provide traders with an advanced Forex AI Gold Scalper Trading Bot that trades automatically with no emotions and no guesswork. Our platform combines intelligent market analysis with comprehensive risk management tools, giving you full control over your trading experience.\n\nAI-Powered\n\nSmart risk management with AI-driven Stop Loss, Take Profit, and Auto Lot sizing based on your account balance.\n\nAutomated\n\nFully automated gold trading on your MT4/MT5 account. The bot executes trades 24/7 without manual intervention.\n\nOptimized\n\nProp-firm friendly settings with customizable risk profiles, max lot limits, and position controls.\n\nComprehensive Risk Management\n\nProfessional features designed to maximize your trading performance and minimize risk\n\nSL/TP Management\n\nAI or Manual Stop Loss and Take Profit settings\n\nLot Size Management\n\nAI Auto Lot or Manual fixed lot sizing\n\nMax Position Control\n\nLimit open positions to prevent overexposure\n\nRisk Profile\n\nLow, Medium, or High risk level settings\n\nTime & News Filter\n\nTrade during preferred sessions, avoid news events\n\nTelegram Alerts\n\nInstant notifications for trades and alerts\n\nEasy Bot Management\n\nFull control over your trading bot with simple, intuitive management features\n\nEnable/Disable Bot\n\nTurn your trading bot on or off anytime with a single click.\n\nConnection Status\n\nMonitor your bot's connection status in real-time.\n\nMT4/MT5 Accounts\n\nConnect, edit, or remove your trading accounts anytime.\n\nWhy Choose MevTrading?\n24/7\nAutomated Trading\nMT4/MT5\nPlatform Support\nCloud\nBased Execution\nReady to Automate Your Trading?\n\nStart trading with the MevTrading AI Gold Scalper — built for consistency, safety, and hands-free performance.\n\nGet Started Today",
+      "title": "About MevTrading — AI-Powered Gold Trading Platform",
+      "url": "https://mevtrading.com/about"
+    },
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Blog"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "← Back to store"
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Return to store"
+        }
+      ],
+      "text": "← Back to store\nBlog\n\nArticles, guides and updates from MevTrading.\n\nNo articles yet — check back soon.\n\nReturn to store",
+      "title": "Blog - MevTrading",
+      "url": "https://mevtrading.com/blog"
+    },
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Changelog"
+        },
+        {
+          "tag": "H2",
+          "text": "Version 6.0"
+        },
+        {
+          "tag": "H3",
+          "text": "MevTrading Wallet — AI Trading Without a Broker"
+        },
+        {
+          "tag": "H3",
+          "text": "Complete In-Platform Trading Dashboard"
+        },
+        {
+          "tag": "H3",
+          "text": "Consistent Execution for All Wallet Users"
+        },
+        {
+          "tag": "H3",
+          "text": "Flexible Usage — Wallet, MT4/MT5, or Both"
+        },
+        {
+          "tag": "H3",
+          "text": "End-of-Day Wallet Withdrawals"
+        },
+        {
+          "tag": "H3",
+          "text": "0% Fee — Keep 100% of Your Profits"
+        },
+        {
+          "tag": "H3",
+          "text": "Version Bump — MevTrading AI Gold v6.0"
+        },
+        {
+          "tag": "H2",
+          "text": "Version 5.0"
+        },
+        {
+          "tag": "H3",
+          "text": "Live XAUUSD Chart with AI Analysis Score"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Weekend Protect Indicator"
+        },
+        {
+          "tag": "H3",
+          "text": "AI News Filter Event Ticker"
+        },
+        {
+          "tag": "H3",
+          "text": "Trading Agent — AI Chat Interface"
+        },
+        {
+          "tag": "H3",
+          "text": "Manage Bot — Main & Advanced Settings Tabs"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Stop Loss & AI Take Profit Labels"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Protection Toggle Cards"
+        },
+        {
+          "tag": "H2",
+          "text": "Version 4.5"
+        },
+        {
+          "tag": "H3",
+          "text": "Account Connection Refresh"
+        },
+        {
+          "tag": "H3",
+          "text": "Documentation Page"
+        },
+        {
+          "tag": "H3",
+          "text": "Public Changelog Page"
+        },
+        {
+          "tag": "H3",
+          "text": "Affiliate Earning Percentage Display"
+        },
+        {
+          "tag": "H2",
+          "text": "Version 4.4"
+        },
+        {
+          "tag": "H3",
+          "text": "Dashboard Overview"
+        },
+        {
+          "tag": "H3",
+          "text": "Trading Account Connection"
+        },
+        {
+          "tag": "H3",
+          "text": "Bot Status Control (ON/OFF)"
+        },
+        {
+          "tag": "H3",
+          "text": "Automatic & Manual Lot Sizing"
+        },
+        {
+          "tag": "H3",
+          "text": "Risk Profile System"
+        },
+        {
+          "tag": "H3",
+          "text": "Maximum Open Position Control"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Stop Loss & Take Profit"
+        },
+        {
+          "tag": "H3",
+          "text": "Reset to Default Settings"
+        },
+        {
+          "tag": "H3",
+          "text": "Cryptocurrency Payments"
+        },
+        {
+          "tag": "H3",
+          "text": "Invoice Downloads"
+        },
+        {
+          "tag": "H3",
+          "text": "Affiliate Program"
+        },
+        {
+          "tag": "H3",
+          "text": "Commission Tracking"
+        },
+        {
+          "tag": "H3",
+          "text": "User Profile Management"
+        },
+        {
+          "tag": "H3",
+          "text": "Two-Factor Authentication"
+        },
+        {
+          "tag": "H3",
+          "text": "Account Deletion"
+        },
+        {
+          "tag": "H3",
+          "text": "Stay Updated"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Back to Home"
+        },
+        {
+          "href": "https://t.me/MevTrading",
+          "text": "Telegram"
+        },
+        {
+          "href": "https://www.youtube.com/@MevTradingOfficial",
+          "text": "YouTube"
+        },
+        {
+          "href": "https://www.tiktok.com/@mevtradingofficial",
+          "text": "TikTok"
+        }
+      ],
+      "text": "Back to Home\nChangelog\n\nVersion history and roadmap for MevTrading\n\nVersion 6.0\n\n7 June 2026\n\n•\nMevTrading Wallet — AI Trading Without a Broker\nFeature\n\nThe biggest update in MevTrading history. Deposit funds into your MevTrading Wallet and the AI starts trading Gold (XAUUSD) automatically on your behalf — no MT4/MT5 account, no broker setup, no VPS, no API connection, no copier delays, and no technical configuration required. Just deposit and the AI does the rest.\n\n•\nComplete In-Platform Trading Dashboard\nFeature\n\nMonitor everything directly inside MevTrading: open positions, closed positions, daily P&L, weekly performance, monthly performance, full trading history, current wallet balance, and withdrawal history — all in one place without logging into any broker platform.\n\n•\nConsistent Execution for All Wallet Users\nFeature\n\nEvery wallet participant receives the same execution quality. The AI scales lot sizes automatically based on each user's wallet balance and AI Auto Mode risk settings, targeting 1%–20% daily profit. No more differences in results between users on the same signal.\n\n•\nFlexible Usage — Wallet, MT4/MT5, or Both\nFeature\n\nPro and Elite plan users have full flexibility: run the MevTrading Wallet only, connect a broker MT4/MT5 account only, or run both simultaneously for maximum AI exposure. The platform supports all three configurations on any paid plan.\n\n•\nEnd-of-Day Wallet Withdrawals\nFeature\n\nSubmit withdrawal requests directly from your MevTrading Wallet during the daily withdrawal window (18:00–22:00 UTC) — no broker login required. Withdrawals process automatically once the window opens and no trade is active.\n\n•\n0% Fee — Keep 100% of Your Profits\nImprovement\n\nFees have been removed across all plans. You now keep 100% of every profitable wallet trade — no fee deducted on any plan, ever.\n\n•\nVersion Bump — MevTrading AI Gold v6.0\nImprovement\n\nAll trade history comments and bot identifiers updated to v6.0 across the platform, reflecting the introduction of the MevTrading Wallet and the new managed trading infrastructure.\n\nVersion 5.0\n\n15 March 2026\n\n•\nLive XAUUSD Chart with AI Analysis Score\nFeature\n\nReal-time Gold/US Dollar price chart embedded in the dashboard, showing live candlestick data and an AI Analysis market condition label (e.g. Low Risk · Aggressive) so you always know the quality of the trading environment before the bot enters a trade\n\n•\nAI Weekend Protect Indicator\nFeature\n\nLive ON/OFF status for AI Weekend Protect is now displayed directly on the chart header, giving instant visibility into whether the bot is protected from weekend gap risk without opening the settings panel\n\n•\nAI News Filter Event Ticker\nFeature\n\nA scrolling economic news ticker at the bottom of the chart shows upcoming high-impact events (e.g. Manufacturing Production MoM, Industrial Production YoY) with country flags and scheduled times, helping you see exactly what news the AI filter is monitoring\n\n•\nTrading Agent — AI Chat Interface\nFeature\n\nFull AI Trading Agent page powered by real-time Forex and Gold market intelligence. Ask questions about your AI risk score, bot protection status, plan comparisons, earnings projections, and broker connection — and get instant personalised answers. Includes quick-prompt chips for common questions\n\n•\nManage Bot — Main & Advanced Settings Tabs\nImprovement\n\nBot configuration page redesigned with a two-tab layout: Main Settings for core controls (Lot Type, AI Risk Profile, Stop Loss & Take Profit configuration) and Advanced Settings for deeper customisation. Reduces cognitive load and keeps the most-used settings front and centre\n\n•\nAI Stop Loss & AI Take Profit Labels\nImprovement\n\nWhen Stop Loss or Take Profit is set to Automatic mode, the value fields now display 'AI Stop Loss' and 'AI Take Profit' labels instead of blank inputs, making it clear the AI is calculating these values dynamically based on market conditions\n\n•\nAI Protection Toggle Cards\nImprovement\n\nAI News Filter, AI Market Protect, and AI Weekend Protect are now displayed as individual toggle cards with clear Active / Inactive status labels, making it easy to see and control all three protection layers at a glance from the Manage Bot page\n\nVersion 4.5\n\n8-December 2025\n\n•\nAccount Connection Refresh\nFeature\n\nRefresh button to verify bot connection status to your trading server in real-time\n\n•\nDocumentation Page\nFeature\n\nComprehensive feature guide with easy navigation covering all MevTrading platform usage\n\n•\nPublic Changelog Page\nFeature\n\nVersion history page showing all platform updates, new features, improvements, and fixes\n\n•\nAffiliate Earning Percentage Display\nFeature\n\nAffiliate users can now view their current earning percentage directly in the affiliate dashboard, showing lifetime commission rate\n\nVersion 4.4\n\n1-July 2025\n\n•\nDashboard Overview\nFeature\n\nMain control center showing total balance, portfolio equity, connected accounts count, and subscription status at a glance\n\n•\nTrading Account Connection\nFeature\n\nConnect MT4/MT5 accounts by entering account number, selecting trading platform, broker server, and master password\n\n•\nBot Status Control (ON/OFF)\nFeature\n\nSwitch to enable or disable your trading bot completely. Turn OFF during major news events, holidays, or when you want to pause trading\n\n•\nAutomatic & Manual Lot Sizing\nFeature\n\nAI intelligently calculates lot sizes based on your account balance (Automatic) or set a fixed lot size (Manual) for prop firm accounts\n\n•\nRisk Profile System\nFeature\n\nPre-configured Low, Medium, and High risk levels that adjust position sizing and lot multipliers automatically\n\n•\nMaximum Open Position Control\nFeature\n\nLimits the total number of trades the bot can have open at once, preventing overexposure to the market\n\n•\nAI Stop Loss & Take Profit\nFeature\n\nEnable automatic AI-calculated stop loss and take profit levels, or set manual fixed values for consistent risk management\n\n•\nReset to Default Settings\nFeature\n\nOne-click restore of all bot settings to recommended default values for optimized trading\n\n•\nCryptocurrency Payments\nFeature\n\nPay with USDT, USDC, BTC, ETH, or Solana through secure crypto payment gateway\n\n•\nInvoice Downloads\nFeature\n\nDownload PDF invoices for all transactions for tax and expense reporting\n\n•\nAffiliate Program\nFeature\n\nEarn lifetime commission by referring new users with unique referral code and link, USDT BEP20 withdrawals processed within 24 hours\n\n•\nCommission Tracking\nFeature\n\nTrack total earnings, available balance, and pending earnings (3-day hold) with complete commission and withdrawal history\n\n•\nUser Profile Management\nFeature\n\nEdit first name, last name, and change password with secure account settings\n\n•\nTwo-Factor Authentication\nSecurity\n\nEmail-based 2FA verification code on login for enhanced account security\n\n•\nAccount Deletion\nFeature\n\nOption to permanently remove your account and all associated data from the platform\n\nStay Updated\n\nFollow us on social media for the latest updates and announcements\n\nTelegram\nYouTube\nTikTok",
+      "title": "MevTrading Changelog — Platform Updates & New Features",
+      "url": "https://mevtrading.com/changelog"
+    },
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Documentation"
+        },
+        {
+          "tag": "H2",
+          "text": "Dashboard"
+        },
+        {
+          "tag": "H3",
+          "text": "Connected Accounts"
+        },
+        {
+          "tag": "H3",
+          "text": "Subscription Status"
+        },
+        {
+          "tag": "H3",
+          "text": "Total Balance Card"
+        },
+        {
+          "tag": "H3",
+          "text": "Last 30-Days"
+        },
+        {
+          "tag": "H3",
+          "text": "Bot Protection Status"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Market Score"
+        },
+        {
+          "tag": "H3",
+          "text": "Trading Agent Launch Card"
+        },
+        {
+          "tag": "H3",
+          "text": "Upgrade / Manage Button"
+        },
+        {
+          "tag": "H2",
+          "text": "MevTrading Wallet"
+        },
+        {
+          "tag": "H3",
+          "text": "How It Works"
+        },
+        {
+          "tag": "H3",
+          "text": "Daily Profit Target"
+        },
+        {
+          "tag": "H3",
+          "text": "Minimum Balance"
+        },
+        {
+          "tag": "H3",
+          "text": "In-Platform Dashboard"
+        },
+        {
+          "tag": "H3",
+          "text": "Fee"
+        },
+        {
+          "tag": "H3",
+          "text": "Wallet Withdrawals"
+        },
+        {
+          "tag": "H3",
+          "text": "Flexible Usage — Wallet + MT4/MT5"
+        },
+        {
+          "tag": "H3",
+          "text": "Consistent Execution Quality"
+        },
+        {
+          "tag": "H2",
+          "text": "Trading Agent"
+        },
+        {
+          "tag": "H3",
+          "text": "Full AI Chat Interface"
+        },
+        {
+          "tag": "H3",
+          "text": "Persistent Conversation History"
+        },
+        {
+          "tag": "H3",
+          "text": "Context-Aware Responses"
+        },
+        {
+          "tag": "H3",
+          "text": "Live Market Intelligence"
+        },
+        {
+          "tag": "H3",
+          "text": "Suggestion Chips"
+        },
+        {
+          "tag": "H3",
+          "text": "Conversation History Modal"
+        },
+        {
+          "tag": "H3",
+          "text": "New Chat Button"
+        },
+        {
+          "tag": "H3",
+          "text": "Escalation to Human Support"
+        },
+        {
+          "tag": "H2",
+          "text": "Bot Protection"
+        },
+        {
+          "tag": "H3",
+          "text": "AI News Filter (Always ON)"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Market Protect (Automatic)"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Weekend Protect (Always ON)"
+        },
+        {
+          "tag": "H3",
+          "text": "Protection Status Indicators"
+        },
+        {
+          "tag": "H3",
+          "text": "Admin Emergency Lock"
+        },
+        {
+          "tag": "H2",
+          "text": "My Account"
+        },
+        {
+          "tag": "H3",
+          "text": "Account Cards"
+        },
+        {
+          "tag": "H3",
+          "text": "Connect First Account"
+        },
+        {
+          "tag": "H3",
+          "text": "Add Account (Dialog)"
+        },
+        {
+          "tag": "H3",
+          "text": "Account Number"
+        },
+        {
+          "tag": "H3",
+          "text": "Trading Platform"
+        },
+        {
+          "tag": "H3",
+          "text": "Broker Server"
+        },
+        {
+          "tag": "H3",
+          "text": "Master Password"
+        },
+        {
+          "tag": "H3",
+          "text": "Bot Status Badge"
+        },
+        {
+          "tag": "H3",
+          "text": "Manage Bot Settings"
+        },
+        {
+          "tag": "H3",
+          "text": "Connection Refresh"
+        },
+        {
+          "tag": "H3",
+          "text": "Delete Account"
+        },
+        {
+          "tag": "H3",
+          "text": "Search & Filter"
+        },
+        {
+          "tag": "H2",
+          "text": "Bot Settings"
+        },
+        {
+          "tag": "H3",
+          "text": "Trading Mode Selector"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Auto Mode"
+        },
+        {
+          "tag": "H3",
+          "text": "AI Auto Mode — Live Score Display"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Lot Type"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Lot Value"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Fixed SL (Stop Loss)"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Fixed TP (Take Profit)"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Max Lot Size"
+        },
+        {
+          "tag": "H3",
+          "text": "Manual Mode — Max Open Positions"
+        },
+        {
+          "tag": "H3",
+          "text": "Reset to Default"
+        },
+        {
+          "tag": "H3",
+          "text": "Save Settings"
+        },
+        {
+          "tag": "H2",
+          "text": "Subscription"
+        },
+        {
+          "tag": "H3",
+          "text": "Current Plan Display"
+        },
+        {
+          "tag": "H3",
+          "text": "Monthly / Yearly Billing Toggle"
+        },
+        {
+          "tag": "H3",
+          "text": "Subscription Status"
+        },
+        {
+          "tag": "H3",
+          "text": "Expiry Date"
+        },
+        {
+          "tag": "H3",
+          "text": "Account Slot Limit"
+        },
+        {
+          "tag": "H3",
+          "text": "Transaction History"
+        },
+        {
+          "tag": "H3",
+          "text": "Invoice Download"
+        },
+        {
+          "tag": "H3",
+          "text": "Cancel Subscription"
+        },
+        {
+          "tag": "H3",
+          "text": "Upgrade Plan Button"
+        },
+        {
+          "tag": "H2",
+          "text": "Plans & Pricing"
+        },
+        {
+          "tag": "H3",
+          "text": "Free Plan — $0 (free forever)"
+        },
+        {
+          "tag": "H3",
+          "text": "Pro Plan — $299/mo or $1,799/yr"
+        },
+        {
+          "tag": "H3",
+          "text": "Elite Plan — $999/mo or $5,999/yr"
+        },
+        {
+          "tag": "H3",
+          "text": "Yearly Discount"
+        },
+        {
+          "tag": "H3",
+          "text": "Supported Payment"
+        },
+        {
+          "tag": "H2",
+          "text": "Refer & Earn"
+        },
+        {
+          "tag": "H3",
+          "text": "Referral Link"
+        },
+        {
+          "tag": "H3",
+          "text": "Referral Code"
+        },
+        {
+          "tag": "H3",
+          "text": "20% Lifetime Commission"
+        },
+        {
+          "tag": "H3",
+          "text": "3-Day Hold Period"
+        },
+        {
+          "tag": "H3",
+          "text": "Total Earnings"
+        },
+        {
+          "tag": "H3",
+          "text": "Available Balance"
+        },
+        {
+          "tag": "H3",
+          "text": "Pending Earnings"
+        },
+        {
+          "tag": "H3",
+          "text": "USDT Wallet (BEP20)"
+        },
+        {
+          "tag": "H3",
+          "text": "Withdrawal Request"
+        },
+        {
+          "tag": "H3",
+          "text": "Commission History"
+        },
+        {
+          "tag": "H3",
+          "text": "Withdrawal History"
+        },
+        {
+          "tag": "H2",
+          "text": "My Profile"
+        },
+        {
+          "tag": "H3",
+          "text": "First Name / Last Name"
+        },
+        {
+          "tag": "H3",
+          "text": "Email Address"
+        },
+        {
+          "tag": "H3",
+          "text": "Save Profile"
+        },
+        {
+          "tag": "H3",
+          "text": "Change Password"
+        },
+        {
+          "tag": "H3",
+          "text": "Two-Factor Authentication (2FA)"
+        },
+        {
+          "tag": "H3",
+          "text": "Enable 2FA"
+        },
+        {
+          "tag": "H3",
+          "text": "Disable 2FA"
+        },
+        {
+          "tag": "H3",
+          "text": "Delete Account"
+        },
+        {
+          "tag": "H3",
+          "text": "Need More Help?"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#dashboard",
+          "text": "Dashboard"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#mevtrading-wallet",
+          "text": "MevTrading Wallet"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#trading-agent",
+          "text": "Trading Agent"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#bot-protection",
+          "text": "Bot Protection"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#my-account",
+          "text": "My Account"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#manage-bot",
+          "text": "Bot Settings"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#subscription",
+          "text": "Subscription"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#plans",
+          "text": "Plans & Pricing"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#affiliate",
+          "text": "Refer & Earn"
+        },
+        {
+          "href": "https://mevtrading.com/user-guide#my-profile",
+          "text": "My Profile"
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Back to Home"
+        },
+        {
+          "href": "https://t.me/MevTrading",
+          "text": "Telegram Support"
+        },
+        {
+          "href": "https://mevtrading.com/blog",
+          "text": "Read Our Blog"
+        },
+        {
+          "href": "https://mevtrading.com/changelog",
+          "text": "View Changelog"
+        }
+      ],
+      "text": "Docs\nDashboard\n\nThe main control center showing your portfolio, account status, bot protection, and market intelligence at a glance.\n\nConnected Accounts\nFunction:\nShows used account slots vs available (e.g., 1/2)\nValue:\nKnow how many more accounts you can connect on your plan\nUse Case:\nPlanning to add more trading accounts or upgrade your plan\nSubscription Status\nFunction:\nDisplays current plan tier and active/inactive status\nValue:\nVerify your subscription is active and bot access is maintained\nUse Case:\nTroubleshoot any access issues or plan expiry\nTotal Balance Card\nFunction:\nDisplays combined balance across all connected trading accounts\nValue:\nSee your complete portfolio value in one place\nUse Case:\nQuick financial overview without logging into each broker\nLast 30-Days\nFunction:\nShows current equity with profit/loss percentage for past 30 days\nValue:\nTrack real-time performance of all accounts\nUse Case:\nMonitor daily gains or losses across all connected accounts\nBot Protection Status\nFunction:\nShows whether bots are currently locked or operational\nValue:\nAlways know if Weekend Protection, News Filter, or Market Risk Guard is active\nUse Case:\nUnderstand why trading may have paused automatically\nAI Market Score\nFunction:\nReal-time XAUUSD market condition score (0–100) recalculated every 10 minutes by the AI Score Engine\nValue:\nKnow the current risk level at a glance — 80–100: Low Risk (Aggressive), 50–79: Normal Risk (Moderate), 30–49: High Risk (Conservative), 0–29: Extreme Risk (Off)\nUse Case:\nCheck before adjusting settings or opening positions manually. A score of 29 or below triggers Market Risk Guard and pauses trading automatically\nTrading Agent Launch Card\nFunction:\nQuick-access card to start a conversation with the Trading Agent\nValue:\nGet immediate AI advice without leaving the dashboard\nUse Case:\nType a question or tap a suggestion chip to open the AI advisor\nUpgrade / Manage Button\nFunction:\nOne-click access to subscription management or upgrade flow\nValue:\nUpgrade plan or view subscription details instantly\nUse Case:\nExpanding to more accounts or checking billing\nMevTrading Wallet\n\nMevTrading V6's flagship feature. Deposit funds and the AI trades Gold (XAUUSD) automatically on your behalf — no broker account, no MT4/MT5, no VPS, no setup. Just deposit and the AI starts trading.\n\nHow It Works\nFunction:\nDeposit into your MevTrading Wallet → AI reads your balance → calculates recommended lot size → trades XAUUSD automatically using AI Auto Mode risk settings\nValue:\nZero friction: no broker, no MT4/MT5, no API connection, no copier delays, no technical configuration of any kind\nUse Case:\nAnyone who wants AI-managed Gold trading without dealing with brokers, MT4/MT5 setup, or VPS\nDaily Profit Target\nFunction:\nAI targets 1%–20% daily profit on your wallet balance using the same intelligent risk management, market protection, and execution logic as the standard bot\nValue:\nSame proven AI system — same weekend protection, news filter, market risk guard — now fully managed for you\nUse Case:\nGrow your wallet balance passively. AI scales lot sizes automatically as your balance grows\nMinimum Balance\nFunction:\nMinimum $10 wallet balance required to activate AI trading\nValue:\nLow barrier to entry — start with any amount at or above $10\nUse Case:\nDeposit at least $10 to have the AI begin placing trades on your behalf\nIn-Platform Dashboard\nFunction:\nMonitor open positions, closed positions, daily P&L, weekly performance, monthly performance, full trading history, current balance, and withdrawal history — all inside MevTrading\nValue:\nEverything in one place — no broker login, no MT4/MT5 terminal required\nUse Case:\nCheck your AI's performance at any time directly inside your MevTrading dashboard\nFee\nFunction:\nPlatform charges 0% fee — you keep 100% of every profitable wallet trade with no deduction\nValue:\nFree to trade — no fee on any plan. Every dollar of profit is yours to keep\nUse Case:\nSimply deposit, let the AI trade XAUUSD, and keep all your profits — no hidden fees on winning trades\nWallet Withdrawals\nFunction:\nSubmit withdrawal requests directly from your MevTrading Wallet during the platform's daily withdrawal window. No broker login needed\nValue:\nWithdraw your funds without logging into any external platform\nUse Case:\nOnce daily trading closes and no position is open, open the Wallet page and submit a withdrawal request\nFlexible Usage — Wallet + MT4/MT5\nFunction:\nAll plans include MevTrading Wallet access. Pro and Elite plan users can additionally connect MT4/MT5 accounts and choose to run Wallet only, MT4/MT5 only, or both simultaneously\nValue:\nFull flexibility — choose what works for you, change anytime\nUse Case:\nFree plan: Wallet trading only. Pro/Elite: run wallet while also having a broker account connected — both trade at the same time. Or use just one, your choice\nConsistent Execution Quality\nFunction:\nAll wallet users receive the same execution quality — AI auto-scales lot size per user based on their balance\nValue:\nNo more latency differences, broker spread differences, or server-response issues between users\nUse Case:\nEvery wallet participant gets the same result from the same AI signal — no broker dependency\nTrading Agent\n\nYour personal AI trading advisor — available 24/7 inside the platform to answer questions, review your settings, explain market conditions, and guide your decisions.\n\nFull AI Chat Interface\nFunction:\nConversational AI interface with full markdown rendering — ask questions in plain language and receive detailed, structured answers\nValue:\nGet responses with tables, headings, and bullet points — clear and easy to read\nUse Case:\nAsk anything from 'Why is my bot locked?' to 'What risk settings should I use for a prop firm?'\nPersistent Conversation History\nFunction:\nAll conversations are saved to your account and synced across devices\nValue:\nPick up any conversation exactly where you left off on any browser or device\nUse Case:\nReview past advice, share context across sessions without re-explaining\nContext-Aware Responses\nFunction:\nAgent automatically receives your live bot settings, subscription plan, account count, and market data\nValue:\nAnswers are personalised to your actual configuration — not generic\nUse Case:\nAsk 'Is my stop loss safe?' and the agent checks your real stop loss settings\nLive Market Intelligence\nFunction:\nAgent sees the current AI Market Score (0–100), the active risk band (Low/Normal/High/Extreme), and upcoming economic news events\nValue:\nAdvice is grounded in actual live conditions — not generic guidance\nUse Case:\nAsk 'Is now a good time to increase my risk?' and get a data-driven answer based on the current score and news calendar\nSuggestion Chips\nFunction:\nPre-built quick questions covering the most common topics\nValue:\nStart a useful conversation instantly without typing\nUse Case:\nTap chips like 'Explain bot protection', 'Best risk settings', 'How do I connect my MT4?'\nConversation History Modal\nFunction:\nBrowse and resume any previous conversation\nValue:\nFull history accessible from the History button in the top bar\nUse Case:\nFind and continue a specific conversation from days or weeks ago\nNew Chat Button\nFunction:\nStart a fresh conversation without losing past history\nValue:\nKeep conversations organised by topic\nUse Case:\nStart a new session for a different question while keeping previous chats intact\nEscalation to Human Support\nFunction:\nAgent flags genuine emergencies (fraud, security breach, legal) for human review\nValue:\nCritical issues always reach the support team\nUse Case:\nUnauthorised account access or confirmed platform malfunction\nBot Protection\n\nThree platform-level protection systems run automatically on every account. They cannot be toggled off by users — they are always active. Each protection indicator is visible on your account's Manage Bot page. Tap any indicator to read a full explanation of how it works.\n\nAI News Filter (Always ON)\nFunction:\nHigh-impact economic news events (NFP, FOMC, CPI, Fed Rate Decisions, GDP) are continuously monitored and fed into the AI Market Score as a risk factor. There is no separate news pause — news risk is blended into the composite score that drives AI Market Protect\nValue:\nWhen a major event is imminent and the composite score drops to 29 or below, AI Market Protect activates automatically. This is more accurate than a fixed time-based pause because it evaluates actual conditions alongside the news\nUse Case:\nNothing to configure. The indicator always shows ON. Click it on the Manage Bot page to read the full explanation of how news events are factored into the AI score\nAI Market Protect (Automatic)\nFunction:\nThe platform monitors the AI Market Score (0–100) every 60 seconds. When the score drops to 29 or below (Extreme Risk), all bots are paused platform-wide. When it recovers to 30 or above, bots resume automatically\nValue:\nScore is computed every 10 minutes using: upcoming news events, live volatility, trend strength, spread/execution quality, session timing, and market stability — all evaluated together\nUse Case:\nThe indicator shows ON when bots are currently locked due to extreme risk, and OFF when conditions are normal and trading is active. Click it to read a detailed breakdown of what the score evaluates\nAI Weekend Protect (Always ON)\nFunction:\nTrading is automatically paused from Friday at market close until Monday at market open. The indicator shows ON during the weekend lock window\nValue:\nGold markets are effectively closed on weekends. Weekend price gaps — sudden jumps when markets reopen — can cause large, uncontrollable losses on open positions\nUse Case:\nThis is a system-level safeguard applied to all accounts and cannot be disabled. Click the indicator on the Manage Bot page to read the full explanation\nProtection Status Indicators\nFunction:\nThree compact indicators (AI News Filter / AI Market Protect / AI Weekend Protect) are shown at the bottom of your account card on the Manage Bot page\nValue:\nInstantly see which protections are active and why your bot may have paused\nUse Case:\nIf your bot stops trading unexpectedly, check these indicators first. Tap any one of them to read a full explanation of how that protection works and what conditions triggered it\nAdmin Emergency Lock\nFunction:\nPlatform administrators can trigger a platform-wide emergency lock during extraordinary market events (e.g. flash crashes, circuit breakers, black-swan events)\nValue:\nExtra safety layer for extreme scenarios that fall outside normal protection thresholds\nUse Case:\nAdmin-only — users cannot trigger or clear this. If an emergency lock is active, the dashboard protection card will show the reason\nMy Account\n\nConnect and manage your MT4/MT5 trading accounts. Each connected account runs the AI Gold Scalper bot automatically once activated.\n\nAccount Cards\nFunction:\nEach connected account is shown as a card with Bot status, Account custom name, Trading Account Number, Trading Platform and Bot Settings Button\nValue:\nAll your accounts at a glance with live data\nUse Case:\nMonitor individual account performance and access bot settings\nConnect First Account\nFunction:\nInline form to connect your first MT4/MT5 account directly on the page\nValue:\nSimple setup flow for new users\nUse Case:\nEnter your account number, broker server, platform (MT4/MT5), and master password\nAdd Account (Dialog)\nFunction:\nAdd additional accounts via a modal dialog (if your plan allows multiple)\nValue:\nExpand your trading to multiple accounts without leaving the page\nUse Case:\nFree plan: Wallet only (no MT4/MT5 required); Pro: Wallet + 1 MT4/MT5 account; Elite: Wallet + 2 MT4/MT5 accounts\nAccount Number\nFunction:\nYour broker's MT4/MT5 login number\nValue:\nUniquely identifies your trading account\nUse Case:\nFind this in your broker's welcome email or MT4/MT5 login screen\nTrading Platform\nFunction:\nSelect MT4 or MT5 — both are fully supported\nValue:\nBot adapts its connection to your platform version\nUse Case:\nChoose the platform your broker provided\nBroker Server\nFunction:\nYour broker's server address (e.g., ICMarketsEU-Live02)\nValue:\nConnects the bot to the correct trading server\nUse Case:\nFind this in MT4/MT5 under File > Login. Must match exactly\nMaster Password\nFunction:\nYour account's master (full access) password — not the investor/read-only password\nValue:\nRequired for the bot to execute trades on your account\nUse Case:\nDo not use the investor password — trades will fail. Use the master password only\nBot Status Badge\nFunction:\nActive or Inactive badge on each account card\nValue:\nInstantly see which accounts are currently trading\nUse Case:\nActive = bot is running. Inactive = bot is paused or protection is active\nManage Bot Settings\nFunction:\nOpens the Manage Bot page for that account — choose between AI Auto Mode (recommended, all plans) or Manual Mode (Pro and Elite)\nValue:\nIn AI Auto Mode all settings are managed automatically. In Manual Mode you set the fixed lot size, stop loss, take profit, and position limits yourself\nUse Case:\nStart with AI Auto Mode — switch to Manual Mode only if you need fixed position sizing for prop firms or prefer manual control\nConnection Refresh\nFunction:\nRefresh button to re-check the connection status with the broker\nValue:\nResolves temporary connection issues without removing the account\nUse Case:\nClick if an account shows as disconnected after your broker restarts their server\nDelete Account\nFunction:\nRemove a trading account from the platform\nValue:\nCleans up accounts you no longer want to trade\nUse Case:\nFrees up a slot for a different account on your plan\nSearch & Filter\nFunction:\nSearch accounts by name or number; filter by active/inactive status\nValue:\nFind specific accounts quickly when managing multiple MT4/MT5 accounts\nUse Case:\nUseful for fund managers running 10+ accounts\nBot Settings\n\nEvery connected account has two trading modes: AI Auto Mode (recommended — all settings managed automatically) and Manual Mode (Pro and Elite — full user control). Access from the Accounts page by clicking any connected account.\n\nTrading Mode Selector\nFunction:\nTwo-button toggle at the top of the settings panel — choose AI Auto Mode or Manual Mode\nValue:\nAI Auto Mode: everything is managed by the AI Score Engine. Manual Mode: you control all settings yourself\nUse Case:\nSwitch to Manual Mode if you want to use a fixed lot size, specific stop loss/take profit levels, or manage a prop firm account with strict rules. Manual Mode is available on Pro and Elite plans — locked on Free\nAI Auto Mode\nFunction:\nWhen selected, the AI Score Engine takes full control. All settings (lot size, stop loss, take profit, max lot, max positions) display as AUTO and cannot be edited\nValue:\nThe bot automatically adjusts risk level every 60 seconds based on the current market score: score 0–29 → Extreme Risk (Off), score 30–49 → Conservative (factor 0.5), score 50–79 → Moderate (factor 1.0), score 80–100 → Aggressive (factor 3.0)\nUse Case:\nRecommended for all users. No configuration needed — the AI handles everything based on live market conditions. Available on all plans including Free\nAI Auto Mode — Live Score Display\nFunction:\nWhile in AI Auto Mode, the current AI Market Score badge is shown inside the settings panel\nValue:\nSee the exact score and risk band that is controlling your bot right now\nUse Case:\nUse this to understand why the bot may be trading conservatively or aggressively at any given moment\nManual Mode — Lot Type\nFunction:\nIn Manual Mode, the lot type is always Fixed Lot — the bot uses a consistent lot size for every trade\nValue:\nPredictable, consistent position sizing regardless of account balance changes\nUse Case:\nRequired for prop firm accounts with strict per-trade sizing rules. Set your fixed lot value in the Lot Value field\nManual Mode — Lot Value\nFunction:\nThe exact fixed lot size the bot will use for every single trade\nValue:\nFull control over position size per trade\nUse Case:\nEnter a value like 0.01 for micro lots, 0.1 for mini lots, or 1.0 for standard lots. Start small if you are new to manual sizing\nManual Mode — Fixed SL (Stop Loss)\nFunction:\nSet a hard stop loss per trade. Choose the unit: percentage (%), cash amount, or pips — then enter the value\nValue:\nThe bot closes losing trades when they reach your defined stop loss level\nUse Case:\nUse cash amount (e.g. $50) for prop firms with dollar-based drawdown limits. Use % for balance-relative protection. Use pips for precise technical levels\nManual Mode — Fixed TP (Take Profit)\nFunction:\nSet a hard take profit target per trade. Choose the unit: percentage (%), cash amount, or pips — then enter the value\nValue:\nThe bot closes winning trades when they reach your defined take profit level\nUse Case:\nUse cash amount for predictable per-trade gains. Leave at 0 or use % if you prefer AI-managed exits scaled to account balance\nManual Mode — Max Lot Size\nFunction:\nOptional upper cap on any single trade's lot size. Leave empty or set to 0 for no cap (Unlimited)\nValue:\nPrevents unexpectedly large trades even when the lot value is set high\nUse Case:\nSet this on prop firm accounts where a maximum single-trade size is enforced. Available in Manual Mode\nManual Mode — Max Open Positions\nFunction:\nCaps the total number of simultaneous open trades the bot can hold at any time\nValue:\nPrevents overexposure when multiple signals fire at the same time\nUse Case:\nDefault is 50. Reduce to 5–10 for prop firm accounts with strict drawdown rules. Available in Manual Mode (Pro and Elite)\nReset to Default\nFunction:\nResets all Manual Mode settings to their safe defaults: Fixed Lot 0.01, SL 50%, TP 1%, Max Lot unlimited, Max Positions 50\nValue:\nInstantly undo all custom changes and return to a safe baseline\nUse Case:\nUse if you have misconfigured settings in Manual Mode and want to start fresh. Only available in Manual Mode\nSave Settings\nFunction:\nApplies and saves all Manual Mode configuration changes immediately\nValue:\nSettings take effect right after saving\nUse Case:\nAlways click Save after making any changes in Manual Mode — unsaved changes are lost on page refresh. Not needed in AI Auto Mode — changes are automatic\nSubscription\n\nManage your subscription plan, view billing history, download invoices, and handle renewals or cancellations.\n\nCurrent Plan Display\nFunction:\nShows your active subscription tier (Free, Pro, or Elite)\nValue:\nAlways know what plan you are on and what features you have access to\nUse Case:\nQuick reference when deciding whether to upgrade\nMonthly / Yearly Billing Toggle\nFunction:\nSwitch between monthly and yearly pricing on the upgrade page\nValue:\nYearly plans save approximately 50% compared to paying monthly\nUse Case:\nIf you plan to use MevTrading long-term, yearly is significantly cheaper\nSubscription Status\nFunction:\nActive, Inactive, or Expired badge\nValue:\nInstantly verify whether your subscription is healthy\nUse Case:\nCheck this first if your bot is not trading unexpectedly\nExpiry Date\nFunction:\nThe exact date your current subscription period ends\nValue:\nPlan your renewal or upgrade timing\nUse Case:\nAvoid service interruption by renewing before expiry\nAccount Slot Limit\nFunction:\nMT4/MT5 accounts your plan allows (Free: Wallet only, Pro: 1 MT4/MT5, Elite: 2 MT4/MT5). All plans include MevTrading Wallet.\nValue:\nKnow how many more accounts you can connect\nUse Case:\nCheck this before trying to add a new account\nTransaction History\nFunction:\nComplete list of all past subscription payments\nValue:\nFull payment audit trail\nUse Case:\nAccounting, tax reporting, and payment verification\nInvoice Download\nFunction:\nDownload a PDF invoice for any past transaction\nValue:\nFormal documentation for expenses\nUse Case:\nBusiness expense reporting or tax purposes\nCancel Subscription\nFunction:\nStops auto-renewal at the end of the current billing period\nValue:\nNo more charges after cancellation — access continues until period ends\nUse Case:\nCancel if you no longer need the service; your bot continues until expiry\nUpgrade Plan Button\nFunction:\nOpens the pricing page to select a higher tier\nValue:\nSeamless upgrade flow with immediate access on payment\nUse Case:\nUpgrade when you are ready to connect more accounts or access advanced features\nPlans & Pricing\n\nMevTrading offers flexible subscription plans for traders at every level — from beginners to professional fund managers.\n\nFree Plan — $0 (free forever)\nFunction:\nMevTrading Wallet access, AI Gold Scalper Bot, 0% Fee, minimum $10 deposit, up to $5,000 balance, 24/7 support\nValue:\nNo subscription fee — deposit funds and the AI trades XAUUSD on your behalf automatically. No MT4/MT5 or broker account required\nUse Case:\nTraders starting out with automated XAUUSD trading who want a fully managed, hands-off experience at zero monthly cost\nPro Plan — $299/mo or $1,799/yr\nFunction:\nMevTrading Wallet + 1 MT4/MT5 account, 0% Fee, up to $20,000 balance, Manual Mode, prop-firm compatible, priority support\nValue:\nRun both Wallet AI trading and a broker account simultaneously. Manual Mode lets you set fixed lot sizes and custom SL/TP for prop firm challenges\nUse Case:\nSerious traders scaling capital across both Wallet and broker accounts, or running prop firm challenges\nElite Plan — $999/mo or $5,999/yr\nFunction:\nMevTrading Wallet + 2 MT4/MT5 accounts, 0% Fee, unlimited balance, Manual Mode, prop-firm compatible, VIP support and account manager\nValue:\nMaximum flexibility — zero fee, highest balance limit, two simultaneous MT4/MT5 accounts plus Wallet trading\nUse Case:\nProfessional traders and fund managers who want the lowest fees and maximum multi-account capacity\nYearly Discount\nFunction:\nSwitch to yearly billing on the pricing page to save ~50% vs monthly\nValue:\nPro: save ~$790/yr. Elite: save ~$5,990/yr\nUse Case:\nRecommended for any trader committed to automated trading long-term\nSupported Payment\nFunction:\nMevTrading accepts payments via USDT, USDC, Bitcoin, ETH, BNB, Solana, and NGN bank transfer depending on your region. Payments are processed securely and your subscription activates automatically.\nValue:\nFast, borderless payments with automatic subscription activation on all plans\nUse Case:\nChoose your preferred method at checkout — crypto payments confirm within minutes, NGN bank transfer availability varies by region\nRefer & Earn\n\nEarn 20% lifetime commission on every payment made by traders you refer. No cap, no expiry — you earn as long as your referral stays subscribed.\n\nReferral Link\nFunction:\nYour unique URL that tracks sign-ups and payments from your referrals\nValue:\nShare anywhere — Telegram, Twitter, YouTube, blogs, email\nUse Case:\nCopy and paste your link from the Refer & Earn page and start sharing\nReferral Code\nFunction:\nShort code version of your referral link\nValue:\nEasier to share verbally or include in marketing materials\nUse Case:\nInclude in video descriptions, bio links, or printed materials\n20% Lifetime Commission\nFunction:\nYou earn 20% of every payment your referred users make — forever\nValue:\nNo cap, no time limit — recurring income as long as they stay subscribed\nUse Case:\nRefer 10 Pro plan users on yearly billing and earn ~$3,598/year passively\n3-Day Hold Period\nFunction:\nCommissions are held for 3 days before being released to your available balance\nValue:\nProtects against refund abuse while ensuring reliable payouts\nUse Case:\nCommission earned today becomes available for withdrawal in 3 days\nTotal Earnings\nFunction:\nLifetime commission earned across all referrals\nValue:\nTrack your total affiliate income\nUse Case:\nGoal setting and performance tracking\nAvailable Balance\nFunction:\nCommissions that have cleared the 3-day hold and are ready to withdraw\nValue:\nYour spendable affiliate income\nUse Case:\nWithdraw anytime — processed within 24 hours\nPending Earnings\nFunction:\nCommissions earned but still within the 3-day hold period\nValue:\nTrack incoming earnings before they clear\nUse Case:\nSee how much is on its way to your available balance\nUSDT Wallet (BEP20)\nFunction:\nYour Binance Smart Chain USDT wallet address for payouts\nValue:\nFast, low-fee crypto payouts directly to your wallet\nUse Case:\nSet this once in the Refer & Earn page — required before requesting withdrawal\nWithdrawal Request\nFunction:\nRequest payout of your available balance at any time\nValue:\nProcessed within 24 hours to your USDT BEP20 wallet\nUse Case:\nNo minimum — withdraw any amount from your available balance\nCommission History\nFunction:\nDetailed log of every commission earned, with referral and amount\nValue:\nFull transparency on your affiliate earnings\nUse Case:\nIdentify which referrals are your biggest earners\nWithdrawal History\nFunction:\nRecord of all past payouts and their status\nValue:\nVerify received payments and track payout history\nUse Case:\nConfirm a payout was processed or check a pending withdrawal\nMy Profile\n\nManage your personal account information, password, and security settings.\n\nFirst Name / Last Name\nFunction:\nEdit your display name shown across the platform\nValue:\nPersonalise your account with your real name or preferred name\nUse Case:\nUpdate after signing up or if you change your name\nEmail Address\nFunction:\nYour registered email — read-only in the app\nValue:\nUsed for login, 2FA codes, and support communication\nUse Case:\nTo change your email, contact support on Telegram @MevTrading\nSave Profile\nFunction:\nApplies and saves name changes\nValue:\nUpdates are reflected immediately across the platform\nUse Case:\nClick after editing your first or last name\nChange Password\nFunction:\nUpdate your login password\nValue:\nKeep your account secure with a strong, unique password\nUse Case:\nRegular rotation recommended — especially if you suspect unauthorised access\nTwo-Factor Authentication (2FA)\nFunction:\nEmail-based verification code required at every login when enabled\nValue:\nSignificantly reduces the risk of unauthorised account access\nUse Case:\nStrongly recommended for all users, especially those with active subscriptions\nEnable 2FA\nFunction:\nTurn on email verification for login\nValue:\nExtra security layer — you will receive a code by email each time you log in\nUse Case:\nEnable from My Profile → Two-Factor Authentication section\nDisable 2FA\nFunction:\nTurn off email verification for login\nValue:\nSimpler login without email codes\nUse Case:\nOnly disable if you are not receiving 2FA emails — check spam folder first\nDelete Account\nFunction:\nPermanently removes your account, all data, subscriptions, and trading connections\nValue:\nComplete and irreversible exit from the platform\nUse Case:\nUse with extreme caution — this cannot be undone. All data is permanently deleted\nNeed More Help?\n\nOur support team is available 24/7 to assist you with any questions.\n\nTelegram Support\nRead Our Blog\nView Changelog",
+      "title": "MevTrading User Guide — Set Up Your AI Gold Bot",
+      "url": "https://mevtrading.com/user-guide"
+    },
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Terms of Service"
+        },
+        {
+          "tag": "H2",
+          "text": "1. Acceptance of Terms"
+        },
+        {
+          "tag": "H2",
+          "text": "2. Trading Risk Disclaimer"
+        },
+        {
+          "tag": "H2",
+          "text": "3. Service Description"
+        },
+        {
+          "tag": "H2",
+          "text": "4. User Responsibilities"
+        },
+        {
+          "tag": "H2",
+          "text": "5. Subscription and Payment"
+        },
+        {
+          "tag": "H2",
+          "text": "6. Limitation of Liability"
+        },
+        {
+          "tag": "H2",
+          "text": "7. Termination"
+        },
+        {
+          "tag": "H2",
+          "text": "8. Changes to Terms"
+        },
+        {
+          "tag": "H2",
+          "text": "9. Contact Information"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Back to Home"
+        }
+      ],
+      "text": "Back to Home\nTerms of Service\n\nLast updated: June 25, 2025\n\n1. Acceptance of Terms\n\nBy accessing and using MevTrading's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.\n\n2. Trading Risk Disclaimer\n\nTrading in financial markets involves substantial risk and may not be suitable for all investors. Past performance is not indicative of future results. You should carefully consider your investment objectives, level of experience, and risk appetite before using our trading bots.\n\nAll trading involves risk of loss\nYou may lose more than your initial investment\nResults may vary significantly between users\nMevTrading does not guarantee profits or returns\n3. Service Description\n\nMevTrading provides automated trading bot services for Gold, Forex, and Cryptocurrency markets. Our service includes:\n\nAI-powered trading algorithms\n24/7 automated trading execution\nRisk management tools\nPerformance analytics and reporting\n4. User Responsibilities\n\nYou are responsible for:\n\nProviding accurate account information\nMaintaining the security of your trading accounts\nMonitoring your trading activities\nComplying with all applicable laws and regulations\nUnderstanding the risks involved in automated trading\n5. Subscription and Payment\n\nSubscription fees are charged in advance and are non-refundable. You may cancel your subscription at any time, but no refunds will be provided for unused portions of your subscription period.\n\n6. Limitation of Liability\n\nMevTrading shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your use of our services, including but not limited to trading losses, lost profits, or business interruption.\n\n7. Termination\n\nWe reserve the right to terminate or suspend your account at any time for violation of these terms or for any other reason at our sole discretion.\n\n8. Changes to Terms\n\nWe reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the service constitutes acceptance of the modified terms.\n\n9. Contact Information\n\nIf you have any questions about these Terms of Service, please contact us through our support channels.",
+      "title": "Terms of Service — MevTrading",
+      "url": "https://mevtrading.com/terms"
+    },
+    {
+      "forms": [],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Privacy Policy"
+        },
+        {
+          "tag": "H2",
+          "text": "1. Information We Collect"
+        },
+        {
+          "tag": "H2",
+          "text": "2. How We Use Your Information"
+        },
+        {
+          "tag": "H2",
+          "text": "3. Information Sharing"
+        },
+        {
+          "tag": "H2",
+          "text": "4. Data Security"
+        },
+        {
+          "tag": "H2",
+          "text": "5. Trading Account Security"
+        },
+        {
+          "tag": "H2",
+          "text": "6. Cookies and Tracking"
+        },
+        {
+          "tag": "H2",
+          "text": "7. Data Retention"
+        },
+        {
+          "tag": "H2",
+          "text": "8. Your Rights"
+        },
+        {
+          "tag": "H2",
+          "text": "9. Changes to Privacy Policy"
+        },
+        {
+          "tag": "H2",
+          "text": "10. Contact Us"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://mevtrading.com/",
+          "text": ""
+        },
+        {
+          "href": "https://mevtrading.com/",
+          "text": "Back to Home"
+        }
+      ],
+      "text": "Back to Home\nPrivacy Policy\n\nLast updated: June 25, 2025\n\n1. Information We Collect\n\nWe collect information you provide directly to us, such as when you create an account, subscribe to our services, or contact us for support.\n\nPersonal information (name, email address)\nAccount credentials and trading account information\nPayment and billing information\nUsage data and analytics\nCommunication history with our support team\n2. How We Use Your Information\n\nWe use the information we collect to:\n\nProvide and maintain our trading bot services\nProcess payments and manage subscriptions\nSend you important service updates and notifications\nProvide customer support\nImprove our services and develop new features\nComply with legal obligations\n3. Information Sharing\n\nWe do not sell, trade, or otherwise transfer your personal information to third parties except in the following circumstances:\n\nWith your explicit consent\nTo comply with legal requirements\nTo protect our rights and prevent fraud\nWith trusted service providers who assist in our operations\n4. Data Security\n\nWe implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes encryption, secure servers, and regular security audits.\n\n5. Trading Account Security\n\nYour trading account credentials are encrypted and stored securely. We use industry-standard security protocols to protect your trading data:\n\nEnd-to-end encryption for sensitive data\nSecure API connections to trading platforms\nRegular security monitoring and updates\nLimited access controls for our staff\n6. Cookies and Tracking\n\nWe use cookies and similar technologies to enhance your experience, analyze usage patterns, and improve our services. You can control cookie settings through your browser preferences.\n\n7. Data Retention\n\nWe retain your personal information for as long as necessary to provide our services and comply with legal obligations. You may request deletion of your account and associated data at any time.\n\n8. Your Rights\n\nYou have the right to:\n\nAccess and review your personal information\nRequest correction of inaccurate data\nRequest deletion of your account and data\nOpt-out of marketing communications\nData portability where applicable\n9. Changes to Privacy Policy\n\nWe may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the \"Last updated\" date.\n\n10. Contact Us\n\nIf you have any questions about this Privacy Policy or our data practices, please contact us through our support channels.",
+      "title": "Privacy Policy — MevTrading",
+      "url": "https://mevtrading.com/privacy"
+    },
+    {
+      "forms": [
+        {
+          "action": "https://mevtrading.com/auth?tab=register",
+          "fields": [
+            {
+              "label": "First Name",
+              "name": "firstName",
+              "placeholder": "First name",
+              "tag": "INPUT",
+              "type": null
+            },
+            {
+              "label": "Last Name",
+              "name": "lastName",
+              "placeholder": "Last name",
+              "tag": "INPUT",
+              "type": null
+            },
+            {
+              "label": "Email",
+              "name": "email",
+              "placeholder": "Enter your email",
+              "tag": "INPUT",
+              "type": "email"
+            },
+            {
+              "label": null,
+              "name": "password",
+              "placeholder": "Create a password (min. 6 characters)",
+              "tag": "INPUT",
+              "type": "password"
+            },
+            {
+              "label": null,
+              "name": "cf-turnstile-response",
+              "placeholder": null,
+              "tag": "INPUT",
+              "type": "hidden"
+            }
+          ],
+          "method": "get"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "AI Gold Scalping Platform for MT4 and MT5"
+        },
+        {
+          "tag": "H3",
+          "text": "Intelligent Risk Protection"
+        },
+        {
+          "tag": "H3",
+          "text": "Prop-Firm Compatible"
+        },
+        {
+          "tag": "H2",
+          "text": "AI Gold Scalping Platform for MT4 and MT5"
+        },
+        {
+          "tag": "H3",
+          "text": "Risk Protection"
+        },
+        {
+          "tag": "H3",
+          "text": "Prop-Firm Ready"
+        }
+      ],
+      "links": [],
+      "text": "91,393 traders running MevTrading AI right now\nFirst Name\nLast Name\nEmail\nPassword\nCountry\nUnited Arab Emirates\nCreate Account\n\nAlready have an account? Sign in\n\n🔒 Secure & encrypted\n\nAI Gold Scalping Platform for MT4 and MT5\n\nDeploy AI-powered gold scalping in minutes with built-in risk protection.\n\nRisk Protection\n\nSL/TP, News Filter & Market Guard\n\nProp-Firm Ready\n\nPass & scale funded accounts\n\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇻🇳\nLinh N***\nVietnam\nPepperstone\nACCOUNT\n358****\nBasic Plan\nSTARTING BALANCE\n$55\nLAST 30-DAYS PROFIT\n+$131.29\n+238.7%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇳🇿\nMia T***\nNew Zealand\nAvaTrade\nACCOUNT\n686****\nBasic Plan\nSTARTING BALANCE\n$110\nLAST 30-DAYS PROFIT\n+$282.57\n+256.9%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇺🇸\nAshley M***\nUnited States\nCoinexx\nACCOUNT\n181****\nPro Plan\nSTARTING BALANCE\n$5,500\nLAST 30-DAYS PROFIT\n+$6440.89\n+117.1%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇯🇵\nHiroshi T***\nJapan\nOctaFX\nACCOUNT\n812****\nPro Plan\nSTARTING BALANCE\n$65,500\nLAST 30-DAYS PROFIT\n+$68387.03\n+104.4%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇶\nAhmed Z***\nIraq\nExclusiveMarkets\nACCOUNT\n988****\nBasic Plan\nSTARTING BALANCE\n$1,000\nLAST 30-DAYS PROFIT\n+$1475.98\n+147.6%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇵🇰\nAisha D***\nPakistan\nOneRoyal\nACCOUNT\n846****\nPro Plan\nSTARTING BALANCE\n$11,400\nLAST 30-DAYS PROFIT\n+$11031.77\n+96.8%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇷🇴\nAndrei P***\nRomania\nFBS\nACCOUNT\n751****\nPro Plan\nSTARTING BALANCE\n$37,000\nLAST 30-DAYS PROFIT\n+$36846.75\n+99.6%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇧🇷\nCarlos G***\nBrazil\nHFM\nACCOUNT\n296****\nPro Plan\nSTARTING BALANCE\n$96,000\nLAST 30-DAYS PROFIT\n+$90562.94\n+94.3%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇩🇿\nNadia C***\nAlgeria\nFBS\nACCOUNT\n766****\nBasic Plan\nSTARTING BALANCE\n$2,400\nLAST 30-DAYS PROFIT\n+$3661.83\n+152.6%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇹\nLuca R***\nItaly\nOneRoyal\nACCOUNT\n326****\nBasic Plan\nSTARTING BALANCE\n$500\nLAST 30-DAYS PROFIT\n+$664.96\n+133.0%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇻🇳\nLinh N***\nVietnam\nPepperstone\nACCOUNT\n358****\nBasic Plan\nSTARTING BALANCE\n$55\nLAST 30-DAYS PROFIT\n+$131.29\n+238.7%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇳🇿\nMia T***\nNew Zealand\nAvaTrade\nACCOUNT\n686****\nBasic Plan\nSTARTING BALANCE\n$110\nLAST 30-DAYS PROFIT\n+$282.57\n+256.9%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇺🇸\nAshley M***\nUnited States\nCoinexx\nACCOUNT\n181****\nPro Plan\nSTARTING BALANCE\n$5,500\nLAST 30-DAYS PROFIT\n+$6440.89\n+117.1%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇯🇵\nHiroshi T***\nJapan\nOctaFX\nACCOUNT\n812****\nPro Plan\nSTARTING BALANCE\n$65,500\nLAST 30-DAYS PROFIT\n+$68387.03\n+104.4%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇶\nAhmed Z***\nIraq\nExclusiveMarkets\nACCOUNT\n988****\nBasic Plan\nSTARTING BALANCE\n$1,000\nLAST 30-DAYS PROFIT\n+$1475.98\n+147.6%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇵🇰\nAisha D***\nPakistan\nOneRoyal\nACCOUNT\n846****\nPro Plan\nSTARTING BALANCE\n$11,400\nLAST 30-DAYS PROFIT\n+$11031.77\n+96.8%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇷🇴\nAndrei P***\nRomania\nFBS\nACCOUNT\n751****\nPro Plan\nSTARTING BALANCE\n$37,000\nLAST 30-DAYS PROFIT\n+$36846.75\n+99.6%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇧🇷\nCarlos G***\nBrazil\nHFM\nACCOUNT\n296****\nPro Plan\nSTARTING BALANCE\n$96,000\nLAST 30-DAYS PROFIT\n+$90562.94\n+94.3%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇩🇿\nNadia C***\nAlgeria\nFBS\nACCOUNT\n766****\nBasic Plan\nSTARTING BALANCE\n$2,400\nLAST 30-DAYS PROFIT\n+$3661.83\n+152.6%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇹\nLuca R***\nItaly\nOneRoyal\nACCOUNT\n326****\nBasic Plan\nSTARTING BALANCE\n$500\nLAST 30-DAYS PROFIT\n+$664.96\n+133.0%",
+      "title": "MevTrading",
+      "url": "https://mevtrading.com/auth?tab=register"
+    },
+    {
+      "forms": [
+        {
+          "action": "https://mevtrading.com/auth?tab=login",
+          "fields": [
+            {
+              "label": "Email",
+              "name": "email",
+              "placeholder": "Enter your email",
+              "tag": "INPUT",
+              "type": "email"
+            },
+            {
+              "label": null,
+              "name": "password",
+              "placeholder": "Enter your password",
+              "tag": "INPUT",
+              "type": "password"
+            },
+            {
+              "label": null,
+              "name": "cf-turnstile-response",
+              "placeholder": null,
+              "tag": "INPUT",
+              "type": "hidden"
+            }
+          ],
+          "method": "get"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "text": "AI Gold Scalping Platform for MT4 and MT5"
+        },
+        {
+          "tag": "H3",
+          "text": "Intelligent Risk Protection"
+        },
+        {
+          "tag": "H3",
+          "text": "Prop-Firm Compatible"
+        },
+        {
+          "tag": "H2",
+          "text": "AI Gold Scalping Platform for MT4 and MT5"
+        },
+        {
+          "tag": "H3",
+          "text": "Risk Protection"
+        },
+        {
+          "tag": "H3",
+          "text": "Prop-Firm Ready"
+        }
+      ],
+      "links": [],
+      "text": "91,393 traders running MevTrading AI right now\nEmail\nPassword\nSign In\n\nDon't have an account? Sign up\n\nForgot your password?\n\n🔒 Secure & encrypted\n\nAI Gold Scalping Platform for MT4 and MT5\n\nDeploy AI-powered gold scalping in minutes with built-in risk protection.\n\nRisk Protection\n\nSL/TP, News Filter & Market Guard\n\nProp-Firm Ready\n\nPass & scale funded accounts\n\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇷🇴\nAndrei P***\nRomania\nExness\nACCOUNT\n940****\nBasic Plan\nSTARTING BALANCE\n$2,300\nLAST 30-DAYS PROFIT\n+$3356.84\n+145.9%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇦🇺\nSofia M***\nAustralia\nXM\nACCOUNT\n961****\nBasic Plan\nSTARTING BALANCE\n$550\nLAST 30-DAYS PROFIT\n+$820.13\n+149.1%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇻🇳\nLinh N***\nVietnam\nPepperstone\nACCOUNT\n491****\nBasic Plan\nSTARTING BALANCE\n$100\nLAST 30-DAYS PROFIT\n+$170.03\n+170.0%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇳🇬\nChidi O***\nNigeria\nFBS\nACCOUNT\n380****\nPro Plan\nSTARTING BALANCE\n$32,500\nLAST 30-DAYS PROFIT\n+$35833.93\n+110.3%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇲🇽\nDiego M***\nMexico\nOctaFX\nACCOUNT\n553****\nPro Plan\nSTARTING BALANCE\n$95,000\nLAST 30-DAYS PROFIT\n+$83810.85\n+88.2%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇺🇸\nTyler H***\nUnited States\nCoinexx\nACCOUNT\n692****\nBasic Plan\nSTARTING BALANCE\n$900\nLAST 30-DAYS PROFIT\n+$1387.27\n+154.1%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇳\nPriya S***\nIndia\nHFM\nACCOUNT\n908****\nPro Plan\nSTARTING BALANCE\n$66,000\nLAST 30-DAYS PROFIT\n+$66285.06\n+100.4%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇬🇧\nJames W***\nUnited Kingdom\nAvaTrade\nACCOUNT\n557****\nPro Plan\nSTARTING BALANCE\n$13,700\nLAST 30-DAYS PROFIT\n+$13001.25\n+94.9%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇯🇵\nHiroshi T***\nJapan\nXM\nACCOUNT\n601****\nBasic Plan\nSTARTING BALANCE\n$55\nLAST 30-DAYS PROFIT\n+$64.64\n+117.5%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇸🇦\nMohammed H***\nSaudi Arabia\nFBS\nACCOUNT\n704****\nPro Plan\nSTARTING BALANCE\n$5,600\nLAST 30-DAYS PROFIT\n+$5547.82\n+99.1%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇷🇴\nAndrei P***\nRomania\nExness\nACCOUNT\n940****\nBasic Plan\nSTARTING BALANCE\n$2,300\nLAST 30-DAYS PROFIT\n+$3356.84\n+145.9%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇦🇺\nSofia M***\nAustralia\nXM\nACCOUNT\n961****\nBasic Plan\nSTARTING BALANCE\n$550\nLAST 30-DAYS PROFIT\n+$820.13\n+149.1%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇻🇳\nLinh N***\nVietnam\nPepperstone\nACCOUNT\n491****\nBasic Plan\nSTARTING BALANCE\n$100\nLAST 30-DAYS PROFIT\n+$170.03\n+170.0%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇳🇬\nChidi O***\nNigeria\nFBS\nACCOUNT\n380****\nPro Plan\nSTARTING BALANCE\n$32,500\nLAST 30-DAYS PROFIT\n+$35833.93\n+110.3%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇲🇽\nDiego M***\nMexico\nOctaFX\nACCOUNT\n553****\nPro Plan\nSTARTING BALANCE\n$95,000\nLAST 30-DAYS PROFIT\n+$83810.85\n+88.2%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇺🇸\nTyler H***\nUnited States\nCoinexx\nACCOUNT\n692****\nBasic Plan\nSTARTING BALANCE\n$900\nLAST 30-DAYS PROFIT\n+$1387.27\n+154.1%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇮🇳\nPriya S***\nIndia\nHFM\nACCOUNT\n908****\nPro Plan\nSTARTING BALANCE\n$66,000\nLAST 30-DAYS PROFIT\n+$66285.06\n+100.4%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇬🇧\nJames W***\nUnited Kingdom\nAvaTrade\nACCOUNT\n557****\nPro Plan\nSTARTING BALANCE\n$13,700\nLAST 30-DAYS PROFIT\n+$13001.25\n+94.9%\nMT4\nLIVE\nMevTrading AI Gold Scalping Bot\n🇯🇵\nHiroshi T***\nJapan\nXM\nACCOUNT\n601****\nBasic Plan\nSTARTING BALANCE\n$55\nLAST 30-DAYS PROFIT\n+$64.64\n+117.5%\nMT5\nLIVE\nMevTrading AI Gold Scalping Bot\n🇸🇦\nMohammed H***\nSaudi Arabia\nFBS\nACCOUNT\n704****\nPro Plan\nSTARTING BALANCE\n$5,600\nLAST 30-DAYS PROFIT\n+$5547.82\n+99.1%",
+      "title": "MevTrading",
+      "url": "https://mevtrading.com/auth?tab=login"
+    }
+  ]
+}
