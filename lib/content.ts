@@ -86,7 +86,7 @@ export const faqs = [
   ],
   [
     "What is the minimum deposit to get started?",
-    "Cash Lab confirms minimum account-funding requirements during onboarding. Funding requirements may depend on the connected broker, account configuration, and agreed risk profile.",
+    "The minimum deposit to get started is $1,000 USD.",
   ],
   [
     "How does the AI decide when to trade?",

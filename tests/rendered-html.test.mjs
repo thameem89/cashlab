@@ -26,6 +26,7 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /70\/30 Profit Split/);
   assert.match(html, /● LIVE/);
   assert.match(html, /\$12,000/);
+  assert.match(html, /minimum deposit to get started is \$1,000 USD/);
   assert.match(html, /30-Day Result/);
   assert.match(html, /United Arab Emirates/);
   assert.match(html, /India/);
