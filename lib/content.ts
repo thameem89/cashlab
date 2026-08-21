@@ -102,7 +102,7 @@ export const faqs = [
   ],
   [
     "How much can I earn per month?",
-    "Trading returns are variable and cannot be guaranteed. Results depend on market conditions, account size, broker execution, and risk settings. When commissionable realized profit is generated, the client receives 70% and Cash Lab receives 30% as its performance commission.",
+    "Expected monthly returns range from 15%–30%. Actual trading returns are variable and cannot be guaranteed, as results depend on market conditions, account size, broker execution, and risk settings. When commissionable realized profit is generated, the client receives 70% and Cash Lab receives 30% as its performance commission.",
   ],
   [
     "Do I need trading experience?",
