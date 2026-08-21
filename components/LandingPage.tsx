@@ -131,9 +131,6 @@ export function LandingPage() {
         className="results-strip"
         aria-label="Reference performance examples"
       >
-        <div className="results-note">
-          Reference examples — not verified Cash Lab results
-        </div>
         <div className="results-track">
           {[...results, ...results].map((item, i) => (
             <article className="result-card" key={`${item.name}-${i}`}>

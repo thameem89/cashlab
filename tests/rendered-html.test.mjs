@@ -29,6 +29,10 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /\+82\.4%/);
   assert.doesNotMatch(
     html,
+    /Reference examples — not verified Cash Lab results/,
+  );
+  assert.doesNotMatch(
+    html,
     /\$13,300|\$68,000|\$98,000|\$37,500|\+119\.2%|\+110\.7%/,
   );
   assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i);

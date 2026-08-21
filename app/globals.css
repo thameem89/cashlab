@@ -560,14 +560,6 @@ body {
   background: rgba(255, 255, 255, 0.012);
   overflow: hidden;
 }
-.results-note {
-  text-align: center;
-  margin-bottom: 18px;
-  color: var(--text-muted);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
 .results-track {
   display: flex;
   width: max-content;
