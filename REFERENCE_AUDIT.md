@@ -99,7 +99,7 @@ The complete FAQ answers and exact audited page text are retained in `reference-
 - [ ] Cash Lab must supply its support email and support destination.
 - [ ] Cash Lab must supply or approve its social-profile URLs.
 - [ ] Cash Lab must provide legal entity name, address, governing law, jurisdiction, and approved effective dates.
-- [ ] Cash Lab must define the calculation period, settlement timing, eligible profit, and exclusions for the 70/30 commission model in its customer agreement.
+- [ ] Cash Lab must define the calculation period, settlement timing, eligible profit, and exclusions for the 70/30 commission model in its client agreement.
 - [ ] Cash Lab must verify every deposit, balance, profit-target, support, product-capability, security, compatibility, wallet, withdrawal, changelog, and performance claim before publication.
 
 ## Unavoidable or intentional differences
@@ -110,4 +110,4 @@ The complete FAQ answers and exact audited page text are retained in `reference-
 - Original social and broker links are omitted because Cash Lab destinations were not supplied.
 - Authentication is a local demonstration with honest feedback because no Cash Lab backend was supplied.
 - The duplicated responsive sections visible on the reference site were normalized into one accessible instance per section.
-- The reference pricing, plan comparison, and 20% affiliate offer are intentionally omitted from Cash Lab. Cash Lab instead presents a 70% customer / 30% company realized-profit commission split.
+- The reference pricing, plan comparison, and 20% affiliate offer are intentionally omitted from Cash Lab. Cash Lab instead presents a 70% client / 30% company realized-profit commission split.

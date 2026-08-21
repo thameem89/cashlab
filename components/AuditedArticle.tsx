@@ -28,7 +28,11 @@ function rebrand(value: string) {
     .replaceAll("Gold", "Forex")
     .replaceAll("gold", "forex")
     .replaceAll("Infrastructure", "EA")
-    .replaceAll("infrastructure", "EA");
+    .replaceAll("infrastructure", "EA")
+    .replaceAll("Customers", "Clients")
+    .replaceAll("customers", "clients")
+    .replaceAll("Customer", "Client")
+    .replaceAll("customer", "client");
 }
 
 function slugify(value: string) {

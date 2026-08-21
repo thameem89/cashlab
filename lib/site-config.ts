@@ -27,7 +27,7 @@ export const siteConfig = {
 } as const;
 
 export const publicationClaimsToVerify = [
-  "Current trader or customer counts",
+  "Current trader or client counts",
   "Displayed account balances, profit figures, and performance percentages",
   "The availability and terms of Cash Lab Wallet",
   "The calculation, settlement timing, and exclusions for the 70/30 realized-profit commission split",

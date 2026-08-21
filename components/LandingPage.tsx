@@ -258,13 +258,13 @@ export function LandingPage() {
               <div>
                 <strong>How is realized profit shared?</strong>
                 <p>
-                  Customers retain 70% of commissionable realized profit, while
+                  Clients retain 70% of commissionable realized profit, while
                   Cash Lab receives 30% as its performance commission.
                 </p>
               </div>
             </div>
             <div className="agent-split">
-              <span>Customer share · 70%</span>
+              <span>Client share · 70%</span>
               <span>Cash Lab share · 30%</span>
             </div>
             <div className="agent-input">
@@ -360,17 +360,17 @@ export function LandingPage() {
                 A Transparent <span>70/30 Profit Split</span>
               </>
             }
-            copy="Customers keep 70% of commissionable realized profit. Cash Lab receives 30% as its performance commission."
+            copy="Clients keep 70% of commissionable realized profit. Cash Lab receives 30% as its performance commission."
           />
           <div className="commission-panel">
             <div
               className="commission-bar"
               role="img"
-              aria-label="Profit split: 70 percent customer and 30 percent Cash Lab"
+              aria-label="Profit split: 70 percent client and 30 percent Cash Lab"
             >
-              <div className="customer-share">
+              <div className="client-share">
                 <strong>70%</strong>
-                <span>Customer</span>
+                <span>Client</span>
               </div>
               <div className="cashlab-share">
                 <strong>30%</strong>
@@ -383,9 +383,9 @@ export function LandingPage() {
                   <Users size={22} />
                 </div>
                 <div>
-                  <h3>70% Customer Share</h3>
+                  <h3>70% Client Share</h3>
                   <p>
-                    The customer receives the majority share of commissionable
+                    The client receives the majority share of commissionable
                     realized trading profit.
                   </p>
                 </div>
@@ -411,7 +411,7 @@ export function LandingPage() {
           </div>
           <p className="tiny-note">
             The split applies to commissionable realized profit under the final
-            Cash Lab customer agreement.
+            Cash Lab client agreement.
           </p>
         </div>
       </section>

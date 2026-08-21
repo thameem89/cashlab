@@ -999,7 +999,7 @@ body {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.customer-share {
+.client-share {
   background: linear-gradient(145deg, #59ef59, var(--green));
   color: #031103;
 }

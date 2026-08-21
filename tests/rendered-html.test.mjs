@@ -34,6 +34,7 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /\+18\.7%/);
   assert.match(html, /\+26\.8%/);
   assert.doesNotMatch(html, /example/i);
+  assert.doesNotMatch(html, /customer/i);
   assert.doesNotMatch(
     html,
     /\$13,300|\$68,000|\$98,000|\$37,500|\+82\.4%|\+93\.1%|\+94\.8%|\+88\.6%|\+119\.2%|\+110\.7%/,
@@ -61,6 +62,7 @@ test("server-renders all audited public routes", async () => {
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.match(html, pattern, path);
+    assert.doesNotMatch(html, /customer/i, path);
     assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i, path);
   }
 });
