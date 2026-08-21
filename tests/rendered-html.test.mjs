@@ -23,6 +23,13 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /Cash Lab/);
   assert.match(html, /AI Forex Trading Platform/);
   assert.match(html, /70\/30 Profit Split/);
+  assert.match(html, /● LIVE/);
+  assert.match(html, /\$12,000/);
+  assert.match(html, /\+82\.4%/);
+  assert.doesNotMatch(
+    html,
+    /\$13,300|\$68,000|\$98,000|\$37,500|\+119\.2%|\+110\.7%/,
+  );
   assert.doesNotMatch(html, /gold|XAUUSD|60\/40/i);
   assert.doesNotMatch(
     html,

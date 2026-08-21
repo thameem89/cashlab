@@ -40,9 +40,9 @@ export const results = [
     platform: "MT4",
     broker: "OneRoyal",
     plan: "Managed Account",
-    balance: "$13,300",
-    profit: "+$15,847.15",
-    gain: "+119.2%",
+    balance: "$8,500",
+    profit: "+$7,004.00",
+    gain: "+82.4%",
   },
   {
     flag: "🇸🇦",
@@ -51,8 +51,8 @@ export const results = [
     platform: "MT4",
     broker: "IC Markets",
     plan: "Managed Account",
-    balance: "$68,000",
-    profit: "+$63,296.82",
+    balance: "$12,000",
+    profit: "+$11,172.00",
     gain: "+93.1%",
   },
   {
@@ -62,8 +62,8 @@ export const results = [
     platform: "MT5",
     broker: "OctaFX",
     plan: "Managed Account",
-    balance: "$98,000",
-    profit: "+$92,921.95",
+    balance: "$9,800",
+    profit: "+$9,290.40",
     gain: "+94.8%",
   },
   {
@@ -73,9 +73,9 @@ export const results = [
     platform: "MT5",
     broker: "OctaFX",
     plan: "Managed Account",
-    balance: "$37,500",
-    profit: "+$41,494.12",
-    gain: "+110.7%",
+    balance: "$7,500",
+    profit: "+$6,645.00",
+    gain: "+88.6%",
   },
 ] as const;
 

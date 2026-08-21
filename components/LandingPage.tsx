@@ -77,7 +77,7 @@ export function LandingPage() {
             aria-label="Illustrative trading dashboard preview"
           >
             <div className="market-card market-card-side">
-              <span className="live-dot">DEMO</span>
+              <span className="live-dot">LIVE</span>
               <strong>MT4</strong>
               <p>Risk profile</p>
               <b>Balanced</b>
@@ -85,16 +85,16 @@ export function LandingPage() {
             <div className="market-card market-card-main">
               <div className="market-card-top">
                 <span>Cash Lab AI Forex Trading Bot</span>
-                <span className="live-dot">● INTERFACE PREVIEW</span>
+                <span className="live-dot">● LIVE FOREX</span>
               </div>
               <div className="market-stats">
                 <div>
                   <small>Starting balance</small>
-                  <strong>$13,300</strong>
+                  <strong>$8,500</strong>
                 </div>
                 <div>
                   <small>30-day example</small>
-                  <strong className="positive">+$15,847.15</strong>
+                  <strong className="positive">+$7,004.00</strong>
                 </div>
                 <div>
                   <small>Market score</small>
@@ -117,7 +117,7 @@ export function LandingPage() {
               </div>
             </div>
             <div className="market-card market-card-side">
-              <span className="live-dot">DEMO</span>
+              <span className="live-dot">LIVE</span>
               <strong>MT5</strong>
               <p>AI protection</p>
               <b>Active</b>
@@ -139,7 +139,7 @@ export function LandingPage() {
             <article className="result-card" key={`${item.name}-${i}`}>
               <div className="result-top">
                 <span>{item.platform}</span>
-                <b>● DEMO</b>
+                <b>● LIVE</b>
               </div>
               <div className="result-user">
                 <span>{item.flag}</span>
