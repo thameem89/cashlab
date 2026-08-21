@@ -50,7 +50,7 @@ export function LandingPage() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="eyebrow">
-            <span /> AI-Powered Forex Trading Infrastructure
+            <span /> AI-Powered Forex Trading EA
           </div>
           <h1>
             AI Forex Trading Platform for <em>MT4 and MT5</em>

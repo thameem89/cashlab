@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Cash Lab",
     short_name: "Cash Lab",
-    description: "AI forex trading infrastructure for MT4 and MT5.",
+    description: "AI forex trading EA for MT4 and MT5.",
     start_url: "/",
     display: "standalone",
     background_color: "#050706",

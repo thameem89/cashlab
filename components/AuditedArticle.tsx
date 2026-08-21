@@ -26,7 +26,9 @@ function rebrand(value: string) {
     .replaceAll("gold trading", "forex trading")
     .replaceAll("AI Gold", "AI Forex")
     .replaceAll("Gold", "Forex")
-    .replaceAll("gold", "forex");
+    .replaceAll("gold", "forex")
+    .replaceAll("Infrastructure", "EA")
+    .replaceAll("infrastructure", "EA");
 }
 
 function slugify(value: string) {

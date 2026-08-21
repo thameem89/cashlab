@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Cash Lab",
   },
   description:
-    "AI-powered forex trading infrastructure with real-time market intelligence and risk protection.",
+    "AI-powered forex trading EA with real-time market intelligence and risk protection.",
   icons: {
     icon: "/brand/favicon-32.png",
     apple: "/brand/apple-touch-icon.png",
@@ -24,22 +24,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Cash Lab",
-    title: "Cash Lab — AI Forex Trading Infrastructure",
+    title: "Cash Lab — AI Forex Trading EA",
     description:
-      "AI-powered forex trading infrastructure with real-time market intelligence and risk protection.",
+      "AI-powered forex trading EA with real-time market intelligence and risk protection.",
     images: [
       {
         url: "/og.png",
         width: 1536,
         height: 1024,
-        alt: "Cash Lab — AI Forex Trading Infrastructure",
+        alt: "Cash Lab — AI Forex Trading EA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cash Lab — AI Forex Trading Infrastructure",
-    description: "AI-powered forex trading infrastructure for MT4 and MT5.",
+    title: "Cash Lab — AI Forex Trading EA",
+    description: "AI-powered forex trading EA for MT4 and MT5.",
     images: ["/og.png"],
   },
 };

@@ -22,6 +22,7 @@ test("server-renders the Cash Lab landing page", async () => {
   const html = await response.text();
   assert.match(html, /Cash Lab/);
   assert.match(html, /AI Forex Trading Platform/);
+  assert.match(html, /AI-Powered Forex Trading EA/);
   assert.match(html, /70\/30 Profit Split/);
   assert.match(html, /● LIVE/);
   assert.match(html, /\$12,000/);
@@ -30,7 +31,7 @@ test("server-renders the Cash Lab landing page", async () => {
     html,
     /\$13,300|\$68,000|\$98,000|\$37,500|\+119\.2%|\+110\.7%/,
   );
-  assert.doesNotMatch(html, /gold|XAUUSD|60\/40/i);
+  assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i);
   assert.doesNotMatch(
     html,
     /Choose Your Trading Plan|id="pricing"|20% Lifetime Commission/,
@@ -53,6 +54,6 @@ test("server-renders all audited public routes", async () => {
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.match(html, pattern, path);
-    assert.doesNotMatch(html, /gold|XAUUSD|60\/40/i, path);
+    assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i, path);
   }
 });
