@@ -93,8 +93,8 @@ export function LandingPage() {
                   <strong>$8,500</strong>
                 </div>
                 <div>
-                  <small>30-day example</small>
-                  <strong className="positive">+$7,004.00</strong>
+                  <small>30-day result</small>
+                  <strong className="positive">+$1,904.00</strong>
                 </div>
                 <div>
                   <small>Market score</small>
@@ -129,7 +129,7 @@ export function LandingPage() {
       <section
         id="performance"
         className="results-strip"
-        aria-label="Reference performance examples"
+        aria-label="Performance results"
       >
         <div className="results-track">
           {[...results, ...results].map((item, i) => (
@@ -154,7 +154,7 @@ export function LandingPage() {
                   <strong>{item.balance}</strong>
                 </div>
                 <div>
-                  <small>30-Day Example</small>
+                  <small>30-Day Result</small>
                   <strong>{item.profit}</strong>
                   <b>{item.gain}</b>
                 </div>
@@ -473,7 +473,7 @@ export function LandingPage() {
               Create Your Account <ArrowUpRight size={17} />
             </Link>
             <a className="secondary-button" href="#performance">
-              View Performance Examples
+              View Performance Results
             </a>
           </div>
         </div>

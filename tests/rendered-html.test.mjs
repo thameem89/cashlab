@@ -26,14 +26,17 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /70\/30 Profit Split/);
   assert.match(html, /● LIVE/);
   assert.match(html, /\$12,000/);
-  assert.match(html, /\+82\.4%/);
+  assert.match(html, /30-Day Result/);
+  assert.match(html, /United Arab Emirates/);
+  assert.match(html, /India/);
+  assert.match(html, /\+22\.4%/);
+  assert.match(html, /\+30\.0%/);
+  assert.match(html, /\+18\.7%/);
+  assert.match(html, /\+26\.8%/);
+  assert.doesNotMatch(html, /example/i);
   assert.doesNotMatch(
     html,
-    /Reference examples — not verified Cash Lab results/,
-  );
-  assert.doesNotMatch(
-    html,
-    /\$13,300|\$68,000|\$98,000|\$37,500|\+119\.2%|\+110\.7%/,
+    /\$13,300|\$68,000|\$98,000|\$37,500|\+82\.4%|\+93\.1%|\+94\.8%|\+88\.6%|\+119\.2%|\+110\.7%/,
   );
   assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i);
   assert.doesNotMatch(
