@@ -551,6 +551,7 @@ body {
   text-align: center;
   color: var(--text-muted);
   font-size: 12px;
+  line-height: 1.65;
 }
 
 .results-strip {
@@ -963,6 +964,10 @@ body {
     rgba(38, 198, 38, 0.035),
     transparent
   );
+}
+.commission-section .tiny-note {
+  max-width: 720px;
+  margin: 18px auto 0;
 }
 .commission-panel {
   max-width: 980px;
@@ -1635,6 +1640,12 @@ body {
 @media (max-width: 760px) {
   .section {
     padding: 84px 0;
+  }
+  .commission-section {
+    padding-bottom: 44px;
+  }
+  .faq-section {
+    padding-top: 44px;
   }
   .section-heading {
     margin-bottom: 40px;
