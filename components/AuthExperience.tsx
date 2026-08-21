@@ -177,9 +177,9 @@ export function AuthExperience({
         <div className="auth-visual-grid" />
         <div className="auth-visual-inner">
           <span className="section-eyebrow">AI trading infrastructure</span>
-          <h2>AI Gold Scalping Platform for MT4 and MT5</h2>
+          <h2>AI Forex Trading Platform for MT4 and MT5</h2>
           <p>
-            Deploy AI-powered gold scalping in minutes with built-in risk
+            Deploy AI-powered forex trading in minutes with built-in risk
             protection.
           </p>
           <div className="auth-feature">

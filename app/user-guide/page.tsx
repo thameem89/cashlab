@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 const page = audit.pages.find((item) => item.url.endsWith("/user-guide"))!;
 export const metadata = pageMetadata(
   "User Guide",
-  "Set up and understand the reference-derived Cash Lab AI gold trading interface.",
+  "Set up and understand the reference-derived Cash Lab AI forex trading interface.",
 );
 export default function UserGuidePage() {
   return (

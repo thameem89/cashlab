@@ -3,7 +3,7 @@ export type TodoValue = `TODO: ${string}`;
 export const siteConfig = {
   name: "Cash Lab",
   shortDescription:
-    "AI Gold Scalping Platform for MT4 & MT5. Automated trading with intelligent risk protection.",
+    "AI Forex Trading Platform for MT4 & MT5. Automated currency trading with intelligent risk protection.",
   canonicalBaseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? null,
   brand: {
     primaryGreen: "#26C626",
@@ -30,7 +30,7 @@ export const publicationClaimsToVerify = [
   "Current trader or customer counts",
   "Displayed account balances, profit figures, and performance percentages",
   "The availability and terms of Cash Lab Wallet",
-  "The calculation, settlement timing, and exclusions for the 60/40 realized-profit commission split",
+  "The calculation, settlement timing, and exclusions for the 70/30 realized-profit commission split",
   "24/7 automated trading and support availability",
   "AI analysis frequency, protection behavior, and market-score methodology",
   "MT4/MT5, broker, prop-firm, payment, and withdrawal compatibility",

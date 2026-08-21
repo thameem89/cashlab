@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <AuditedArticle
       title="About Cash Lab"
-      intro="The Forex AI Gold Scalper Trading Bot built for real profits. Let our AI engine analyze the market, execute trades, and manage risk automatically on your MT4/MT5 account."
+      intro="The AI forex trading platform built for automated execution. Let our AI engine analyze currency markets, execute trades, and manage risk automatically on your MT4/MT5 account."
       text={page.text}
       headings={page.headings}
     />

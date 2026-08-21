@@ -11,11 +11,11 @@ const metadataBase = new URL(
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: "Cash Lab — AI Gold Trading for MT4 & MT5",
+    default: "Cash Lab — AI Forex Trading for MT4 & MT5",
     template: "%s | Cash Lab",
   },
   description:
-    "AI-powered gold trading infrastructure with real-time market intelligence and risk protection.",
+    "AI-powered forex trading infrastructure with real-time market intelligence and risk protection.",
   icons: {
     icon: "/brand/favicon-32.png",
     apple: "/brand/apple-touch-icon.png",
@@ -24,22 +24,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Cash Lab",
-    title: "Cash Lab — AI Gold Trading Infrastructure",
+    title: "Cash Lab — AI Forex Trading Infrastructure",
     description:
-      "AI-powered gold trading infrastructure with real-time market intelligence and risk protection.",
+      "AI-powered forex trading infrastructure with real-time market intelligence and risk protection.",
     images: [
       {
         url: "/og.png",
         width: 1536,
         height: 1024,
-        alt: "Cash Lab — AI Gold Trading Infrastructure",
+        alt: "Cash Lab — AI Forex Trading Infrastructure",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cash Lab — AI Gold Trading Infrastructure",
-    description: "AI-powered gold trading infrastructure for MT4 and MT5.",
+    title: "Cash Lab — AI Forex Trading Infrastructure",
+    description: "AI-powered forex trading infrastructure for MT4 and MT5.",
     images: ["/og.png"],
   },
 };

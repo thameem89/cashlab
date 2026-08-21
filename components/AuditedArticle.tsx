@@ -8,7 +8,25 @@ type Heading = { tag: string; text: string };
 function rebrand(value: string) {
   return value
     .replaceAll("MevTrading", "Cash Lab")
-    .replaceAll("MEV Trading", "Cash Lab");
+    .replaceAll("MEV Trading", "Cash Lab")
+    .replaceAll("Forex AI Gold Scalper Trading Bot", "AI Forex Trading Bot")
+    .replaceAll(
+      "AI Gold Scalping Trading Platform",
+      "AI Forex Trading Platform",
+    )
+    .replaceAll("AI Gold Scalping Platform", "AI Forex Trading Platform")
+    .replaceAll("AI Gold Scalping Bot", "AI Forex Trading Bot")
+    .replaceAll("AI Gold Scalper", "AI Forex Trading Bot")
+    .replaceAll("Gold (XAUUSD)", "major forex pairs")
+    .replaceAll("Gold/US Dollar", "forex")
+    .replaceAll("XAUUSD", "major currency pairs")
+    .replaceAll("Gold, Forex, and Cryptocurrency markets", "Forex markets")
+    .replaceAll("gold scalping", "forex trading")
+    .replaceAll("Gold trading", "Forex trading")
+    .replaceAll("gold trading", "forex trading")
+    .replaceAll("AI Gold", "AI Forex")
+    .replaceAll("Gold", "Forex")
+    .replaceAll("gold", "forex");
 }
 
 function slugify(value: string) {

@@ -8,7 +8,7 @@ This inventory records the public reference experience before implementation. Th
 
 | Reference route      | Cash Lab route       | Main content and behavior                                                                                                                                                                                                                                                   | Status                                                                                                               |
 | -------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `/`                  | `/`                  | Sticky header; anchors for Features, Pricing, Affiliate, FAQ; hero; performance-card marquee; three setup steps; four feature cards; AI agent mockup; market-score engine; monthly/yearly pricing; comparison table; affiliate steps; ten-item accordion; final CTA; footer | Implemented with pricing intentionally removed and the affiliate offer replaced by Cash Lab's 60/40 commission model |
+| `/`                  | `/`                  | Sticky header; anchors for Features, Pricing, Affiliate, FAQ; hero; performance-card marquee; three setup steps; four feature cards; AI agent mockup; market-score engine; monthly/yearly pricing; comparison table; affiliate steps; ten-item accordion; final CTA; footer | Implemented with pricing intentionally removed and the affiliate offer replaced by Cash Lab's 70/30 commission model |
 | `/about`             | `/about`             | Mission, AI-Powered / Automated / Optimized cards, risk-management features, bot-management features, platform statistics, CTA                                                                                                                                              | Implemented; claims flagged                                                                                          |
 | `/blog`              | `/blog`              | Empty blog state with “No articles yet” and return link                                                                                                                                                                                                                     | Implemented                                                                                                          |
 | `/changelog`         | `/changelog`         | Versions 6.0, 5.0, 4.5, and 4.4 with feature/improvement/security entries                                                                                                                                                                                                   | Implemented; claims flagged                                                                                          |
@@ -83,7 +83,7 @@ The complete FAQ answers and exact audited page text are retained in `reference-
 ## Cash Lab verification checklist
 
 - [x] All audited public routes exist.
-- [x] Homepage information hierarchy is preserved, with the requested removal of pricing and addition of the 60/40 commission model.
+- [x] Homepage information hierarchy is preserved, with the requested removal of pricing and addition of the 70/30 commission model.
 - [x] Navigation, mobile disclosure, commission and FAQ anchor links, FAQ accordion, and safe forms work.
 - [x] The full user-guide, changelog, legal, privacy, about, and empty-blog copy is present and rebranded.
 - [x] Reference social, broker, signup, and domain links are removed from the public site.
@@ -99,7 +99,7 @@ The complete FAQ answers and exact audited page text are retained in `reference-
 - [ ] Cash Lab must supply its support email and support destination.
 - [ ] Cash Lab must supply or approve its social-profile URLs.
 - [ ] Cash Lab must provide legal entity name, address, governing law, jurisdiction, and approved effective dates.
-- [ ] Cash Lab must define the calculation period, settlement timing, eligible profit, and exclusions for the 60/40 commission model in its customer agreement.
+- [ ] Cash Lab must define the calculation period, settlement timing, eligible profit, and exclusions for the 70/30 commission model in its customer agreement.
 - [ ] Cash Lab must verify every deposit, balance, profit-target, support, product-capability, security, compatibility, wallet, withdrawal, changelog, and performance claim before publication.
 
 ## Unavoidable or intentional differences
@@ -110,4 +110,4 @@ The complete FAQ answers and exact audited page text are retained in `reference-
 - Original social and broker links are omitted because Cash Lab destinations were not supplied.
 - Authentication is a local demonstration with honest feedback because no Cash Lab backend was supplied.
 - The duplicated responsive sections visible on the reference site were normalized into one accessible instance per section.
-- The reference pricing, plan comparison, and 20% affiliate offer are intentionally omitted from Cash Lab. Cash Lab instead presents a 60% customer / 40% company realized-profit commission split.
+- The reference pricing, plan comparison, and 20% affiliate offer are intentionally omitted from Cash Lab. Cash Lab instead presents a 70% customer / 30% company realized-profit commission split.

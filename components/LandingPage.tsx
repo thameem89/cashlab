@@ -50,13 +50,13 @@ export function LandingPage() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="eyebrow">
-            <span /> AI-Powered Gold Trading Infrastructure
+            <span /> AI-Powered Forex Trading Infrastructure
           </div>
           <h1>
-            AI Gold Scalping Trading Platform for <em>MT4 and MT5</em>
+            AI Forex Trading Platform for <em>MT4 and MT5</em>
           </h1>
           <p className="hero-copy">
-            Deploy AI-powered gold trading in minutes. The system analyzes
+            Deploy AI-powered forex trading in minutes. The system analyzes
             real-time market conditions and executes trades on MT4 and MT5 with
             built-in risk protection.
           </p>
@@ -84,7 +84,7 @@ export function LandingPage() {
             </div>
             <div className="market-card market-card-main">
               <div className="market-card-top">
-                <span>Cash Lab AI Gold Scalping Bot</span>
+                <span>Cash Lab AI Forex Trading Bot</span>
                 <span className="live-dot">● INTERFACE PREVIEW</span>
               </div>
               <div className="market-stats">
@@ -261,14 +261,14 @@ export function LandingPage() {
               <div>
                 <strong>How is realized profit shared?</strong>
                 <p>
-                  Customers retain 60% of commissionable realized profit, while
-                  Cash Lab receives 40% as its performance commission.
+                  Customers retain 70% of commissionable realized profit, while
+                  Cash Lab receives 30% as its performance commission.
                 </p>
               </div>
             </div>
             <div className="agent-split">
-              <span>Customer share · 60%</span>
-              <span>Cash Lab share · 40%</span>
+              <span>Customer share · 70%</span>
+              <span>Cash Lab share · 30%</span>
             </div>
             <div className="agent-input">
               Ask Trading Agent anything… <b>↗</b>
@@ -360,23 +360,23 @@ export function LandingPage() {
             eyebrow="Commission model"
             title={
               <>
-                A Transparent <span>60/40 Profit Split</span>
+                A Transparent <span>70/30 Profit Split</span>
               </>
             }
-            copy="Customers keep 60% of commissionable realized profit. Cash Lab receives 40% as its performance commission."
+            copy="Customers keep 70% of commissionable realized profit. Cash Lab receives 30% as its performance commission."
           />
           <div className="commission-panel">
             <div
               className="commission-bar"
               role="img"
-              aria-label="Profit split: 60 percent customer and 40 percent Cash Lab"
+              aria-label="Profit split: 70 percent customer and 30 percent Cash Lab"
             >
               <div className="customer-share">
-                <strong>60%</strong>
+                <strong>70%</strong>
                 <span>Customer</span>
               </div>
               <div className="cashlab-share">
-                <strong>40%</strong>
+                <strong>30%</strong>
                 <span>Cash Lab</span>
               </div>
             </div>
@@ -386,7 +386,7 @@ export function LandingPage() {
                   <Users size={22} />
                 </div>
                 <div>
-                  <h3>60% Customer Share</h3>
+                  <h3>70% Customer Share</h3>
                   <p>
                     The customer receives the majority share of commissionable
                     realized trading profit.
@@ -398,9 +398,9 @@ export function LandingPage() {
                   <BriefcaseBusiness size={22} />
                 </div>
                 <div>
-                  <h3>40% Cash Lab Commission</h3>
+                  <h3>30% Cash Lab Commission</h3>
                   <p>
-                    Cash Lab receives 40% of commissionable realized profit as
+                    Cash Lab receives 30% of commissionable realized profit as
                     its performance commission.
                   </p>
                 </div>
@@ -468,7 +468,7 @@ export function LandingPage() {
             Start Your AI Trading System <span>Today</span>
           </h2>
           <p>
-            Deploy automated gold trading with intelligent AI risk protection
+            Deploy automated forex trading with intelligent AI risk protection
             and real-time trading insights.
           </p>
           <div>
