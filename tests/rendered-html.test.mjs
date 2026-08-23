@@ -67,7 +67,7 @@ test("server-renders the Cash Lab landing page", async () => {
 
 test("server-renders all audited public routes", async () => {
   const checks = [
-    ["/about", /About Cash Lab/],
+    ["/about", /Comprehensive Risk Management/],
     ["/blog", /No articles yet/],
     ["/changelog", /Version 6\.0/],
     ["/user-guide", /Documentation/],
