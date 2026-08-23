@@ -934,19 +934,47 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }
-.score-factors > div {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin: 20px 0;
+.score-factor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 14px;
+  margin: 26px 0 30px;
 }
-.score-factors span {
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: var(--green-muted);
-  color: var(--green);
-  font-size: 10px;
+.score-factor {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.score-factor span {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+}
+.score-factor strong {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.score-factor.neutral span {
+  color: #aeb7b0;
+}
+.score-factor.green span {
+  color: #3dde61;
+}
+.score-factor.blue span {
+  color: #5ea4ff;
+}
+.score-factor.yellow span {
+  color: #f3c85b;
+}
+.score-factor.red span {
+  color: #ff6f71;
 }
 .score-factors p {
   margin: 0;
@@ -1690,6 +1718,10 @@ body {
   }
   .risk-grid article {
     padding: 17px;
+  }
+  .score-factor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;

@@ -2,15 +2,22 @@
 
 import Link from "next/link";
 import {
+  Activity,
   ArrowUpRight,
+  BarChart3,
   Bot,
   BrainCircuit,
   BriefcaseBusiness,
   ChevronDown,
+  CircleDollarSign,
+  Clock3,
   Link2,
+  Newspaper,
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
+  TrendingDown,
+  TrendingUp,
   Users,
 } from "lucide-react";
 import { useState } from "react";
@@ -20,6 +27,15 @@ import { SiteFooter } from "./SiteFooter";
 
 const featureIcons = [BrainCircuit, ShieldCheck, SlidersHorizontal, Users];
 const stepIcons = [Link2, Bot, ArrowUpRight];
+const scoreFactors = [
+  { label: "Economic News Events", icon: Newspaper, tone: "neutral" },
+  { label: "Market Volatility", icon: BarChart3, tone: "blue" },
+  { label: "Trend Direction", icon: TrendingUp, tone: "green" },
+  { label: "Spread Conditions", icon: CircleDollarSign, tone: "yellow" },
+  { label: "Trading Session", icon: Clock3, tone: "neutral" },
+  { label: "RSI Momentum", icon: Activity, tone: "blue" },
+  { label: "Drawdown", icon: TrendingDown, tone: "red" },
+] as const;
 
 function SectionHeading({
   eyebrow,
@@ -331,17 +347,14 @@ export function LandingPage() {
           </div>
           <div className="score-factors">
             <small>Score is based on</small>
-            <div>
-              {[
-                "Economic News Events",
-                "Market Volatility",
-                "Trend Direction",
-                "Spread Conditions",
-                "Trading Session",
-                "RSI Momentum",
-                "Drawdown",
-              ].map((x) => (
-                <span key={x}>{x}</span>
+            <div className="score-factor-grid">
+              {scoreFactors.map(({ label, icon: Icon, tone }) => (
+                <div className={`score-factor ${tone}`} key={label}>
+                  <span aria-hidden="true">
+                    <Icon size={21} strokeWidth={1.8} />
+                  </span>
+                  <strong>{label}</strong>
+                </div>
               ))}
             </div>
             <p>

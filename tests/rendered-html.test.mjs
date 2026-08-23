@@ -32,6 +32,11 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /class="blue">Moderate/);
   assert.match(html, /class="yellow">Conservative/);
   assert.match(html, /class="red">Off/);
+  assert.match(html, /score-factor neutral/);
+  assert.match(html, /score-factor blue/);
+  assert.match(html, /score-factor green/);
+  assert.match(html, /score-factor yellow/);
+  assert.match(html, /score-factor red/);
   assert.match(html, /30-Day Result/);
   assert.match(html, /United Arab Emirates/);
   assert.match(html, /India/);
