@@ -486,7 +486,7 @@ export function LandingPage() {
               Create Your Account <ArrowUpRight size={17} />
             </Link>
             <a className="secondary-button" href="#performance">
-              View Performance Results
+              View Live Performance
             </a>
           </div>
         </div>

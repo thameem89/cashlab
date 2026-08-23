@@ -28,6 +28,7 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /\$12,000/);
   assert.match(html, /minimum deposit to get started is \$1,000 USD/);
   assert.match(html, /Expected monthly returns range from 15%–30%/);
+  assert.match(html, /View Live Performance/);
   assert.match(html, /class="green">Aggressive/);
   assert.match(html, /class="blue">Moderate/);
   assert.match(html, /class="yellow">Conservative/);
