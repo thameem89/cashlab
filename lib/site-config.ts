@@ -3,7 +3,7 @@ export type TodoValue = `TODO: ${string}`;
 export const siteConfig = {
   name: "Cash Lab",
   shortDescription:
-    "AI Forex Trading Platform for MT4 & MT5. Automated currency trading with intelligent risk protection.",
+    "AI Forex Trading Platform for MT4 & MT5. Automated Forex Trading with intelligent risk protection.",
   canonicalBaseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? null,
   brand: {
     primaryGreen: "#26C626",
