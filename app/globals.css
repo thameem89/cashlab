@@ -872,19 +872,19 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 12px currentColor;
 }
-.risk-grid .green {
+.risk-grid i.green {
   background: #3dde61;
   color: #3dde61;
 }
-.risk-grid .blue {
+.risk-grid i.blue {
   background: #5ea4ff;
   color: #5ea4ff;
 }
-.risk-grid .yellow {
+.risk-grid i.yellow {
   background: #f3c85b;
   color: #f3c85b;
 }
-.risk-grid .red {
+.risk-grid i.red {
   background: #ff6f71;
   color: #ff6f71;
 }
@@ -894,11 +894,26 @@ body {
 .risk-grid em {
   margin-left: 8px;
   padding: 3px 7px;
+  border: 1px solid currentColor;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-muted);
   font-size: 9px;
   font-style: normal;
+}
+.risk-grid em.green {
+  background: rgba(61, 222, 97, 0.09);
+  color: #3dde61;
+}
+.risk-grid em.blue {
+  background: rgba(94, 164, 255, 0.09);
+  color: #5ea4ff;
+}
+.risk-grid em.yellow {
+  background: rgba(243, 200, 91, 0.09);
+  color: #f3c85b;
+}
+.risk-grid em.red {
+  background: rgba(255, 111, 113, 0.09);
+  color: #ff6f71;
 }
 .risk-grid p {
   margin: 7px 0 0;

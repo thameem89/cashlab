@@ -290,7 +290,7 @@ export function LandingPage() {
               <i className="green" />
               <div>
                 <strong>
-                  Low Risk <em>Aggressive</em>
+                  Low Risk <em className="green">Aggressive</em>
                 </strong>
                 <p>
                   Market conditions are calm. System trades at full capacity.
@@ -301,7 +301,7 @@ export function LandingPage() {
               <i className="blue" />
               <div>
                 <strong>
-                  Normal Risk <em>Moderate</em>
+                  Normal Risk <em className="blue">Moderate</em>
                 </strong>
                 <p>Moderate conditions. System trades with balanced risk.</p>
               </div>
@@ -310,7 +310,7 @@ export function LandingPage() {
               <i className="yellow" />
               <div>
                 <strong>
-                  High Risk <em>Conservative</em>
+                  High Risk <em className="yellow">Conservative</em>
                 </strong>
                 <p>
                   Elevated risk detected. System reduces exposure automatically.
@@ -321,7 +321,7 @@ export function LandingPage() {
               <i className="red" />
               <div>
                 <strong>
-                  Extreme Risk <em>Off</em>
+                  Extreme Risk <em className="red">Off</em>
                 </strong>
                 <p>
                   Dangerous conditions. All trading paused to protect capital.
