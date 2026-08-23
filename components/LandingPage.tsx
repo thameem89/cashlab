@@ -109,7 +109,7 @@ export function LandingPage() {
                   <strong>$8,500</strong>
                 </div>
                 <div>
-                  <small>30-day result</small>
+                  <small>Last 30 Days Profit</small>
                   <strong className="positive">+$1,904.00</strong>
                 </div>
                 <div>
@@ -170,7 +170,7 @@ export function LandingPage() {
                   <strong>{item.balance}</strong>
                 </div>
                 <div>
-                  <small>30-Day Result</small>
+                  <small>Last 30 Days Profit</small>
                   <strong>{item.profit}</strong>
                   <b>{item.gain}</b>
                 </div>
