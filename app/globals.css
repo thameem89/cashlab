@@ -1247,10 +1247,11 @@ body {
   text-align: center;
 }
 .about-back-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: max-content;
   gap: 8px;
-  margin-bottom: 48px;
+  margin: 0 0 48px;
   color: var(--text-muted);
   font-size: 13px;
 }
