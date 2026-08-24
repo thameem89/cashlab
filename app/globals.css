@@ -443,6 +443,25 @@ h1 em {
 [data-theme="light"] .agent-panel {
   color: #f4f7f4;
 }
+[data-theme="light"] .about-page {
+  background: var(--background);
+}
+[data-theme="light"] .about-hero {
+  background:
+    linear-gradient(180deg, rgba(38, 198, 38, 0.055), transparent 75%),
+    var(--background);
+}
+[data-theme="light"] .cashlab-share,
+[data-theme="light"] .final-cta,
+[data-theme="light"] .site-footer,
+[data-theme="light"] .auth-visual,
+[data-theme="light"] .about-feature-panel,
+[data-theme="light"] .about-cta {
+  --text: #f4f7f4;
+  --text-muted: #9ba69e;
+  --border: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
 body {
   overflow-x: hidden;
 }
