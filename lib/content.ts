@@ -85,6 +85,10 @@ export const faqs = [
     "Yes. The system works with both MT4 and MT5 accounts. Simply connect your account and everything runs automatically.",
   ],
   [
+    "Which forex trading instruments can be used for EA trade?",
+    "The EA supports a wide range of Forex currency pairs, along with selected commodities and cryptocurrencies. It can trade major, minor, and exotic currency pairs, with XAUUSD (Gold) and BTCUSD (Bitcoin) among the highlighted instruments.",
+  ],
+  [
     "What is the minimum deposit to get started?",
     "The minimum deposit to get started is $1,000 USD.",
   ],

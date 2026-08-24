@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Eye, EyeOff, LockKeyhole, ShieldCheck } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { countries } from "@/lib/countries";
 
 export function AuthExperience({
   initialMode,
@@ -125,11 +126,11 @@ export function AuthExperience({
                   defaultValue="United Arab Emirates"
                   required
                 >
-                  <option>United Arab Emirates</option>
-                  <option>Saudi Arabia</option>
-                  <option>United Kingdom</option>
-                  <option>United States</option>
-                  <option>Other</option>
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
                 </select>
               </label>
             )}
@@ -176,7 +177,7 @@ export function AuthExperience({
       <section className="auth-visual">
         <div className="auth-visual-grid" />
         <div className="auth-visual-inner">
-          <span className="section-eyebrow">AI trading EA</span>
+          <span className="section-eyebrow">Cashlab AI Trading EA</span>
           <h2>AI Forex Trading Platform for MT4 and MT5</h2>
           <p>
             Deploy AI-powered forex trading in minutes with built-in risk
@@ -185,7 +186,7 @@ export function AuthExperience({
           <div className="auth-feature">
             <ShieldCheck />
             <div>
-              <strong>Risk Protection</strong>
+              <strong>Intelligent Risk Protection</strong>
               <small>SL/TP, News Filter &amp; Market Guard</small>
             </div>
           </div>

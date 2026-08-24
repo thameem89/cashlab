@@ -44,6 +44,10 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /score-factor yellow/);
   assert.match(html, /score-factor red/);
   assert.match(html, /Last 30 Days Profit/);
+  assert.match(
+    html,
+    /Which forex trading instruments can be used for EA trade\?[^]*XAUUSD \(Gold\)[^]*BTCUSD \(Bitcoin\)/,
+  );
   assert.doesNotMatch(html, /30-Day Result/i);
   assert.match(html, /United Arab Emirates/);
   assert.match(html, /India/);
@@ -57,7 +61,7 @@ test("server-renders the Cash Lab landing page", async () => {
     html,
     /\$13,300|\$68,000|\$98,000|\$37,500|\+82\.4%|\+93\.1%|\+94\.8%|\+88\.6%|\+119\.2%|\+110\.7%/,
   );
-  assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i);
+  assert.doesNotMatch(html, /60\/40|infrastructure/i);
   assert.doesNotMatch(
     html,
     /Choose Your Trading Plan|id="pricing"|20% Lifetime Commission/,
@@ -83,6 +87,22 @@ test("server-renders all audited public routes", async () => {
     assert.doesNotMatch(html, /customer/i, path);
     assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i, path);
   }
+});
+
+test("shows the updated auth messaging and About navigation", async () => {
+  const authResponse = await render("/auth?tab=register");
+  assert.equal(authResponse.status, 200);
+  const authHtml = await authResponse.text();
+  assert.match(authHtml, /Cashlab AI Trading EA/);
+  assert.match(authHtml, /Intelligent Risk Protection/);
+  assert.match(authHtml, /<option value="Afghanistan">Afghanistan<\/option>/);
+  assert.match(authHtml, /<option value="India">India<\/option>/);
+  assert.match(authHtml, /<option value="Zimbabwe">Zimbabwe<\/option>/);
+
+  const landingResponse = await render();
+  assert.equal(landingResponse.status, 200);
+  const landingHtml = await landingResponse.text();
+  assert.match(landingHtml, /href="\/about"[^>]*>About</);
 });
 
 test("omits the removed zero-fee changelog entry", async () => {

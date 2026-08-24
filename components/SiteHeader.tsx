@@ -6,6 +6,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
 
 const nav = [
+  ["About", "/about"],
   ["Features", "/#features"],
   ["Commission", "/#commission"],
   ["FAQ", "/#faq"],
