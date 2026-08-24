@@ -92,3 +92,16 @@ test("omits the removed zero-fee changelog entry", async () => {
   assert.doesNotMatch(html, /0% Fee — Keep 100% of Your Profits/);
   assert.doesNotMatch(html, /Fees have been removed across all plans/);
 });
+
+test("describes performance commission instead of subscription billing", async () => {
+  const response = await render("/terms");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /5\. Performance Commission and Payment/);
+  assert.match(html, /does not charge a subscription fee/);
+  assert.match(html, /No commission is collected in advance/);
+  assert.match(html, /client retains 70%/);
+  assert.match(html, /Cash Lab receives 30%/);
+  assert.match(html, /no performance commission is due/);
+  assert.doesNotMatch(html, /Subscription fees are charged in advance/);
+});
