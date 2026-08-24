@@ -84,3 +84,11 @@ test("server-renders all audited public routes", async () => {
     assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i, path);
   }
 });
+
+test("omits the removed zero-fee changelog entry", async () => {
+  const response = await render("/changelog");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.doesNotMatch(html, /0% Fee — Keep 100% of Your Profits/);
+  assert.doesNotMatch(html, /Fees have been removed across all plans/);
+});
