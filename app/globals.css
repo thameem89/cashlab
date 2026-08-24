@@ -117,22 +117,23 @@ h4 {
   content: "";
   position: absolute;
   z-index: -1;
-  right: 8%;
-  bottom: -18px;
-  left: 8%;
-  height: 38px;
+  right: -4%;
+  bottom: -28px;
+  left: -4%;
+  height: 58px;
   border-radius: 999px;
   background: radial-gradient(
     ellipse at center,
-    rgba(70, 242, 70, 0.72) 0%,
-    rgba(38, 198, 38, 0.34) 42%,
-    transparent 74%
+    rgba(89, 255, 89, 0.94) 0%,
+    rgba(38, 198, 38, 0.52) 38%,
+    transparent 76%
   );
-  filter: blur(13px);
-  opacity: 0.58;
+  filter: blur(19px);
+  opacity: 0.76;
   pointer-events: none;
-  transform: scale(0.92);
-  animation: cashlab-button-glow 2.8s ease-in-out infinite;
+  transform: translate3d(-10%, 0, 0) scale(0.82);
+  animation: cashlab-button-glow 1.9s ease-in-out infinite;
+  will-change: opacity, transform;
 }
 .button:hover {
   transform: translateY(-2px);
@@ -142,7 +143,7 @@ h4 {
     0 16px 46px rgba(38, 198, 38, 0.28);
 }
 .button:hover::before {
-  opacity: 0.86;
+  animation-duration: 1.15s;
 }
 .button:focus-visible,
 a:focus-visible {
@@ -156,9 +157,9 @@ a:focus-visible {
   font-size: 14px;
 }
 .button-small::before {
-  bottom: -12px;
-  height: 26px;
-  opacity: 0.4;
+  bottom: -16px;
+  height: 34px;
+  opacity: 0.56;
 }
 .hero {
   min-height: calc(100vh - 74px);
@@ -186,7 +187,8 @@ a:focus-visible {
   border-radius: 50%;
   background: rgba(38, 198, 38, 0.13);
   filter: blur(110px);
-  animation: cashlab-ambient-glow 6s ease-in-out infinite alternate;
+  animation: cashlab-ambient-glow 4s ease-in-out infinite alternate;
+  will-change: opacity, transform;
 }
 .hero-inner {
   position: relative;
@@ -378,37 +380,46 @@ h1 em {
   }
 }
 @keyframes cashlab-button-glow {
-  0%,
-  100% {
-    opacity: 0.48;
-    transform: scale(0.88);
+  0% {
+    opacity: 0.54;
+    transform: translate3d(-12%, 3px, 0) scale(0.78, 0.8);
   }
-  50% {
-    opacity: 0.78;
-    transform: scale(1.08);
+  45% {
+    opacity: 1;
+    transform: translate3d(7%, -3px, 0) scale(1.18, 1.24);
+  }
+  72% {
+    opacity: 0.72;
+    transform: translate3d(14%, 1px, 0) scale(0.96, 1.05);
+  }
+  100% {
+    opacity: 0.54;
+    transform: translate3d(-12%, 3px, 0) scale(0.78, 0.8);
   }
 }
 @keyframes cashlab-ambient-glow {
   from {
-    opacity: 0.72;
-    transform: translate3d(-4%, -2%, 0) scale(0.94);
+    opacity: 0.64;
+    transform: translate3d(-9%, -4%, 0) scale(0.88);
   }
   to {
     opacity: 1;
-    transform: translate3d(4%, 4%, 0) scale(1.08);
+    transform: translate3d(9%, 7%, 0) scale(1.18);
   }
 }
 @keyframes cashlab-icon-glow {
   0%,
   100% {
     box-shadow:
-      0 12px 34px rgba(38, 198, 38, 0.11),
-      0 0 22px rgba(38, 198, 38, 0.08);
+      0 12px 34px rgba(38, 198, 38, 0.16),
+      0 0 26px rgba(38, 198, 38, 0.14);
+    transform: translateY(1px) scale(0.98);
   }
   50% {
     box-shadow:
-      0 16px 42px rgba(38, 198, 38, 0.22),
-      0 0 34px rgba(38, 198, 38, 0.2);
+      0 20px 52px rgba(38, 198, 38, 0.36),
+      0 0 46px rgba(62, 228, 62, 0.38);
+    transform: translateY(-4px) scale(1.07);
   }
 }
 @media (max-width: 820px) {
@@ -788,7 +799,13 @@ body {
   box-shadow:
     0 12px 34px rgba(38, 198, 38, 0.11),
     0 0 22px rgba(38, 198, 38, 0.08);
-  animation: cashlab-icon-glow 3.2s ease-in-out infinite;
+  animation: cashlab-icon-glow 2.15s ease-in-out infinite;
+  will-change: box-shadow, transform;
+}
+.feature-card:nth-child(2n) .feature-icon,
+.step-card:nth-child(2n) .feature-icon,
+.commission-details article:nth-child(2n) .feature-icon {
+  animation-delay: -1.08s;
 }
 .step-card h3,
 .feature-card h3 {
