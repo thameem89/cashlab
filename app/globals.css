@@ -955,8 +955,8 @@ body {
 }
 .score-factor-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 22px 14px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
   margin: 26px 0 30px;
 }
 .score-factor {
@@ -2027,6 +2027,10 @@ body {
   }
   .intelligence-grid {
     gap: 48px;
+  }
+  .score-factor-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px 12px;
   }
   .commission-details {
     grid-template-columns: 1fr;
