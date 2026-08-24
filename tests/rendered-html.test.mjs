@@ -85,7 +85,11 @@ test("server-renders all audited public routes", async () => {
     const html = await response.text();
     assert.match(html, pattern, path);
     assert.doesNotMatch(html, /customer/i, path);
-    assert.doesNotMatch(html, /gold|XAUUSD|60\/40|infrastructure/i, path);
+    assert.doesNotMatch(
+      html,
+      /gold|XAUUSD|60\/40|infrastructure|wallet/i,
+      path,
+    );
   }
 });
 
@@ -111,6 +115,17 @@ test("omits the removed zero-fee changelog entry", async () => {
   const html = await response.text();
   assert.doesNotMatch(html, /0% Fee — Keep 100% of Your Profits/);
   assert.doesNotMatch(html, /Fees have been removed across all plans/);
+  assert.doesNotMatch(html, /wallet/i);
+  assert.doesNotMatch(html, /Cash Lab Wallet — AI Trading Without a Broker/);
+  assert.doesNotMatch(html, /Consistent Execution for All Wallet Users/);
+  assert.doesNotMatch(html, /End-of-Day Wallet Withdrawals/);
+});
+
+test("omits wallet-related User Guide sections", async () => {
+  const response = await render("/user-guide");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.doesNotMatch(html, /wallet/i);
 });
 
 test("describes performance commission instead of subscription billing", async () => {

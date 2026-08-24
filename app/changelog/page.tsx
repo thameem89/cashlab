@@ -1,5 +1,6 @@
 import audit from "@/reference-pages.json";
 import { AuditedArticle } from "@/components/AuditedArticle";
+import { removeKeywordSections } from "@/lib/article-filters";
 import { pageMetadata } from "@/lib/metadata";
 
 const page = audit.pages.find((item) => item.url.endsWith("/changelog"))!;
@@ -7,15 +8,20 @@ const removedEntry = "0% Fee — Keep 100% of Your Profits";
 const changelogLines = page.text.split("\n");
 const removedEntryIndex = changelogLines.indexOf(removedEntry);
 const nextEntryIndex = changelogLines.indexOf("•", removedEntryIndex + 1);
-const changelogText =
+const changelogWithoutFee =
   removedEntryIndex === -1 || nextEntryIndex === -1
     ? page.text
     : [
         ...changelogLines.slice(0, Math.max(0, removedEntryIndex - 1)),
         ...changelogLines.slice(nextEntryIndex),
       ].join("\n");
-const changelogHeadings = page.headings.filter(
+const changelogHeadingsWithoutFee = page.headings.filter(
   (heading) => heading.text !== removedEntry,
+);
+const changelog = removeKeywordSections(
+  changelogWithoutFee,
+  changelogHeadingsWithoutFee,
+  /\bwallet\b/i,
 );
 
 export const metadata = pageMetadata(
@@ -27,8 +33,8 @@ export default function ChangelogPage() {
     <AuditedArticle
       title="Changelog"
       intro="Version history and roadmap for Cash Lab"
-      text={changelogText}
-      headings={changelogHeadings}
+      text={changelog.text}
+      headings={changelog.headings}
     />
   );
 }

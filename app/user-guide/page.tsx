@@ -1,8 +1,10 @@
 import audit from "@/reference-pages.json";
 import { AuditedArticle } from "@/components/AuditedArticle";
+import { removeKeywordSections } from "@/lib/article-filters";
 import { pageMetadata } from "@/lib/metadata";
 
 const page = audit.pages.find((item) => item.url.endsWith("/user-guide"))!;
+const guide = removeKeywordSections(page.text, page.headings, /\bwallet\b/i);
 export const metadata = pageMetadata(
   "User Guide",
   "Set up and understand the reference-derived Cash Lab AI forex trading interface.",
@@ -12,8 +14,8 @@ export default function UserGuidePage() {
     <AuditedArticle
       title="Documentation"
       intro="Complete feature guide for the Cash Lab trading interface."
-      text={page.text}
-      headings={page.headings}
+      text={guide.text}
+      headings={guide.headings}
     />
   );
 }
