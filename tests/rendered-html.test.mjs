@@ -29,6 +29,9 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /minimum deposit to get started is \$1,000 USD/);
   assert.match(html, /Expected monthly returns range from 15%–30%/);
   assert.match(html, /View Live Performance/);
+  assert.match(html, /aria-expanded="false"/);
+  assert.doesNotMatch(html, /aria-expanded="true"/);
+  assert.match(html, /id="faq-answer-0" class="faq-answer" hidden=""/);
   assert.match(
     html,
     /Automated Forex Trading with intelligent risk protection/,

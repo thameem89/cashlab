@@ -56,7 +56,7 @@ function SectionHeading({
 }
 
 export function LandingPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <main>
