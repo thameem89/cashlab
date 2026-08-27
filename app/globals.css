@@ -635,6 +635,15 @@ body {
   font-size: 17px;
   line-height: 1.7;
 }
+@media (min-width: 901px) {
+  .steps-section .section-heading {
+    max-width: none;
+  }
+  .steps-section .section-heading h2 {
+    font-size: clamp(36px, 4.1vw, 50px);
+    white-space: nowrap;
+  }
+}
 .section-action {
   display: flex;
   justify-content: center;
