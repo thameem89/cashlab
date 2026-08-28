@@ -2027,6 +2027,9 @@ body {
   line-height: 1.05;
   letter-spacing: -0.05em;
 }
+.auth-visual h2 span {
+  color: var(--green);
+}
 .auth-visual-inner > p {
   color: #93a096;
   line-height: 1.7;

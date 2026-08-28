@@ -178,7 +178,9 @@ export function AuthExperience({
         <div className="auth-visual-grid" />
         <div className="auth-visual-inner">
           <span className="section-eyebrow">Cashlab AI Trading EA</span>
-          <h2>AI Forex Trading Platform for MT4 and MT5</h2>
+          <h2>
+            AI Forex Trading Platform for <span>MT4 and MT5</span>
+          </h2>
           <p>
             Deploy AI-powered forex trading in minutes with built-in risk
             protection.
