@@ -667,7 +667,7 @@ body {
   display: flex;
   width: max-content;
   gap: 16px;
-  animation: marquee 42s linear infinite;
+  animation: marquee 84s linear infinite;
 }
 .results-strip:hover .results-track {
   animation-play-state: paused;
@@ -2263,7 +2263,7 @@ body {
     display: inline-flex;
   }
   .results-track {
-    animation-duration: 52s;
+    animation-duration: 104s;
   }
   .result-card {
     width: 285px;

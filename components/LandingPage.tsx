@@ -152,7 +152,7 @@ export function LandingPage() {
             <article className="result-card" key={`${item.name}-${i}`}>
               <div className="result-top">
                 <span>{item.platform}</span>
-                <b>● LIVE</b>
+                <b>● {item.status}</b>
               </div>
               <div className="result-user">
                 <span>{item.flag}</span>
