@@ -1561,10 +1561,17 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: 900px;
-  margin: 66px auto 0;
+  margin: 26px auto 0;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--surface);
+}
+.about-highlights-title {
+  margin: 66px auto 0;
+  font-family: Sora, sans-serif;
+  font-size: clamp(28px, 3.2vw, 38px);
+  letter-spacing: -0.035em;
+  text-align: center;
 }
 .about-highlights > div {
   display: grid;
@@ -1686,7 +1693,11 @@ body {
   }
   .about-highlights {
     grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+  .about-highlights-title {
     margin-top: 48px;
+    font-size: 28px;
   }
   .about-highlights > div + div {
     border-top: 1px solid var(--border);

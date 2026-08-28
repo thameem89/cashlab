@@ -203,6 +203,7 @@ export default function AboutPage() {
             ))}
           </div>
 
+          <h2 className="about-highlights-title">Why Choose Cash Lab?</h2>
           <div className="about-highlights" aria-label="Platform highlights">
             <div>
               <Gauge size={24} />
