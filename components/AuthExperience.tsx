@@ -2,9 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, EyeOff, LockKeyhole, ShieldCheck } from "lucide-react";
+import { LockKeyhole, MailCheck, ShieldCheck } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { countries } from "@/lib/countries";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+
+type AuthStep = "details" | "verify" | "verified";
+type AuthMessage = {
+  kind: "error" | "info" | "success";
+  text: string;
+};
 
 export function AuthExperience({
   initialMode,
@@ -12,22 +19,106 @@ export function AuthExperience({
   initialMode: "login" | "register";
 }) {
   const [mode, setMode] = useState(initialMode);
-  const [showPassword, setShowPassword] = useState(false);
-  const [message, setMessage] = useState("");
+  const [step, setStep] = useState<AuthStep>("details");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("United Arab Emirates");
+  const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<AuthMessage | null>(null);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    setMessage(
-      mode === "register"
-        ? "Demo only — no account was created and no information was sent."
-        : "Demo only — credentials were not sent and no sign-in was attempted.",
+
+    if (step === "verify") {
+      await verifyOtp();
+      return;
+    }
+
+    await sendOtp();
+  }
+
+  async function sendOtp() {
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const supabase = getSupabaseBrowserClient();
+      const normalizedEmail = email.trim().toLowerCase();
+      const { error } = await supabase.auth.signInWithOtp({
+        email: normalizedEmail,
+        options: {
+          shouldCreateUser: mode === "register",
+          ...(mode === "register"
+            ? {
+                data: {
+                  country,
+                  first_name: firstName.trim(),
+                  last_name: lastName.trim(),
+                },
+              }
+            : {}),
+        },
+      });
+
+      if (error) throw error;
+
+      setEmail(normalizedEmail);
+      setOtp("");
+      setStep("verify");
+      setMessage({
+        kind: "info",
+        text: `A six-digit verification code was sent to ${normalizedEmail}.`,
+      });
+    } catch (error) {
+      setMessage({ kind: "error", text: authErrorMessage(error, mode) });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function verifyOtp() {
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const supabase = getSupabaseBrowserClient();
+      const { error } = await supabase.auth.verifyOtp({
+        email,
+        token: otp,
+        type: "email",
+      });
+
+      if (error) throw error;
+
+      setStep("verified");
+      setMessage({
+        kind: "success",
+        text:
+          mode === "register"
+            ? "Your Cash Lab account has been verified and created."
+            : "You are signed in successfully.",
+      });
+    } catch (error) {
+      setMessage({ kind: "error", text: authErrorMessage(error, mode) });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function changeMode() {
+    setMode((currentMode) =>
+      currentMode === "register" ? "login" : "register",
     );
-    form.reset();
+    setStep("details");
+    setOtp("");
+    setMessage(null);
   }
 
   return (
@@ -44,133 +135,175 @@ export function AuthExperience({
         </Link>
         <div className="auth-card">
           <div className="auth-status">
-            <span className="pulse-dot" /> Secure local demonstration
+            <span className="pulse-dot" /> Secure email verification
           </div>
           <h1>
-            {mode === "register"
-              ? "Create your Cash Lab account"
-              : "Welcome back"}
+            {step === "verified"
+              ? "Account verified"
+              : mode === "register"
+                ? "Create your Cash Lab account"
+                : "Welcome back"}
           </h1>
           <p>
-            {mode === "register"
-              ? "Start with a local interface preview. No live backend is connected yet."
-              : "Sign in to your trading dashboard interface preview."}
+            {step === "verified"
+              ? "Your secure Supabase session is active on this device."
+              : step === "verify"
+                ? `Enter the code sent to ${email}.`
+                : mode === "register"
+                  ? "Register with your email and verify it using a one-time code."
+                  : "Sign in with the one-time code sent to your email."}
           </p>
-          <form onSubmit={submit} noValidate={false}>
-            {mode === "register" && (
-              <div className="form-row">
+          {step !== "verified" ? (
+            <form onSubmit={submit} noValidate={false}>
+              {mode === "register" && step === "details" && (
+                <div className="form-row">
+                  <label>
+                    First Name
+                    <input
+                      name="firstName"
+                      placeholder="First name"
+                      autoComplete="given-name"
+                      value={firstName}
+                      onChange={(event) => setFirstName(event.target.value)}
+                      required
+                      minLength={2}
+                    />
+                  </label>
+                  <label>
+                    Last Name
+                    <input
+                      name="lastName"
+                      placeholder="Last name"
+                      autoComplete="family-name"
+                      value={lastName}
+                      onChange={(event) => setLastName(event.target.value)}
+                      required
+                      minLength={2}
+                    />
+                  </label>
+                </div>
+              )}
+              {step === "details" ? (
                 <label>
-                  First Name
+                  Email
                   <input
-                    name="firstName"
-                    placeholder="First name"
-                    autoComplete="given-name"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                     required
-                    minLength={2}
                   />
                 </label>
+              ) : (
                 <label>
-                  Last Name
+                  Verification Code
                   <input
-                    name="lastName"
-                    placeholder="Last name"
-                    autoComplete="family-name"
+                    className="otp-input"
+                    name="otp"
+                    type="text"
+                    placeholder="000000"
+                    autoComplete="one-time-code"
+                    inputMode="numeric"
+                    pattern="[0-9]{6}"
+                    maxLength={6}
+                    value={otp}
+                    onChange={(event) =>
+                      setOtp(event.target.value.replace(/\D/g, "").slice(0, 6))
+                    }
                     required
-                    minLength={2}
+                    aria-describedby="otp-help"
                   />
+                  <small id="otp-help">
+                    Enter the six-digit code from your email.
+                  </small>
                 </label>
-              </div>
-            )}
-            <label>
-              Email
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                autoComplete="email"
-                required
-              />
-            </label>
-            <div className="password-group">
-              <label htmlFor="auth-password">Password</label>
-              <div className="password-field">
-                <input
-                  id="auth-password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder={
-                    mode === "register"
-                      ? "Create a password (min. 6 characters)"
-                      : "Enter your password"
-                  }
-                  autoComplete={
-                    mode === "register" ? "new-password" : "current-password"
-                  }
-                  required
-                  minLength={6}
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword((value) => !value)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
+              )}
+              {mode === "register" && step === "details" && (
+                <label>
+                  Country
+                  <select
+                    name="country"
+                    value={country}
+                    onChange={(event) => setCountry(event.target.value)}
+                    required
+                  >
+                    {countries.map((countryName) => (
+                      <option key={countryName} value={countryName}>
+                        {countryName}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
+              <button
+                className="button auth-submit"
+                type="submit"
+                disabled={loading}
+              >
+                {loading
+                  ? "Please wait…"
+                  : step === "verify"
+                    ? "Verify Code"
+                    : mode === "register"
+                      ? "Send Verification Code"
+                      : "Send Login Code"}
+              </button>
+              {step === "verify" && (
+                <div className="otp-actions">
+                  <button type="button" onClick={sendOtp} disabled={loading}>
+                    Resend code
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStep("details");
+                      setOtp("");
+                      setMessage(null);
+                    }}
+                  >
+                    Change email
+                  </button>
+                </div>
+              )}
+              {message && (
+                <div
+                  className={`auth-message auth-message-${message.kind}`}
+                  role={message.kind === "error" ? "alert" : "status"}
                 >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
+                  {message.kind === "error" ? (
+                    <ShieldCheck size={18} />
+                  ) : (
+                    <MailCheck size={18} />
+                  )}
+                  {message.text}
+                </div>
+              )}
+            </form>
+          ) : (
+            <div className="auth-success">
+              <div className="auth-success-icon">
+                <MailCheck size={26} />
               </div>
+              {message && <p role="status">{message.text}</p>}
+              <Link className="button auth-submit" href="/">
+                Continue to Cash Lab
+              </Link>
             </div>
-            {mode === "register" && (
-              <label>
-                Country
-                <select
-                  name="country"
-                  defaultValue="United Arab Emirates"
-                  required
-                >
-                  {countries.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
-            <button className="button auth-submit" type="submit">
-              {mode === "register" ? "Create Account" : "Sign In"}
-            </button>
-            {message && (
-              <div className="demo-message" role="status">
-                <ShieldCheck size={18} />
-                {message}
-              </div>
-            )}
-          </form>
-          <p className="auth-switch">
-            {mode === "register"
-              ? "Already have an account?"
-              : "Don’t have an account?"}{" "}
-            <button
-              onClick={() => {
-                setMode(mode === "register" ? "login" : "register");
-                setMessage("");
-              }}
-            >
-              {mode === "register" ? "Sign in" : "Sign up"}
-            </button>
-          </p>
-          {mode === "login" && (
-            <button
-              className="forgot-button"
-              onClick={() =>
-                setMessage(
-                  "Password recovery is a demo only. Add a Cash Lab support destination before launch.",
-                )
-              }
-            >
-              Forgot your password?
-            </button>
+          )}
+          {step === "details" && (
+            <p className="auth-switch">
+              {mode === "register"
+                ? "Already have an account?"
+                : "Don’t have an account?"}{" "}
+              <button type="button" onClick={changeMode}>
+                {mode === "register" ? "Sign in" : "Sign up"}
+              </button>
+            </p>
           )}
           <div className="secure-copy">
-            <LockKeyhole size={14} /> Local demo — nothing leaves your device
+            <LockKeyhole size={14} /> Passwordless access secured by Supabase
           </div>
         </div>
       </section>
@@ -208,8 +341,7 @@ export function AuthExperience({
             <span />
           </div>
           <p className="tiny-note">
-            All capability claims and account flows require Cash Lab
-            verification and backend integration.
+            Account access is protected with one-time email verification.
           </p>
         </div>
       </section>
@@ -223,4 +355,28 @@ function BotIcon() {
       AI
     </span>
   );
+}
+
+function authErrorMessage(error: unknown, mode: "login" | "register") {
+  const fallback = "We could not complete that request. Please try again.";
+  if (!(error instanceof Error)) return fallback;
+
+  const message = error.message.toLowerCase();
+  if (message.includes("rate limit") || message.includes("seconds")) {
+    return "Please wait a moment before requesting another code.";
+  }
+  if (
+    message.includes("token") &&
+    (message.includes("expired") || message.includes("invalid"))
+  ) {
+    return "That verification code is invalid or has expired. Request a new code and try again.";
+  }
+  if (mode === "login" && message.includes("signups not allowed")) {
+    return "No account was found for this email. Please create an account first.";
+  }
+  if (message.includes("not configured")) {
+    return "Account access is temporarily unavailable. Please try again later.";
+  }
+
+  return fallback;
 }

@@ -115,6 +115,10 @@ test("shows the updated auth messaging and About navigation", async () => {
   const authHtml = await authResponse.text();
   assert.match(authHtml, /Cashlab AI Trading EA/);
   assert.match(authHtml, /Intelligent Risk Protection/);
+  assert.match(authHtml, /Secure email verification/);
+  assert.match(authHtml, /Send Verification Code/);
+  assert.doesNotMatch(authHtml, /type="password"/);
+  assert.doesNotMatch(authHtml, /Demo only|local demonstration/i);
   assert.match(authHtml, /<option value="Afghanistan">Afghanistan<\/option>/);
   assert.match(authHtml, /<option value="India">India<\/option>/);
   assert.match(authHtml, /<option value="Zimbabwe">Zimbabwe<\/option>/);

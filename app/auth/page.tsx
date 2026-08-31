@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(
   "Account Access",
-  "Cash Lab account registration and sign-in interface demonstration.",
+  "Create or access your Cash Lab account with secure email verification.",
 );
 
 export default async function AuthPage({
