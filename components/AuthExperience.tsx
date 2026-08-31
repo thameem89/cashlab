@@ -310,7 +310,7 @@ export function AuthExperience({
       <section className="auth-visual">
         <div className="auth-visual-grid" />
         <div className="auth-visual-inner">
-          <span className="section-eyebrow">Cashlab AI Trading EA</span>
+          <span className="section-eyebrow">Cash Lab AI Trading EA</span>
           <h2>
             AI Forex Trading Platform for <span>MT4 and MT5</span>
           </h2>
