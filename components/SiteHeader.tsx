@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const nav = [
   ["About", "/about"],
@@ -14,13 +15,6 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [light, setLight] = useState(false);
-
-  function toggleTheme() {
-    const next = !light;
-    setLight(next);
-    document.documentElement.dataset.theme = next ? "light" : "dark";
-  }
 
   return (
     <header className="site-header">
@@ -42,13 +36,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <button
-            className="icon-button theme-button"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${light ? "dark" : "light"} theme`}
-          >
-            {light ? <Moon size={17} /> : <Sun size={17} />}
-          </button>
+          <ThemeToggle />
           <Link className="button button-small" href="/auth?tab=register">
             Get Started
           </Link>

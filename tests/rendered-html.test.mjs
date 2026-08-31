@@ -114,7 +114,8 @@ test("shows the updated auth messaging and About navigation", async () => {
   const authResponse = await render("/auth?tab=register");
   assert.equal(authResponse.status, 200);
   const authHtml = await authResponse.text();
-  assert.match(authHtml, /Cashlab AI Trading EA/);
+  assert.match(authHtml, /Cash Lab AI Trading EA/);
+  assert.match(authHtml, /Switch to light theme/);
   assert.match(authHtml, /Intelligent Risk Protection/);
   assert.match(authHtml, /Secure email verification/);
   assert.match(authHtml, /Send Verification Code/);
