@@ -123,12 +123,14 @@ test("shows the updated auth messaging and About navigation", async () => {
   assert.match(authHtml, /Send Verification Code/);
   assert.doesNotMatch(authHtml, /type="password"/);
   assert.doesNotMatch(authHtml, /Demo only|local demonstration/i);
-  assert.match(
-    authHtml,
-    /<option value="Afghanistan">🇦🇫 Afghanistan<\/option>/,
-  );
-  assert.match(authHtml, /<option value="India">🇮🇳 India<\/option>/);
-  assert.match(authHtml, /<option value="Zimbabwe">🇿🇼 Zimbabwe<\/option>/);
+  assert.match(authHtml, /placeholder="Search or select a country"/);
+  assert.match(authHtml, /role="combobox"/);
+  assert.match(authHtml, /🇦🇫/);
+  assert.match(authHtml, />Afghanistan<\/span>/);
+  assert.match(authHtml, /🇮🇳/);
+  assert.match(authHtml, />India<\/span>/);
+  assert.match(authHtml, /🇿🇼/);
+  assert.match(authHtml, />Zimbabwe<\/span>/);
 
   const landingResponse = await render();
   assert.equal(landingResponse.status, 200);

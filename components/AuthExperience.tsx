@@ -2,8 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LockKeyhole, MailCheck, ShieldCheck } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { LockKeyhole, MailCheck, Search, ShieldCheck } from "lucide-react";
+import {
+  FormEvent,
+  KeyboardEvent,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { countryOptions } from "@/lib/countries";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
@@ -228,21 +236,7 @@ export function AuthExperience({
                   </label>
                 )}
                 {mode === "register" && step === "details" && (
-                  <label>
-                    Country
-                    <select
-                      name="country"
-                      value={country}
-                      onChange={(event) => setCountry(event.target.value)}
-                      required
-                    >
-                      {countryOptions.map(({ name, flag }) => (
-                        <option key={name} value={name}>
-                          {`${flag} ${name}`}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
+                  <CountryPicker value={country} onChange={setCountry} />
                 )}
                 <button
                   className="button auth-submit"
@@ -362,6 +356,152 @@ function BotIcon() {
     <span className="bot-icon" aria-hidden="true">
       AI
     </span>
+  );
+}
+
+function CountryPicker({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (country: string) => void;
+}) {
+  const listboxId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [query, setQuery] = useState(value);
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const selectedCountry = countryOptions.find(({ name }) => name === value);
+  const filteredCountries = useMemo(() => {
+    const normalizedQuery = query.trim().toLocaleLowerCase();
+    if (!normalizedQuery || query === value) return countryOptions;
+    return countryOptions.filter(({ name }) =>
+      name.toLocaleLowerCase().includes(normalizedQuery),
+    );
+  }, [query, value]);
+
+  useEffect(() => {
+    inputRef.current?.setCustomValidity(
+      value ? "" : "Select a country from the list.",
+    );
+  }, [value]);
+
+  function chooseCountry(countryName: string) {
+    onChange(countryName);
+    setQuery(countryName);
+    setOpen(false);
+    inputRef.current?.focus();
+  }
+
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setOpen(true);
+      setActiveIndex((index) =>
+        Math.min(index + 1, filteredCountries.length - 1),
+      );
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setOpen(true);
+      setActiveIndex((index) => Math.max(index - 1, 0));
+    } else if (event.key === "Enter" && open) {
+      event.preventDefault();
+      const activeCountry = filteredCountries[activeIndex];
+      if (activeCountry) chooseCountry(activeCountry.name);
+    } else if (event.key === "Escape") {
+      setOpen(false);
+      setQuery(value);
+    }
+  }
+
+  return (
+    <div className="country-field">
+      <label htmlFor="country-search">Country</label>
+      <div
+        className="country-picker"
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setOpen(false);
+            setQuery(value);
+          }
+        }}
+      >
+        <span className="country-input-flag" aria-hidden="true">
+          {selectedCountry?.flag ?? "🌐"}
+        </span>
+        <input
+          ref={inputRef}
+          id="country-search"
+          className="country-search-input"
+          type="text"
+          name="country"
+          autoComplete="country-name"
+          placeholder="Search or select a country"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded={open}
+          aria-controls={listboxId}
+          aria-activedescendant={
+            open && filteredCountries[activeIndex]
+              ? `${listboxId}-${activeIndex}`
+              : undefined
+          }
+          value={query}
+          onFocus={(event) => {
+            setOpen(true);
+            setActiveIndex(
+              Math.max(
+                0,
+                filteredCountries.findIndex(({ name }) => name === value),
+              ),
+            );
+            event.currentTarget.select();
+          }}
+          onChange={(event) => {
+            const nextQuery = event.target.value;
+            const exactMatch = countryOptions.find(
+              ({ name }) =>
+                name.toLocaleLowerCase() ===
+                nextQuery.trim().toLocaleLowerCase(),
+            );
+            setQuery(nextQuery);
+            onChange(exactMatch?.name ?? "");
+            setActiveIndex(0);
+            setOpen(true);
+          }}
+          onKeyDown={handleKeyDown}
+          required
+        />
+        <Search className="country-search-icon" size={17} aria-hidden="true" />
+        <div
+          id={listboxId}
+          className="country-options"
+          role="listbox"
+          hidden={!open}
+        >
+          {filteredCountries.length ? (
+            filteredCountries.map(({ name, flag }, index) => (
+              <button
+                key={name}
+                id={`${listboxId}-${index}`}
+                className={index === activeIndex ? "is-active" : undefined}
+                type="button"
+                role="option"
+                aria-selected={name === value}
+                onMouseDown={(event) => event.preventDefault()}
+                onClick={() => chooseCountry(name)}
+              >
+                <span aria-hidden="true">{flag}</span>
+                <span>{name}</span>
+              </button>
+            ))
+          ) : (
+            <p>No countries found</p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
