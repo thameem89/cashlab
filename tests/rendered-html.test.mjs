@@ -116,16 +116,19 @@ test("shows the updated auth messaging and About navigation", async () => {
   const authResponse = await render("/auth?tab=register");
   assert.equal(authResponse.status, 200);
   const authHtml = await authResponse.text();
-  assert.match(authHtml, /Cash Lab AI Trading EA/);
+  assert.match(authHtml, /CASH LAB AI FOREX TRADING EA/);
   assert.match(authHtml, /Switch to light theme/);
   assert.match(authHtml, /Intelligent Risk Protection/);
   assert.match(authHtml, /Secure email verification/);
   assert.match(authHtml, /Send Verification Code/);
   assert.doesNotMatch(authHtml, /type="password"/);
   assert.doesNotMatch(authHtml, /Demo only|local demonstration/i);
-  assert.match(authHtml, /<option value="Afghanistan">Afghanistan<\/option>/);
-  assert.match(authHtml, /<option value="India">India<\/option>/);
-  assert.match(authHtml, /<option value="Zimbabwe">Zimbabwe<\/option>/);
+  assert.match(
+    authHtml,
+    /<option value="Afghanistan">🇦🇫 Afghanistan<\/option>/,
+  );
+  assert.match(authHtml, /<option value="India">🇮🇳 India<\/option>/);
+  assert.match(authHtml, /<option value="Zimbabwe">🇿🇼 Zimbabwe<\/option>/);
 
   const landingResponse = await render();
   assert.equal(landingResponse.status, 200);

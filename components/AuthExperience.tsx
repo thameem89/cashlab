@@ -5,7 +5,7 @@ import Link from "next/link";
 import { LockKeyhole, MailCheck, ShieldCheck } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { countries } from "@/lib/countries";
+import { countryOptions } from "@/lib/countries";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 
 type AuthStep = "details" | "verify" | "verified";
@@ -236,9 +236,9 @@ export function AuthExperience({
                       onChange={(event) => setCountry(event.target.value)}
                       required
                     >
-                      {countries.map((countryName) => (
-                        <option key={countryName} value={countryName}>
-                          {countryName}
+                      {countryOptions.map(({ name, flag }) => (
+                        <option key={name} value={name}>
+                          {`${flag} ${name}`}
                         </option>
                       ))}
                     </select>
@@ -318,7 +318,7 @@ export function AuthExperience({
       <section className="auth-visual">
         <div className="auth-visual-grid" />
         <div className="auth-visual-inner">
-          <span className="section-eyebrow">Cash Lab AI Trading EA</span>
+          <span className="section-eyebrow">CASH LAB AI FOREX TRADING EA</span>
           <h2>
             AI Forex Trading Platform for <span>MT4 and MT5</span>
           </h2>

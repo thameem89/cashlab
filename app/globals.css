@@ -1895,7 +1895,7 @@ body {
   display: flex;
   min-height: 48px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 24px;
 }
 .auth-logo {
@@ -1978,6 +1978,10 @@ body {
 .auth-card select:focus {
   border-color: var(--green);
   box-shadow: 0 0 0 4px var(--green-muted);
+}
+.auth-card select,
+.auth-card select option {
+  font-weight: 400;
 }
 .password-field {
   position: relative;
