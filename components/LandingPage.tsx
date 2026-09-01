@@ -274,8 +274,8 @@ export function LandingPage() {
               <div>
                 <strong>How is realized profit shared?</strong>
                 <p>
-                  Clients retain 70% of commissionable realized profit, while
-                  Cash Lab receives 30% as its performance commission.
+                  Clients retain 70% of eligible realized profit, while Cash Lab
+                  receives 30% as its performance fee.
                 </p>
               </div>
             </div>
@@ -367,13 +367,13 @@ export function LandingPage() {
       <section id="commission" className="section commission-section">
         <div className="container">
           <SectionHeading
-            eyebrow="Commission model"
+            eyebrow="Performance fee"
             title={
               <>
                 A Transparent <span>70/30 Profit Split</span>
               </>
             }
-            copy="Clients keep 70% of commissionable realized profit. Cash Lab receives 30% as its performance commission."
+            copy="Clients keep 70% of eligible realized profit. Cash Lab receives 30% as its performance fee."
           />
           <div className="commission-panel">
             <div
@@ -398,8 +398,8 @@ export function LandingPage() {
                 <div>
                   <h3>70% Client Share</h3>
                   <p>
-                    The client receives the majority share of commissionable
-                    realized trading profit.
+                    The client receives the majority share of eligible realized
+                    trading profit.
                   </p>
                 </div>
               </article>
@@ -408,10 +408,10 @@ export function LandingPage() {
                   <BriefcaseBusiness size={22} />
                 </div>
                 <div>
-                  <h3>30% Cash Lab Commission</h3>
+                  <h3>30% Cash Lab Performance Fee</h3>
                   <p>
-                    Cash Lab receives 30% of commissionable realized profit as
-                    its performance commission.
+                    Cash Lab receives 30% of eligible realized profit as its
+                    performance fee.
                   </p>
                 </div>
               </article>
@@ -423,8 +423,8 @@ export function LandingPage() {
             </Link>
           </div>
           <p className="tiny-note">
-            The split applies to commissionable realized profit under the final
-            Cash Lab client agreement.
+            The split applies to eligible realized profit under the final Cash
+            Lab client agreement.
           </p>
         </div>
       </section>

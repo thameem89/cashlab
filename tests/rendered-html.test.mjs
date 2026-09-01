@@ -150,15 +150,15 @@ test("omits wallet-related User Guide sections", async () => {
   assert.doesNotMatch(html, /wallet/i);
 });
 
-test("describes performance commission instead of subscription billing", async () => {
+test("describes the performance fee instead of subscription billing", async () => {
   const response = await render("/terms");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /5\. Performance Commission and Payment/);
+  assert.match(html, /5\. Performance Fee and Payment/);
   assert.match(html, /does not charge a subscription fee/);
-  assert.match(html, /No commission is collected in advance/);
+  assert.match(html, /No performance fee is collected in advance/);
   assert.match(html, /client retains 70%/);
   assert.match(html, /Cash Lab receives 30%/);
-  assert.match(html, /no performance commission is due/);
+  assert.match(html, /no performance fee is due/);
   assert.doesNotMatch(html, /Subscription fees are charged in advance/);
 });

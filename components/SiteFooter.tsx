@@ -19,7 +19,7 @@ export function SiteFooter() {
           <h3>Quick Links</h3>
           <Link href="/about">About</Link>
           <Link href="/blog">Blog</Link>
-          <Link href="/#commission">Commission Model</Link>
+          <Link href="/#commission">Performance Fee</Link>
         </div>
         <div>
           <h3>Info</h3>

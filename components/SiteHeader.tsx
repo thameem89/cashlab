@@ -9,7 +9,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const nav = [
   ["About", "/about"],
   ["Features", "/#features"],
-  ["Commission", "/#commission"],
+  ["Performance Fee", "/#commission"],
   ["FAQ", "/#faq"],
 ] as const;
 
