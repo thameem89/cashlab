@@ -171,7 +171,7 @@ export function LandingPage() {
                 </div>
                 <div>
                   <small>Last 30 Days Profit</small>
-                  <strong>{item.profit}</strong>
+                  <strong className="profit-amount">{item.profit}</strong>
                   <b>{item.gain}</b>
                 </div>
               </div>

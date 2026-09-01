@@ -754,6 +754,9 @@ body {
 .result-values strong {
   font-size: 13px;
 }
+.result-values .profit-amount {
+  color: var(--green);
+}
 .result-values b {
   color: var(--green);
   font-size: 10px;
