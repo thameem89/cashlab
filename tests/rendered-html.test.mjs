@@ -25,8 +25,10 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.match(html, /AI-Powered Forex Trading EA/);
   assert.match(html, /70\/30 Profit Split/);
   assert.match(html, /● LIVE/);
+  assert.match(html, />Real Account</);
   assert.doesNotMatch(html, /●\s*(?:<!-- -->)?DEMO/);
   assert.doesNotMatch(html, />Demo Account</);
+  assert.doesNotMatch(html, />(?:Managed|Live) Account</);
   assert.match(html, /\$12,000/);
   assert.match(html, /Arjun R\*\*\*/);
   assert.match(html, /Fatima M\*\*\*/);

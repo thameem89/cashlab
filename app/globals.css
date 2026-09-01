@@ -1872,6 +1872,7 @@ body {
 }
 
 .auth-page {
+  position: relative;
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
@@ -1894,7 +1895,7 @@ body {
   display: flex;
   min-height: 48px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 24px;
 }
 .auth-logo {
@@ -1908,7 +1909,10 @@ body {
   height: auto;
 }
 .auth-theme-button {
-  flex: 0 0 auto;
+  position: fixed;
+  z-index: 20;
+  top: 24px;
+  right: 24px;
   width: 44px;
   height: 44px;
   border-radius: 12px;
@@ -2361,6 +2365,8 @@ body {
   }
   .auth-theme-button {
     display: inline-flex;
+    top: 16px;
+    right: 16px;
   }
   .header-actions {
     gap: 8px;

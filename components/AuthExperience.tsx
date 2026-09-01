@@ -124,6 +124,7 @@ export function AuthExperience({
 
   return (
     <main className="auth-page">
+      <ThemeToggle className="auth-theme-button" />
       <section className="auth-panel">
         <div className="auth-shell">
           <div className="auth-topbar">
@@ -136,7 +137,6 @@ export function AuthExperience({
                 priority
               />
             </Link>
-            <ThemeToggle className="auth-theme-button" />
           </div>
           <div className="auth-card">
             <div className="auth-status">
