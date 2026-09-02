@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { LockKeyhole, MailCheck, Search, ShieldCheck } from "lucide-react";
 import {
   FormEvent,
@@ -36,6 +37,7 @@ export function AuthExperience({
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<AuthMessage | null>(null);
+  const router = useRouter();
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -114,6 +116,7 @@ export function AuthExperience({
             ? "Your Cash Lab account has been verified and created."
             : "You are signed in successfully.",
       });
+      router.replace("/dashboard");
     } catch (error) {
       setMessage({ kind: "error", text: authErrorMessage(error, mode) });
     } finally {
@@ -288,8 +291,8 @@ export function AuthExperience({
                   <MailCheck size={26} />
                 </div>
                 {message && <p role="status">{message.text}</p>}
-                <Link className="button auth-submit" href="/">
-                  Continue to Cash Lab
+                <Link className="button auth-submit" href="/dashboard">
+                  Continue to Dashboard
                 </Link>
               </div>
             )}

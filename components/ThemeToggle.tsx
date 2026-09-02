@@ -16,7 +16,8 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
         document.documentElement.dataset.theme === "light");
 
     document.documentElement.dataset.theme = isLight ? "light" : "dark";
-    setLight(isLight);
+    const timer = window.setTimeout(() => setLight(isLight), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   function toggleTheme() {
