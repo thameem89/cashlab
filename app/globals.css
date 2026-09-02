@@ -2447,7 +2447,7 @@ body {
 }
 @media (max-width: 520px) {
   .theme-button {
-    display: none;
+    display: inline-flex;
   }
   .auth-theme-button {
     display: inline-flex;
