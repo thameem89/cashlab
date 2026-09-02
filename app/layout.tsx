@@ -17,7 +17,19 @@ export const metadata: Metadata = {
   description:
     "AI-powered forex trading EA with real-time market intelligence and risk protection.",
   icons: {
-    icon: "/brand/favicon-32.png",
+    icon: [
+      {
+        url: "/brand/cashlab-favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/brand/cashlab-favicon-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/brand/cashlab-favicon-32.png",
     apple: "/brand/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",

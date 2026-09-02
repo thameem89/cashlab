@@ -21,6 +21,8 @@ test("server-renders the Cash Lab landing page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Cash Lab/);
+  assert.match(html, /\/brand\/cashlab-favicon-32\.png/);
+  assert.match(html, /\/brand\/cashlab-favicon-64\.png/);
   assert.match(html, /AI Forex Trading Platform/);
   assert.match(html, /AI-Powered Forex Trading EA/);
   assert.match(html, /70\/30 Profit Split/);
