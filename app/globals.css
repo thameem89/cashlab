@@ -72,13 +72,24 @@ body {
   align-items: center;
   padding: 0 10px;
 }
-.app-sidebar-head img {
-  width: 142px;
-  height: auto;
-  display: block;
+.app-sidebar-head > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #f5f8f6;
+  font-family: Sora, sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
 }
-[data-theme="light"] .app-sidebar-head img {
-  filter: invert(1);
+.app-sidebar-head img {
+  width: 32px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+}
+[data-theme="light"] .app-sidebar-head > a {
+  color: #101815;
 }
 .app-mobile-close {
   display: none;

@@ -69,7 +69,7 @@ const clientNav = [
 
 const accountNav = [
   ["Profile", "/dashboard/profile", UserRound],
-  ["Subscription", "/dashboard/subscription", CircleDollarSign],
+  ["Payments", "/dashboard/subscription", CircleDollarSign],
   ["Settings", "/dashboard/settings", Settings],
   ["Support", "/dashboard/support", Headphones],
 ] as const;
@@ -188,12 +188,13 @@ export function DashboardExperience() {
         <div className="app-sidebar-head">
           <Link href="/dashboard" aria-label="Cash Lab dashboard">
             <Image
-              src="/brand/cashlab-wordmark.png"
-              alt="Cash Lab"
-              width={154}
-              height={40}
+              src="/brand/cashlab-icon.png"
+              alt=""
+              width={36}
+              height={48}
               priority
             />
+            <span>Cash Lab</span>
           </Link>
           <button
             className="app-mobile-close"
@@ -565,7 +566,7 @@ function MarketEmpty() {
 function AIResearchPanel() {
   return (
     <Panel
-      title="CashLab AI Research"
+      title="Cash Lab AI Research"
       action={<span className="status-pill neutral">API required</span>}
     >
       <p className="panel-subtitle">
@@ -585,7 +586,7 @@ function AIResearchPanel() {
       </div>
       <div className="ai-input">
         <Bot />
-        <span>Ask CashLab anything about the market…</span>
+        <span>Ask Cash Lab anything about the market…</span>
         <button disabled aria-label="Send question">
           <ChevronRight />
         </button>
@@ -1363,7 +1364,7 @@ function ComingSoonPage({ pathname }: { pathname: string }) {
     ],
     "/dashboard/research": [
       "AI Research",
-      "CashLab AI is ready for a verified backend integration.",
+      "Cash Lab AI is ready for a verified backend integration.",
       <Bot key="i" />,
     ],
     "/dashboard/ai": [
@@ -1377,8 +1378,8 @@ function ComingSoonPage({ pathname }: { pathname: string }) {
       <Star key="i" />,
     ],
     "/dashboard/subscription": [
-      "Subscription",
-      "Your Cash Lab plan and billing controls will appear here.",
+      "Payments",
+      "Your Cash Lab payment and performance-fee details will appear here.",
       <CircleDollarSign key="i" />,
     ],
     "/dashboard/support": [
