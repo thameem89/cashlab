@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/manrope";
 import "@fontsource-variable/sora";
 import "./globals.css";
@@ -54,6 +54,14 @@ export const metadata: Metadata = {
     description: "AI-powered forex trading EA for MT4 and MT5.",
     images: ["/og.png"],
   },
+};
+
+export const viewport: Viewport = {
+  // vinext currently serializes only the standard width/scale viewport fields.
+  // Keeping viewport-fit in this value preserves Next's viewport API while
+  // ensuring the deployed meta tag includes safe-area support.
+  width: "device-width, viewport-fit=cover",
+  initialScale: 1,
 };
 
 export default function RootLayout({
