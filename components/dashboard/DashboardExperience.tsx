@@ -60,7 +60,7 @@ type AppState = {
 
 const clientNav = [
   ["Dashboard", "/dashboard", LayoutDashboard],
-  ["My Trading Accounts", "/dashboard/accounts", WalletCards],
+  ["Trading Accounts", "/dashboard/accounts", WalletCards],
   ["AI Trading", "/dashboard/ai", TrendingUp],
   ["AI Research", "/dashboard/research", Bot],
   ["Markets", "/dashboard/markets", BarChart3],
@@ -409,7 +409,7 @@ function DashboardHome({ state }: { state: AppState }) {
       </section>
       <section className="dashboard-split lower">
         <Panel
-          title="My Trading Accounts"
+          title="Trading Accounts"
           action={
             <Link className="panel-link" href="/dashboard/accounts">
               Manage accounts <ChevronRight />
@@ -679,7 +679,7 @@ function AccountsPage({
     <>
       <PageIntro
         eyebrow="Trading configuration"
-        title="My Trading Accounts"
+        title="Trading Accounts"
         text="Manage the MT4 and MT5 account information used for future secure synchronization."
         action={
           <button
