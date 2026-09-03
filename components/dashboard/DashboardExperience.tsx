@@ -458,7 +458,7 @@ function Onboarding({
           <span>2</span>Connect MT4 / MT5
         </li>
         <li>
-          <span>3</span>Start using Cash Lab
+          <span>3</span>Start using Cash Lab EA
         </li>
       </ol>
       <div className="onboarding-actions">
