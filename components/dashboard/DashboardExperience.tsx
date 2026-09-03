@@ -458,15 +458,15 @@ function Onboarding({
           <span>2</span>Connect MT4 / MT5
         </li>
         <li>
-          <span>3</span>Start using Cash Lab EA
+          <span>3</span>Start Using Cash Lab EA
         </li>
       </ol>
       <div className="onboarding-actions">
         <Link className="app-button secondary" href="/dashboard/profile">
-          Complete profile
+          Complete Profile
         </Link>
         <Link className="app-button" href="/dashboard/accounts">
-          Connect trading account
+          Connect Trading Account
         </Link>
       </div>
     </section>
