@@ -106,11 +106,12 @@ export function LandingPage() {
               <div className="market-stats">
                 <div>
                   <small>Starting balance</small>
-                  <strong>$8,500</strong>
+                  <strong>$10,000</strong>
                 </div>
                 <div>
                   <small>Last 30 Days Profit</small>
                   <strong className="positive">+$1,904.00</strong>
+                  <b className="profit-percent">+19.0%</b>
                 </div>
                 <div>
                   <small>Market score</small>

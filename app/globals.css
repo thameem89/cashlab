@@ -2002,6 +2002,12 @@ h1 em {
   margin-top: 9px;
   font-family: Sora, sans-serif;
 }
+.market-stats .profit-percent {
+  display: block;
+  margin-top: 5px;
+  color: var(--green);
+  font-size: 10px;
+}
 .positive {
   color: var(--green);
 }

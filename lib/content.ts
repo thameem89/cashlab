@@ -41,9 +41,9 @@ export const results = [
     broker: "OneRoyal",
     plan: "Real Account",
     status: "LIVE",
-    balance: "$8,500",
+    balance: "$10,000",
     profit: "+$1,904.00",
-    gain: "+22.4%",
+    gain: "+19.0%",
   },
   {
     flag: "🇦🇪",

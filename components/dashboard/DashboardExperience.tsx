@@ -61,9 +61,9 @@ type AppState = {
 const clientNav = [
   ["Dashboard", "/dashboard", LayoutDashboard],
   ["My Trading Accounts", "/dashboard/accounts", WalletCards],
-  ["Markets", "/dashboard/markets", BarChart3],
-  ["AI Research", "/dashboard/research", Bot],
   ["AI Trading", "/dashboard/ai", TrendingUp],
+  ["AI Research", "/dashboard/research", Bot],
+  ["Markets", "/dashboard/markets", BarChart3],
   ["Watchlist", "/dashboard/watchlist", Star],
 ] as const;
 
@@ -566,7 +566,7 @@ function MarketEmpty() {
 function AIResearchPanel() {
   return (
     <Panel
-      title="Cash Lab AI Research"
+      title="Ask Cash Lab AI"
       action={<span className="status-pill neutral">API required</span>}
     >
       <p className="panel-subtitle">
@@ -1176,7 +1176,7 @@ function ProfilePage({
               <label className="app-field">
                 <span>Email</span>
                 <input value={state.email} disabled />
-                <small>Email changes require Supabase confirmation.</small>
+                <small>Contact support to change your email address.</small>
               </label>
               <FormField
                 label="Phone"
