@@ -10,6 +10,7 @@ import {
   Bell,
   Bot,
   BriefcaseBusiness,
+  ChevronDown,
   ChevronRight,
   CircleDollarSign,
   ClipboardList,
@@ -268,7 +269,12 @@ export function DashboardExperience() {
           <div className="app-header-actions">
             <ThemeToggle />
             <NotificationBell state={state} onChange={setState} />
-            <Avatar profile={state.profile} name={displayName} small />
+            <AccountMenu
+              profile={state.profile}
+              name={displayName}
+              email={state.email}
+              onLogout={logout}
+            />
           </div>
         </header>
         <main className="app-content">
@@ -2056,6 +2062,49 @@ function NotificationBell({
     </div>
   );
 }
+
+function AccountMenu({
+  profile,
+  name,
+  email,
+  onLogout,
+}: {
+  profile: Profile | null;
+  name: string;
+  email: string;
+  onLogout: () => Promise<void>;
+}) {
+  return (
+    <details className="account-menu">
+      <summary aria-label="Open account menu">
+        <Avatar profile={profile} name={name} small />
+        <ChevronDown className="account-menu-chevron" aria-hidden="true" />
+      </summary>
+      <div className="account-menu-popover" role="menu">
+        <div className="account-menu-identity">
+          <Avatar profile={profile} name={name} small />
+          <div>
+            <strong>{name}</strong>
+            <span>{email}</span>
+          </div>
+        </div>
+        <Link href="/dashboard/profile" role="menuitem">
+          <UserRound />
+          My Profile
+        </Link>
+        <Link href="/dashboard/subscription" role="menuitem">
+          <CircleDollarSign />
+          Payments
+        </Link>
+        <button type="button" role="menuitem" onClick={() => void onLogout()}>
+          <LogOut />
+          Log out
+        </button>
+      </div>
+    </details>
+  );
+}
+
 function Avatar({
   profile,
   name,
