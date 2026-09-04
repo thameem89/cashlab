@@ -38,6 +38,31 @@ test("trading account UI never collects or renders credentials", async () => {
   assert.match(dashboard, /Market data integration required/);
 });
 
+test("dashboard consistently uses the spaced Cash Lab brand copy", async () => {
+  const [dashboard, migration] = await Promise.all([
+    readFile(
+      new URL("components/dashboard/DashboardExperience.tsx", root),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "supabase/migrations/20260904013000_fix_cash_lab_activity_copy.sql",
+        root,
+      ),
+      "utf8",
+    ),
+  ]);
+
+  assert.match(dashboard, />Ask Cash Lab AI</);
+  assert.match(dashboard, />Connect Your Trading Account</);
+  assert.match(
+    dashboard,
+    /Connect your MT4 or MT5 trading account to start using the Cash Lab[^]*EA\./,
+  );
+  assert.match(dashboard, /replaceAll\(\/cashlab\/gi, "Cash Lab"\)/);
+  assert.match(migration, /'Cash Lab account created\.'/);
+});
+
 test("Supabase migrations enforce ownership and protect system fields", async () => {
   const [schema, hardening] = await Promise.all([
     readFile(

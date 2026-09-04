@@ -586,7 +586,7 @@ function AIResearchPanel() {
       </div>
       <div className="ai-input">
         <Bot />
-        <span>Ask Cash Lab anything about the market…</span>
+        <span>Ask Cash Lab AI</span>
         <button disabled aria-label="Send question">
           <ChevronRight />
         </button>
@@ -638,7 +638,7 @@ function ActivityList({ activities }: { activities: Activity[] }) {
             <ActivityIcon />
           </span>
           <div>
-            <strong>{activity.description}</strong>
+            <strong>{formatCashLabCopy(activity.description)}</strong>
             <small>{formatDate(activity.created_at, true)}</small>
           </div>
         </div>
@@ -716,10 +716,10 @@ function AccountsPage({
       ) : (
         <div className="large-empty">
           <WalletCards />
-          <h2>Connect your first trading account</h2>
+          <h2>Connect Your Trading Account</h2>
           <p>
-            Connect your MT4 or MT5 account configuration to start using Cash
-            Lab trading analytics and AI research.
+            Connect your MT4 or MT5 trading account to start using the Cash Lab
+            EA.
           </p>
           <button className="app-button" onClick={() => setOpen(true)}>
             <Plus /> Add Trading Account
@@ -2049,8 +2049,8 @@ function NotificationBell({
               >
                 <span className={`notification-dot ${item.category}`} />
                 <div>
-                  <strong>{item.title}</strong>
-                  <span>{item.message}</span>
+                  <strong>{formatCashLabCopy(item.title)}</strong>
+                  <span>{formatCashLabCopy(item.message)}</span>
                   <small>{formatDate(item.created_at, true)}</small>
                 </div>
               </button>
@@ -2062,6 +2062,10 @@ function NotificationBell({
       )}
     </div>
   );
+}
+
+function formatCashLabCopy(value: string) {
+  return value.replaceAll(/cashlab/gi, "Cash Lab");
 }
 
 function AccountMenu({
