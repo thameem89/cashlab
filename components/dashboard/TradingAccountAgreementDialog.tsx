@@ -16,10 +16,12 @@ type AgreementDetails = {
 
 export function TradingAccountAgreementDialog({
   details,
+  effectiveDate,
   onCancel,
   onAgree,
 }: {
   details: AgreementDetails;
+  effectiveDate: string;
   onCancel: () => void;
   onAgree: () => void;
 }) {
@@ -68,10 +70,14 @@ export function TradingAccountAgreementDialog({
     };
   }, [onCancel]);
 
-  const effectiveDate =
-    process.env.NEXT_PUBLIC_CASHLAB_AGREEMENT_EFFECTIVE_DATE ||
-    "To be confirmed";
-  const lines = agreement.split("\n").filter((line) => line.trim());
+  const lines = agreement
+    .split("\n")
+    .filter((line) => line.trim())
+    .map((line) =>
+      line.trim() === "Effective Date:"
+        ? `Effective Date: ${effectiveDate || "Date of acceptance"}`
+        : line,
+    );
 
   return (
     <div className="modal-layer agreement-layer" role="presentation">
@@ -92,7 +98,9 @@ export function TradingAccountAgreementDialog({
             <div className="agreement-meta">
               <span>Jurisdiction: United Arab Emirates</span>
               <span>Agreement Version: {TRADING_AGREEMENT_VERSION}</span>
-              <span>Effective Date: {effectiveDate}</span>
+              <span>
+                Effective Date: {effectiveDate || "Date of acceptance"}
+              </span>
             </div>
           </div>
           <button type="button" onClick={onCancel} aria-label="Close agreement">

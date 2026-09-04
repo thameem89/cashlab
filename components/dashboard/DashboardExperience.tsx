@@ -841,6 +841,7 @@ function AccountModal({
     accountNumber: "",
     broker: "",
   });
+  const [agreementEffectiveDate, setAgreementEffectiveDate] = useState("");
   const [agreementAccepted, setAgreementAccepted] = useState(false);
   const [formValid, setFormValid] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -856,6 +857,13 @@ function AccountModal({
         (form?.elements.namedItem("broker_name") as HTMLInputElement | null)
           ?.value ?? "",
     });
+    setAgreementEffectiveDate(
+      new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      }).format(new Date()),
+    );
     setAgreementOpen(true);
   }
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -1096,6 +1104,7 @@ function AccountModal({
         </form>
         {agreementOpen && (
           <TradingAccountAgreementDialog
+            effectiveDate={agreementEffectiveDate}
             details={{
               fullName: state.profile?.full_name ?? "",
               email: state.email,
