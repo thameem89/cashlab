@@ -6,6 +6,8 @@ import { usePathname, useRouter } from "next/navigation";
 import {
   Activity as ActivityIcon,
   AlertCircle,
+  AlertTriangle,
+  ArrowRight,
   BarChart3,
   Bell,
   Bot,
@@ -16,6 +18,8 @@ import {
   ClipboardList,
   Gauge,
   Headphones,
+  Eye,
+  EyeOff,
   LayoutDashboard,
   LogOut,
   Menu,
@@ -39,6 +43,11 @@ import {
   useState,
 } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import {
+  TradingAccountAgreementDialog,
+  TRADING_AGREEMENT_HASH,
+  TRADING_AGREEMENT_VERSION,
+} from "@/components/dashboard/TradingAccountAgreementDialog";
 import { countryOptions } from "@/lib/countries";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import type {
@@ -689,14 +698,13 @@ function AccountsPage({
               setOpen(true);
             }}
           >
-            <Plus /> Add Trading Account
+            <Plus /> Connect Trading Account
           </button>
         }
       />
       <Notice>
-        Cash Lab stores configuration only. It does not request or store your
-        MetaTrader password, and live balances require a separate approved
-        integration.
+        Trading account configurations are submitted for review. A separate
+        approved MetaTrader integration is required before live synchronization.
       </Notice>
       {message && <InlineMessage>{message}</InlineMessage>}
       {state.accounts.length ? (
@@ -722,7 +730,7 @@ function AccountsPage({
             EA.
           </p>
           <button className="app-button" onClick={() => setOpen(true)}>
-            <Plus /> Add Trading Account
+            <Plus /> Connect Account
           </button>
         </div>
       )}
@@ -743,7 +751,7 @@ function AccountsPage({
             setMessage(
               exists
                 ? "Trading account updated."
-                : "Trading account added. Connection is pending.",
+                : "Configuration submitted. Connection is pending.",
             );
           }}
         />
@@ -824,30 +832,77 @@ function AccountModal({
   const [platform, setPlatform] = useState<"MT4" | "MT5">(
     account?.platform ?? "MT5",
   );
+  const [accountType, setAccountType] = useState<"live" | "demo">(
+    account?.account_type ?? "live",
+  );
+  const [showPassword, setShowPassword] = useState(false);
+  const [agreementOpen, setAgreementOpen] = useState(false);
+  const [agreementDetails, setAgreementDetails] = useState({
+    accountNumber: "",
+    broker: "",
+  });
+  const [agreementAccepted, setAgreementAccepted] = useState(false);
+  const [formValid, setFormValid] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
+  function openAgreement() {
+    const form = formRef.current;
+    setAgreementDetails({
+      accountNumber:
+        (form?.elements.namedItem("account_number") as HTMLInputElement | null)
+          ?.value ?? "",
+      broker:
+        (form?.elements.namedItem("broker_name") as HTMLInputElement | null)
+          ?.value ?? "",
+    });
+    setAgreementOpen(true);
+  }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!agreementAccepted) {
+      setError("Read and accept the client agreement before continuing.");
+      return;
+    }
     setSaving(true);
     setError("");
     const form = new FormData(event.currentTarget);
     const payload = {
-      user_id: state.userId,
       platform,
       account_label: String(form.get("account_label") ?? "").trim(),
       broker_name: String(form.get("broker_name") ?? "").trim(),
       account_number: String(form.get("account_number") ?? "").trim(),
       broker_server: String(form.get("broker_server") ?? "").trim(),
-      account_type: String(form.get("account_type")),
-      currency: String(form.get("currency")),
-      connection_type: String(form.get("connection_type")),
+      account_type: accountType,
+      currency: account?.currency ?? state.profile?.preferred_currency ?? "USD",
+      connection_type: account?.connection_type ?? "trading_enabled",
     };
+    const passwordInput = event.currentTarget.elements.namedItem(
+      "master_password",
+    ) as HTMLInputElement | null;
+    if (passwordInput) passwordInput.value = "";
     const supabase = getSupabaseBrowserClient();
-    const query = account
-      ? supabase.from("trading_accounts").update(payload).eq("id", account.id)
-      : supabase.from("trading_accounts").insert(payload);
-    const { data, error: saveError } = await query.select("*").single();
+    const result = account
+      ? await supabase
+          .from("trading_accounts")
+          .update({ ...payload, user_id: state.userId })
+          .eq("id", account.id)
+          .select("*")
+          .single()
+      : await supabase.rpc("submit_trading_account_configuration", {
+          p_platform: payload.platform,
+          p_account_label: payload.account_label,
+          p_account_number: payload.account_number,
+          p_broker_name: payload.broker_name,
+          p_broker_server: payload.broker_server,
+          p_account_type: payload.account_type,
+          p_agreement_version: TRADING_AGREEMENT_VERSION,
+          p_document_hash: TRADING_AGREEMENT_HASH,
+          p_client_full_name: state.profile?.full_name ?? "",
+          p_client_email: state.email,
+        });
+    const data = result.data;
+    const saveError = result.error;
     if (saveError) {
       setError(
         saveError.code === "23505"
@@ -872,17 +927,22 @@ function AccountModal({
         <header>
           <div>
             <span className="section-kicker">Secure configuration</span>
-            <h2 id="account-modal-title">
-              {account ? "Edit Trading Account" : "Add Trading Account"}
-            </h2>
+            <h2 id="account-modal-title">Connect Your Trading Account</h2>
+            <p>Connect your MT4 or MT5 account to start using Cash Lab EA.</p>
           </div>
           <button onClick={onClose} aria-label="Close">
             <X />
           </button>
         </header>
-        <form ref={formRef} onSubmit={submit}>
+        <form
+          ref={formRef}
+          onSubmit={submit}
+          onChange={(event) =>
+            setFormValid(event.currentTarget.checkValidity())
+          }
+        >
           <fieldset>
-            <legend>Choose platform</legend>
+            <legend>Platform</legend>
             <div className="platform-choices">
               {(["MT4", "MT5"] as const).map((item) => (
                 <button
@@ -890,84 +950,123 @@ function AccountModal({
                   type="button"
                   className={platform === item ? "selected" : ""}
                   onClick={() => setPlatform(item)}
+                  role="radio"
+                  aria-checked={platform === item}
                 >
                   <span>{item}</span>
                   <strong>MetaTrader {item.slice(-1)}</strong>
-                  <small>Configuration record</small>
+                  <small>
+                    {platform === item ? "Selected" : "Select platform"}
+                  </small>
                 </button>
               ))}
             </div>
           </fieldset>
-          <div className="app-form-grid">
+          <div className="connection-form-fields">
             <FormField
-              label="Account label"
+              label="Account Name"
               name="account_label"
-              placeholder="My Gold Account"
+              placeholder="e.g. My Gold Account"
               defaultValue={account?.account_label}
             />
             <FormField
-              label="Broker name"
-              name="broker_name"
-              placeholder="Enter your broker"
-              defaultValue={account?.broker_name}
-            />
-            <FormField
-              label="Trading account number"
+              label="Trading Account Number"
               name="account_number"
-              placeholder="12345678"
+              placeholder="e.g. 12345678"
               defaultValue={account?.account_number}
               inputMode="numeric"
               pattern="[0-9]{4,32}"
             />
             <FormField
-              label="Broker server"
+              label="Broker Name"
+              name="broker_name"
+              placeholder="e.g. Exness"
+              defaultValue={account?.broker_name}
+            />
+            <FormField
+              label="Broker Server"
               name="broker_server"
-              placeholder="Broker-Live01"
+              placeholder="e.g. Exness-MT5Real50"
               defaultValue={account?.broker_server}
             />
-            <SelectField
-              label="Account type"
-              name="account_type"
-              defaultValue={account?.account_type ?? "live"}
-              options={[
-                ["live", "Live"],
-                ["demo", "Demo"],
-              ]}
-            />
-            <SelectField
-              label="Currency"
-              name="currency"
-              defaultValue={account?.currency ?? "USD"}
-              options={[
-                "USD",
-                "EUR",
-                "GBP",
-                "AED",
-                "JPY",
-                "AUD",
-                "CAD",
-                "CHF",
-              ].map((v) => [v, v])}
-            />
-            <SelectField
-              label="Connection method"
-              name="connection_type"
-              defaultValue={account?.connection_type ?? "read_only"}
-              options={[
-                ["read_only", "Read only"],
-                ["trading_enabled", "Trading enabled (requires approval)"],
-              ]}
-            />
+            <fieldset className="account-type-fieldset">
+              <legend>Account Type</legend>
+              <div className="account-type-choices" role="radiogroup">
+                {(["live", "demo"] as const).map((item) => (
+                  <button
+                    type="button"
+                    key={item}
+                    className={accountType === item ? "selected" : ""}
+                    role="radio"
+                    aria-checked={accountType === item}
+                    onClick={() => setAccountType(item)}
+                  >
+                    <span aria-hidden="true" /> {titleCase(item)}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+            <label className="app-field password-field">
+              <span>Master Password</span>
+              <span className="password-control">
+                <input
+                  name="master_password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter your MT4/MT5 master password"
+                  autoComplete="new-password"
+                  required
+                  minLength={4}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((visible) => !visible)}
+                  aria-label={
+                    showPassword
+                      ? "Hide master password"
+                      : "Show master password"
+                  }
+                >
+                  {showPassword ? <EyeOff /> : <Eye />}
+                </button>
+              </span>
+            </label>
+          </div>
+          <div className="cent-account-notice">
+            <AlertTriangle />
+            <div>
+              <strong>Important</strong>
+              <span>
+                For accounts with capital below $20,000 USD, a Cent Account with
+                low spreads is required to ensure proper EA performance
+              </span>
+            </div>
           </div>
           <div className="credential-warning">
             <ShieldCheck />
             <div>
-              <strong>No password required</strong>
+              <strong>Secure handling</strong>
               <span>
-                Never submit your master or investor password here. A secure
-                connection provider will be configured separately.
+                Your master password is cleared from this form and is not stored
+                in browser storage or browser-readable account records. The
+                configuration remains pending until an approved secure connector
+                is available.
               </span>
             </div>
+          </div>
+          <div className="agreement-acceptance">
+            <input
+              id="trading-agreement"
+              type="checkbox"
+              checked={agreementAccepted}
+              onChange={openAgreement}
+            />
+            <label htmlFor="trading-agreement">
+              I have read, understood and agree to the{" "}
+              <button type="button" onClick={openAgreement}>
+                CASH LAB Client Risk Acknowledgment, Expected Performance &amp;
+                Limited Liability Agreement.
+              </button>
+            </label>
           </div>
           {error && (
             <div className="form-error" role="alert">
@@ -982,11 +1081,34 @@ function AccountModal({
             >
               Cancel
             </button>
-            <button className="app-button" disabled={saving}>
-              {saving ? "Saving…" : account ? "Save changes" : "Add account"}
+            <button
+              className="app-button"
+              disabled={saving || !formValid || !agreementAccepted}
+            >
+              {saving
+                ? "Connecting..."
+                : account
+                  ? "Save Changes"
+                  : "Connect Account"}
+              {!saving && !account && <ArrowRight />}
             </button>
           </footer>
         </form>
+        {agreementOpen && (
+          <TradingAccountAgreementDialog
+            details={{
+              fullName: state.profile?.full_name ?? "",
+              email: state.email,
+              accountNumber: agreementDetails.accountNumber,
+              broker: agreementDetails.broker,
+            }}
+            onCancel={() => setAgreementOpen(false)}
+            onAgree={() => {
+              setAgreementAccepted(true);
+              setAgreementOpen(false);
+            }}
+          />
+        )}
       </section>
     </div>
   );

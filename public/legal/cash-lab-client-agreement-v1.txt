@@ -1,0 +1,342 @@
+
+                      CLIENT RISK ACKNOWLEDGMENT, EXPECTED PERFORMANCE & LIMITED LIABILITY AGREEMENT
+
+Company: CASH LAB LLC
+Jurisdiction: United Arab Emirates
+Effective Date:
+
+1. PARTIES:
+This Agreement is entered into between:
+
+CASH LAB LLC, a limited liability company established in the United Arab Emirates, hereinafter referred to as the “Company” or “CASH LAB”
+
+and
+
+Client Name                              :
+Passport/Emirates ID No.                 :
+Email                                    :
+Contact No                               :
+
+hereinafter referred to as the      “Client”
+CASH LAB and the Client may collectively be referred to as the               “Parties”
+
+2. PURPOSE OF THIS AGREEMENT:
+
+This  Agreement  establishes  the  Client’s  understanding  of  the  risks  associated  with  financial               -market  trading  and  sets  out  the  agreed  terms
+concerning:
+
+* Client capital
+* Expected monthly performance
+* Client risk exposure
+* Losses up to 30% of Initial Capital
+* Losses exceeding 30% of Initial Capital
+* CASH LAB LLC’s limited liability
+* The procedure for any eligible Excess Loss refund.
+
+3. CLIENT CAPITAL
+
+The Client confirms that the capital allocated for the service is:
+Initial Capital:
+Currency:
+The Client acknowledges that this capital is exposed to financial-market risk and that its value may increase or decrease depending on trading
+performance and market conditions. The Client confirms that the capital allocated is money the Client can afford to expose to trading risk.
+
+4. PERFORMANCE ACKNOWLEDGMENT AND FLEXI                        BILITY
+CASH LAB LLC’s trading strategy has an expected/target monthly performance range of approximately 15%                              –30%, depending on market conditions,
+volatility, trading conditions, account size, execution conditions, and the selected strategy.
+Performance Target Range          : The Client acknowledges that performance target models reflect potential return strategies, with actual monthly
+performance varying based on market dynamics.
+Uncapped Upside Potential: Returns are not capped and actual performance may exceed target metrics, including potential returns above 30%
+monthly depending on prevailing market conditions.
+Dynamic Market Participation: Actual performance reflects active exposure to financial markets, allowing the Client to fully participate in both
+baseline target strategies and high-performing market opportunities.
+Market-Driven Outcomes: Results are intrinsically tied to live market conditions, ensuring strategies continuously adjust to capture optimal risk-
+adjusted opportunities.
+Strategic Investment Approach: The Client enters into this Agreement seeking market-aligned performance and strategic capital growth rather
+than a fixed-rate baseline
+The expected performance range must not be interpreted as a promise, assurance, or guarantee of investment return.
+
+5. FINANCIAL-MARKET RISK
+The Client acknowledges that financial-market trading involves substantial risks. Trading losses may occur because of, including but not limited to:
+Market volatility, Sudden price movements, Economic announcements, Geopolitical events, Liquidity conditions, Market gaps, Slippage, Spread
+fluctuations, Execution delays, Broker-related issues, Technical failures, Server/VPS interruptions, Internet connectivity problems, Trading-platform
+failures, Extraordinary market conditions and Force majeure events.
+Risk Acknowledgment: The Client acknowledges that market volatility, sudden price swings, liquidity shifts, spread fluctuations, and force majeure
+events can impact trading performance, and no methodology can eliminate market risk.                            CASH LAB commits to maintaining institutional              -grade
+server  infrastructure,  redundant  connectivity,  and  high          -performance  VPS  hosting  to  minimize  technical  interruptions,  execution  delays,  and
+slippage. CASH LAB utilizes continuous monitoring and risk-mitigation protocols within its algorithms, Expert Advisors, and trading systems to
+respond dynamically to major economic announcements and geopolitical events. CASH LAB implements robust operational backups to safeguard
+platform  stability,  while  both  parties  recognize  that  unexpected  broker-side  disruptions  or  broader  technical  failures  remain  inherent  market
+variables. The Client enters this Agreement aiming for optimal market-aligned performance, supported by CASH LAB’s deployment of industry-
+standard risk management practices to mitigate downside exposure without offering guaranteed capital preservation. The Client understands that
+no trading strategy, algorithm, Expert Advisor, artificial intelligence system, signal, indicator, or methodology can completely eliminate market
+risk. The  Client  and  CASH  LAB  LLC  mutually  acknowledge  that  financial-market  trading  involves  inherent  risk,  requiring  balanced  operational
+standards and risk management.
+
+6. CAPITAL MANAGEMENT & BOUNDARY PROTECTION
+1. Capital Preservation Target (70%)
+The Primary Objective under this Agreement is to safeguard the vast majority of the Client’s funds. The Company operates under a strict risk
+management framework designed to protect at least 70% of the Client’s Initial Capital from market drawdown at all times.
+2. Defined Operational Buffer (30%)
+To allow the strategy to navigate normal market volatility, the Client approves a designated operational risk buffer capped strictly at 30% of the
+Initial Capital.
+Controlled Exposure: Trading operations are strictly bounded by this 30% ceiling to prevent uncontrolled capital loss.
+Capital  Protection  Assurance: In  the  event  of  standard  market  fluctuations  within  this  approved  30%  threshold,  operational  drawdowns  are
+managed within the agreed strategy terms, ensuring the remaining 70% core capital protection mechanism remains fully active. The Parties agree
+that 30% of the Client’s Initial Capital represents the Client’s agreed risk exposure.
+
+7. LOSS EXCEEDING AGREGATE THRESHOLD
+In the event that the Client sustains a verified qualifying trading loss exceeding thirty percent (30%) of the Initial Capital, any sum in excess of this
+thirty percent (30%) threshold shall be classified as the “Excess Loss Amount.”
+Subject to the terms and conditions of this Agreement, CASH LAB LLC guarantees to promptly refund the full Excess Loss Amount to the Client. To
+ensure maximum client security and capital safety, all eligible refund obligations shall be fully backed and processed within a protected timeframe
+upon verification.
+
+8. LIMITATION OF CASH LAB LIABILITY
+CASH LAB’s liability under this loss-protection arrangement is strictly limited to the verified Excess Loss Amount exceeding thirty percent (30%) of
+the Initial Capital. CASH LAB retains no liability for losses up to and including the initial thirty percent (30%) threshold. CASH LAB shall not be held
+liable for losses arising from circumstances beyond its reasonable control, including but not limited to:
+Client Interference: Unauthorized trading, manual execution or liquidation of positions, unauthorized alteration of trading parameters or lot sizes,
+or the modification or removal of established stop-loss mechanisms;
+Third-Party & Infrastructure Disruptions: Operational failure, insolvency, or service interruption of third-party brokers, liquidity providers, payment
+processors, virtual private servers (VPS), or telecommunications networks;
+Market & Regulatory Events: Extraordinary market volatility, severe slippage, systemic liquidity  disruptions, regulatory  interventions, or Force
+Majeure events; or
+Client Non-Compliance: Fraud, willful misconduct, material misrepresentation, or breach of any terms of this Agreement by the Client. Nothing in
+this Agreement excludes or restricts any liability that cannot lawfully be excluded or restricted under applicable UAE law.
+
+9. INITIAL CAPITAL BASELINE
+The 30% threshold is calculated exclusively against your original Initial Capital. This established baseline serves as the permanent anchor for all
+loss calculations, ensuring absolute clarity and consistency without unexpected shifts.
+QUALIFYING TRADING ELEMENTS: To determine your true net performance, CASH LAB LLC accounts for every aspect of your market activity. The
+qualifying trading result reflects the full financial picture by combining:
+Realized Gains & Losses: The net financial outcome from all closed positions.
+Transaction Costs: All execution commissions, exchange fees, and broker charges.
+Market Spreads: Bid-ask spread differentials incurred during entry and exit.
+Overnight Financing: Swap fees, rollover charges, and capital holding costs.
+Account Servicing: Any direct operational or processing fees associated with your trading.
+AUDIT & VERIFICATION
+To safeguard accuracy and maintain the highest standards of financial integrity, CASH LAB LLC verifies all claims prior to confirming an Excess Loss.
+This straightforward audit process relies on official broker statements, complete trading logs, and official account records to ensure every dollar is
+precisely accounted for.
+
+10. EXCESS LOSS REFUND PROCEDURE
+To initiate an Excess Loss review, the Client must strictly satisfy each of the following procedural conditions:
+Mandatory Notice Period: The Client must submit a formal, written claim to CASH LAB LLC strictly within 24 hours from the alleged Excess Loss
+occurred. Failure to submit within this timeframe constitutes an absolute and irrevocable waiver of any right to claim a refund.
+Evidentiary Requirements: The Client bears the sole burden of proof and must submit complete, unedited documentation, including but not limited
+to:
+Full legal name and verified government           -issued identification;
+Trading account number;
+Official proof of Initial Capital deposit (e.g., stamped bank receipt, wire transfer confirmation);
+Certified broker statements covering the entire trading period;
+Unaltered, complete trade execution logs and transaction records;
+Exact timestamp and date of the alleged Excess Loss; and
+Any additional verification documentation unilaterally requested by CASH LAB LLC.
+Sole Discretion & Review: CASH LAB LLC reserves the exclusive right to audit, verify, and calculate the alleged qualifying loss. CASH LAB LLC shall
+hold sole discretion in determining whether a loss meets the contractual definition of a qualifying loss, and its assessment shall be final and binding.
+Claims  Rejection  &  Forfeiture:  CASH  LAB  LLC  reserves  the  right  to  reject  any  claim  without  liability  if  the  Client  fails  to  provide  all  requested
+documents within forty-eight (48) hours of request, provides inconsistent data, or if the account has engaged in prohibited trading strategies,
+unauthorized leverage manipulation, or market abuse.
+Approval and Settlement: If CASH LAB LLC, in its sole judgment, confirms an Excess Loss, it shall issue a written notification outlining the approved
+refund amount, payment method, and processing timeline. Receipt of any approved refund is contingent upon the Client executing a full, binding
+release of all current and future claims against CASH LAB LLC.
+
+11. EXCESS LOSS PROTECTION
+Terms and Conditions:
+Excess Loss Protection Eligibility
+The Excess Loss Protection policy operates strictly at the sole discretion of CASH LAB LLC (the "Company") and applies exclusively when all of the
+following conditions are fully satisfied:
+Prior Agreement Acceptance: This Agreement was explicitly accepted by the Client prior to the execution of the trading activity giving rise to the
+claim.
+Capital Verification: The Initial Capital was fully verified and approved by the Company prior to trading commencement.
+Authorized Account Operation: The designated trading account was operated in strict conformity with the specific, agreed-upon parameters of the
+relevant service.
+Direct Loss Attribution: The loss is demonstrated to be sole and directly attributable to the authorized CASH LAB LLC trading service, excluding
+external market factors or third-party disruptions.
+No Client Interference: The Client refrained from any direct, indirect, or operational interference with the active trading strategy or automated
+execution processes.
+Parameter Integrity: The Client did not independently modify, override, or alter any trading settings, risk parameters, or account configurations.
+Accuracy of Information: All information, disclosures, and documentation provided by the Client to the Company were true, accurate, and complete.
+Full Terms Compliance: The Client maintained full compliance with all applicable Terms of Service, policies, and operational rules of the Company
+at all times.
+Absence of Malfeasance: The Client committed no act of fraud, market manipulation, willful misrepresentation, unauthorized account access, or
+material breach of this Agreement.
+The Company reserves the right to review, audit, and make the final determination on all Excess Loss Protection claims. Failure to meet any single
+condition above shall automatically forfeit eligibility.
+
+12. CLIENT INTERFERENCE OR CLIENT-ASSISTED CONTROL & STRATEGY PRESERVATION
+At  CASH  LAB  LLC,  our  automated  systems  and  specialized  trading  algorithms  are  engineered  to  execute  strategies  with  maximum  precision,
+disciplined risk management, and optimal performance. To ensure the integrity of your account strategy and safeguard your capital under our
+protection policy, our standard operations rely on an undisturbed trading environment.
+To optimize your results and preserve full eligibility for our Excess Loss Protection, account operations are managed exclusively by our core system.
+Independent manual interventions—while fully within your right as the account holder—can alter risk parameters, disrupt algorithmic timing, and
+compromise overall performance. CASH LAB LLC shall not be responsible for losses caused or materially increased by the Client’s independent
+actions
+Guidance for Maintaining Maximum Account Protection:
+System Autonomy: Allow the automated algorithm to execute trades, adjust lot sizes, and set Stop-Loss/Take-Profit parameters without manual
+override to ensure strategies run as back tested.
+Account Integrity: Maintain continuous, uninterrupted operation of the trading system on the approved account to avoid missed market cycles or
+execution desynchronization.
+Fund Stability: Coordinate capital allocations, withdrawals, or account changes directly through your dedicated account representative to prevent
+unintended leverage shifts.
+Strategy Alignment: Ensure all account instructions remain consistent with your mutually agreed-upon investment profile and risk framework.
+Excess Loss Protection & Shared Responsibility
+We partner with our clients to maintain strict risk controls. In the event that manual modifications, unauthorized fund movements, or independent
+trade overrides materially impact trading outcomes, CASH LAB LLC reserves the right to review, adjust, or proportionately limit Excess Loss coverage
+relative to the intervention's impact, subject to applicable law.
+By allowing our automated strategy to run uninterrupted, you maximize both the performance potential of your capital and the full scope of
+protective guarantees offered by CASH LAB LLC.
+
+13. PERFORMANCE
+PERFORMANCE EXPECTATIONS & RISK ACKNOWLEDGMENT: The Client acknowledges that all trading targets, including the expected performance
+range of 15%–30% monthly, represent historical standard projections under favorable market conditions and are not guaranteed. Actual monthly
+results will vary and may fall above, within, or below this target range, including the potential for zero or negative returns. Achieving returns
+outside the target range does not constitute a failure of service or create any obligation for refunds or financial compensation. Cash Lab LLC
+remains dedicated to executing high-standard trading strategies, while ensuring full transparency regarding market risks.
+
+
+14. PERFORMANCE DISCLAIMER:
+While Cash Lab LLC aims for an expected monthly performance range of 15%–30%, the Client understands that market conditions dictate actual
+outcomes. Monthly returns are not guaranteed and may be higher, lower, net-zero, or negative. Target figures serve as operational benchmarks
+rather  than  fixed  promises,  and  variations  in  performance  do  not  qualify  for  refunds  or  adjustments.  Cash  Lab  LLC  operates  with  complete
+commitment to optimal execution while navigating real-market variability.
+
+15. BROKER AND TRADING ACCOUNT
+Where applicable, the Client’s trading account may be maintained with an independent third-party broker. CASH LAB LLC does not control the
+Client’s broker, liquidity provider, bank, payment provider, VPS provider, or internet service provider. The Client acknowledges that  third-party
+failures may affect trading performance and may be outside CASH LAB LLC’s reasonable control.
+
+16. CLIENT OBLIGATIONS & COLLABORATIVE RESPONSIBILITIES
+To ensure the optimal performance, security, and execution of the automated trading systems provided by CASH LAB LLC, the Client agrees to fulfill
+the following operational responsibilities:
+Provision  of  Complete  &  Accurate  Data:  Provide  accurate,  complete,  and  up-to-date  account  details  and  personal  identification  information
+necessary to facilitate seamless setup, ongoing management, and compliance standards.
+Account Maintenance & Broker Compliance: Maintain an active, fully verified, and fully compliant account with an authorized b                                    roker, adhering to
+all terms, margin requirements, and operational rules set forth by that broker.
+Capital & Reserve Management: Maintain adequate initial funding and operational equity balance requirements within the tradin                                          g account to
+support active trading strategies, absorb standard market volatility, and avoid unwanted automated liquidations or sys                                tem disruptions.
+System  Integrity  &  Signal  Adherence:  Diligently  adhere  to  all  agreed             -upon  service  instructions,  onboarding  protocols,  and  trading  strategy
+guidelines provided by CASH LAB LLC to maximize the efficiency and safety of the service.
+Protected Trading Environment: Refrain from engaging in manual order execution, manual trade overrides, or unauthorized accou                                      nt interventions
+on the designated trading balance, allowing the automated system to function as designed without manual error risk                                  s.
+Parameter Safeguards: Refrain from altering, resetting, or modifying any system trading parameters, risk profiles, leverage settings, or automated
+software configurations without prior written consultation and authorization from CASH LAB LLC.
+Proactive  Security  Notification:  Promptly  notify  CASH  LAB  LLC’s  support  team  upon  discovering  any  unexpected  account  behaviors,  suspected
+security breaches, or unauthorized third-party activity to enable immediate protective action.
+Open Communication Channel: Keep primary contact details current and remain reasonably accessible for critical system updates, market volatility
+notices, or strategy performance reviews.
+
+17. CONFIDENTIALITY AND PROPRIETARY INFORMATION
+17.1 Scope of Confidential Information. "Confidential Information" refers to any non-public, proprietary, or sensitive data, material, or technical
+knowledge  disclosed  by  one  Party  ("Disclosing  Party")  to  the  other  Party  ("Receiving  Party")  under  or  in  connection  with  this  Agreement.
+Confidential Information includes, without limitation:
+Trading Intellectual Property: Trading strategies, proprietary algorithms, Expert Advisor (EA) configurations, software code, quantitative models,
+and technical documentation.
+Operational  &  Financial  Data:  Account  credentials,  trading  history,  portfolio  holdings,  execution  parameters,  financial  statements,  and  fee
+structures.
+Corporate & Client Data: Client identities, personal data, business operations, marketing plans, trade secrets, and proprietary materials belonging
+to CASH LAB LLC.
+17.2 Duty of Care and Non-Disclosure. The Receiving Party agrees to maintain all Confidential Information in strict confidence and to exercise at
+least the same degree of care to prevent unauthorized access, use, or disclosure as it uses to protect its own confidential information of like nature,
+but in no event less than a reasonable standard of care. Confidential Information shall not be copied, reproduced, or used for any purpose other
+than executing obligations or exercising rights under this Agreement.
+17.3 Permitted Disclosures. The obligations of non-disclosure shall not apply to information that:
+Is or becomes publicly known through no breach of this Agreement by the Receiving Party.
+Was already lawfully in the Receiving Party’s possession prior to disclosure without confidentiality restrictions.
+Is independently developed by the Receiving Party without reference to or reliance upon the Disclosing Party’s Confidential Information.
+17.4 Required Legal & Professional Disclosures. The Receiving Party may disclose Confidential Information to the extent required by applicable law,
+regulation, judicial order, or request from a competent regulatory or supervisory authority. Additionally, disclosures may be made on a need-to-
+know basis to the Receiving Party’s legal counsel, accountants, auditors, executing brokers, liquidity providers, or banking                             partners, provided such
+third parties are bound by professional duties or written agreements o                  f confidentiality no less restrictive than those contained herein.
+17.5 Injunctive Relief and Survival. The Parties acknowledge that a breach of this Section may cause irreparable harm for whi                              ch monetary damages
+alone  are  inadequate.  Consequently,  the  Disclosing  Party  shall  be  entitled  to  seek  equitable  relief,  including                 injunctions,  alongside  any  other
+remedies available at law. The confidentiality obligations set forth herein shall survive the expiration or termination of th                           is Agreement.
+
+18. FRAUDULENT CLAIMS
+18.1 Prohibition of Fraudulent Claims
+The Client explicitly warrants that all claims, requests for reimbursement, invoices, supporting documentation, and communica                                   tions submitted to
+CASH LAB LLC shall be true, accurate, complete, and authentic. The Client shall not submit, or cause to be submi                             tted, any claim that is fraudulent,
+fabricated, altered, manipulated, misleading, deceptive, or intentionally inaccurate in any respect.
+18.2 Audit and Verification Rights
+CASH LAB LLC reserves the right, at its sole discretion, to independently audit, inspect, and verify the validity of any clai                              m, invoice, receipt, or
+supporting documentation prior to or following processing. Upon request, the Client shall promptly provide                             additional documentation or evidence
+reasonably required by CASH LAB LLC to establish the legitimacy of a claim.
+18.3 Remedies for Fraudulent Submission
+In the event that CASH LAB LLC determines, suspects, or reasonably believes that a claim submitted by the Client is fraudulent, misleading, or
+intentionally inaccurate, CASH LAB LLC reserves the right to exercise any or all of the following remedies without prior notice:
+Immediate Rejection: Reject, deny, or withhold payment for the subject claim and any other pending or future claims submitted by the Client.
+Claw back and Setoff: Demand immediate repayment of, or set off against future payouts, any funds previously disbursed to the Client pursuant
+to a fraudulent or misleading claim.
+Account Suspension or Termination: Immediately suspend or terminate the Client’s account, access to services, or agreement for material breach.
+18.4 Indemnification and Recovery of Costs
+The Client shall indemnify, defend, and hold harmless CASH LAB LLC, its officers, directors, employees, and agents from any costs, losses, damages,
+liabilities, fines, or legal fees incurred as a direct or indirect result of the Client’s submission of a fraudulent, misleading, or intentionally inaccurate
+claim.
+
+19. TERMINATION AND SURVIVAL
+19.1 Termination for Convenience or Cause. Either Party may terminate this Agreement or any individual Service Schedule pursuant to the terms
+specified in the applicable Service Terms. Additionally, either Party may terminate this Agreement immediately upon written notice if the other
+Party materially breaches any provision of this Agreement and fails to cure such breach within thirty (30) days of receiving written notice thereof.
+19.2 Survival of Accrued Rights. Termination of this Agreement, for any reason, shall be without prejudice to any rights, claims, or obligations that
+accrued  prior  to  the  effective  date  of  termination.  This  includes,  without  limitation,  the  obligation  to  pay  any  accrued  fees,  expenses,  or
+indemnification obligations.
+19.3 Excess  Loss  Claim  Settlement. Any  Excess  Loss  claim  originating  prior  to  the  effective  date  of  termination,  whether  currently  pending  or
+submitted  prior  to  final  off-boarding,  shall  remain  fully  subject  to  the  verification,  review,  and  settlement  protocols  established  under  this
+Agreement. Termination shall not invalidate or excuse either Party’s obligations regarding the processing, verification, or payment of valid Excess
+Loss claims.
+
+20. GOVERNING LAW AND DISPUTE RESOLUTION
+This Agreement shall be governed by the applicable laws of the United Arab Emirates.
+Subject to applicable law and any valid dispute-resolution mechanism agreed between the Parties, disputes arising from this Agreement shall be
+submitted to the competent courts of the Emirate of Dubai, United Arab Emirates.
+
+21. REGULATORY COMPLIANCE
+The Parties acknowledge that financial and investment-related activities in the UAE may be subject to licensing and regulatory requirements.
+Nothing in this Agreement authorizes CASH LAB LLC or the Client to conduct an activity requiring a regulatory authorization or license that has not
+been obtained. If any provision of this Agreement conflicts with a mandatory requirement of applicable law or a competent regulatory authority,
+the mandatory requirement shall prevail to the extent of that conflict.
+
+22. SEVERABILITY
+If any provision of this Agreement is determined to be invalid or unenforceable, that provision shall be modified or severed to the minimum extent
+necessary, while the remaining provisions shall continue in effect to the extent permitted by law.
+
+23. ENTIRE AGREEMENT
+This  Agreement,  together  with  any  applicable  service-specific  terms,  constitutes  the  understanding  between  CASH  LAB  LLC  and  the  Client
+concerning the matters covered by this Agreement. Any amendment must be made in writing and accepted by both Parties.
+
+24. CLIENT FINAL ACKNOWLEDGMENT
+By signing below, I confirm that I have fully read, understood, and voluntarily accepted the terms of this Agreement.
+Key Acknowledgments
+Performance Expectations: CASH LAB LLC targets an estimated monthly return of 15% to 30%. This range represents a target only and is not
+guaranteed.
+Market Risk: Financial-market trading carries substantial risk. I am fully responsible for market losses up to and including 30% of my Initial Capital
+(the agreed risk exposure threshold).
+Refund Terms: CASH LAB LLC is not required to refund losses within the 30% risk threshold. Subject to the conditions of this                              Agreement, CASH LAB
+LLC may refund a verified qualifying amount only if losses exceed the 30% threshold.
+Fixed Returns: CASH LAB LLC makes no guarantee of specific profits, minimum yields, or consistent monthly returns.
+Informed Consent: I have been given the opportunity to ask questions, review risks, and voluntarily enter into this Agreement                                 with full awareness
+of the financial risks involved.
+
+CLIENT DETAILS
+
+Client Full Name                                            :
+Initial Capital                                             :
+Currency                                     :
+Trading Account No                           :
+Broker                                                      :
+Client Signature                                            :
+DATE                                                        :
+
+
+
+
+
+
+
+FOR CASH LAB LLC
+
+Authorized Representative                                   :
+Designation                                                 :
+Date                                                        :
+Company Signature & Stamp                    :

@@ -23,17 +23,27 @@ test("dashboard protects sessions and sends OTP users to the dashboard", async (
   assert.match(auth, /href="\/dashboard"/);
 });
 
-test("trading account UI never collects or renders credentials", async () => {
-  const dashboard = await readFile(
-    new URL("components/dashboard/DashboardExperience.tsx", root),
-    "utf8",
-  );
+test("trading account credentials stay out of browser storage and account records", async () => {
+  const [dashboard, migration] = await Promise.all([
+    readFile(
+      new URL("components/dashboard/DashboardExperience.tsx", root),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "supabase/migrations/20260904162238_trading_account_agreement_acceptances.sql",
+        root,
+      ),
+      "utf8",
+    ),
+  ]);
 
-  assert.doesNotMatch(
-    dashboard,
-    /name="(?:password|investor_password|master_password)"/,
-  );
-  assert.match(dashboard, /No password required/);
+  assert.match(dashboard, /name="master_password"/);
+  assert.match(dashboard, /passwordInput\.value = ""/);
+  assert.doesNotMatch(dashboard, /localStorage|sessionStorage/);
+  assert.doesNotMatch(migration, /master_password|investor_password/);
+  assert.match(migration, /trading_account_agreement_acceptances/);
+  assert.match(migration, /connection_status[\s\S]*'pending'/);
   assert.match(dashboard, /No simulated information is shown/);
   assert.match(dashboard, /Market data integration required/);
 });
