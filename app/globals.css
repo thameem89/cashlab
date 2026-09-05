@@ -75,21 +75,12 @@ body {
 .app-sidebar-head > a {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: #f5f8f6;
-  font-family: Sora, sans-serif;
-  font-size: 23px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
 }
 .app-sidebar-head img {
-  width: 32px;
-  height: 42px;
+  width: 170px;
+  height: auto;
   display: block;
   object-fit: contain;
-}
-[data-theme="light"] .app-sidebar-head > a {
-  color: #101815;
 }
 .app-mobile-close {
   display: none;

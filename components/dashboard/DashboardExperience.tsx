@@ -195,15 +195,14 @@ export function DashboardExperience() {
     <div className="app-frame">
       <aside className={`app-sidebar ${mobileNav ? "is-open" : ""}`}>
         <div className="app-sidebar-head">
-          <Link href="/dashboard" aria-label="Cash Lab dashboard">
+          <Link href="/" aria-label="Cash Lab home">
             <Image
-              src="/brand/cashlab-icon.png"
-              alt=""
-              width={36}
+              src="/brand/cashlab-wordmark.png"
+              alt="Cash Lab"
+              width={190}
               height={48}
               priority
             />
-            <span>Cash Lab</span>
           </Link>
           <button
             className="app-mobile-close"
