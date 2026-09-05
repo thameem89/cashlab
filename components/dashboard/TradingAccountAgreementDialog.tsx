@@ -12,6 +12,7 @@ type AgreementDetails = {
   email: string;
   accountNumber: string;
   broker: string;
+  currency: string;
 };
 
 export function TradingAccountAgreementDialog({
@@ -116,7 +117,7 @@ export function TradingAccountAgreementDialog({
           </span>
           <span>Broker: {details.broker || "Unavailable"}</span>
           <span>Initial Capital: Unavailable</span>
-          <span>Currency: Unavailable</span>
+          <span>Currency: {details.currency || "Unavailable"}</span>
         </div>
         <div className="agreement-body">
           {agreement ? (

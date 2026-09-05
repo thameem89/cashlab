@@ -984,10 +984,14 @@ body {
 }
 .password-control {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .password-control input {
   padding-right: 48px;
+}
+.password-control input::placeholder {
+  font-size: 10px;
 }
 .password-control button {
   position: absolute;
@@ -1932,6 +1936,12 @@ body {
   .account-type-choices,
   .agreement-client-details {
     grid-template-columns: 1fr;
+  }
+  .connection-password-field .password-control input {
+    font-size: 16px;
+  }
+  .connection-password-field .password-control input::placeholder {
+    font-size: 14px;
   }
   .table-toolbar {
     align-items: stretch;

@@ -100,7 +100,7 @@ export function LandingPage() {
             </div>
             <div className="market-card market-card-main">
               <div className="market-card-top">
-                <span>Cash Lab AI Forex Trading Bot</span>
+                <span>Cash Lab AI Forex Trading EA</span>
                 <span className="live-dot">● LIVE FOREX</span>
               </div>
               <div className="market-stats">

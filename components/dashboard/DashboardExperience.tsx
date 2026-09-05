@@ -431,9 +431,9 @@ function DashboardHome({ state }: { state: AppState }) {
             <MiniEmpty
               icon={<WalletCards />}
               title="No trading accounts yet"
-              text="Add an MT4 or MT5 configuration to start the connection process."
+              text="Add your MT5 or MT5 trading account to start using Cash Lab EA."
               href="/dashboard/accounts"
-              action="Add account"
+              action="Connect Account"
             />
           )}
         </Panel>
@@ -730,7 +730,7 @@ function AccountsPage({
             EA.
           </p>
           <button className="app-button" onClick={() => setOpen(true)}>
-            <Plus /> Connect Account
+            <Plus /> Connect Trading Account
           </button>
         </div>
       )}
@@ -835,11 +835,13 @@ function AccountModal({
   const [accountType, setAccountType] = useState<"live" | "demo">(
     account?.account_type ?? "live",
   );
+  const [currency, setCurrency] = useState(account?.currency ?? "USC");
   const [showPassword, setShowPassword] = useState(false);
   const [agreementOpen, setAgreementOpen] = useState(false);
   const [agreementDetails, setAgreementDetails] = useState({
     accountNumber: "",
     broker: "",
+    currency: account?.currency ?? "USC",
   });
   const [agreementEffectiveDate, setAgreementEffectiveDate] = useState("");
   const [agreementAccepted, setAgreementAccepted] = useState(false);
@@ -856,6 +858,9 @@ function AccountModal({
       broker:
         (form?.elements.namedItem("broker_name") as HTMLInputElement | null)
           ?.value ?? "",
+      currency:
+        (form?.elements.namedItem("currency") as HTMLSelectElement | null)
+          ?.value ?? currency,
     });
     setAgreementEffectiveDate(
       new Intl.DateTimeFormat("en-GB", {
@@ -882,7 +887,7 @@ function AccountModal({
       account_number: String(form.get("account_number") ?? "").trim(),
       broker_server: String(form.get("broker_server") ?? "").trim(),
       account_type: accountType,
-      currency: account?.currency ?? state.profile?.preferred_currency ?? "USD",
+      currency: String(form.get("currency") ?? "").trim().toUpperCase(),
       connection_type: account?.connection_type ?? "trading_enabled",
     };
     const passwordInput = event.currentTarget.elements.namedItem(
@@ -904,6 +909,7 @@ function AccountModal({
           p_broker_name: payload.broker_name,
           p_broker_server: payload.broker_server,
           p_account_type: payload.account_type,
+          p_currency: payload.currency,
           p_agreement_version: TRADING_AGREEMENT_VERSION,
           p_document_hash: TRADING_AGREEMENT_HASH,
           p_client_full_name: state.profile?.full_name ?? "",
@@ -1014,7 +1020,23 @@ function AccountModal({
                 ))}
               </div>
             </fieldset>
-            <label className="app-field password-field">
+            <label className="app-field">
+              <span>Currency</span>
+              <select
+                name="currency"
+                value={currency}
+                onChange={(event) => setCurrency(event.target.value)}
+                required
+              >
+                <option value="USC">USC — United States Cent</option>
+                <option value="USD">USD — United States Dollar</option>
+                {account?.currency &&
+                  !["USC", "USD"].includes(account.currency) && (
+                    <option value={account.currency}>{account.currency}</option>
+                  )}
+              </select>
+            </label>
+            <label className="app-field connection-password-field">
               <span>Master Password</span>
               <span className="password-control">
                 <input
@@ -1044,8 +1066,9 @@ function AccountModal({
             <div>
               <strong>Important</strong>
               <span>
-                For accounts with capital below $20,000 USD, a Cent Account with
-                low spreads is required to ensure proper EA performance
+                For accounts with capital below $20,000 USD, a USC (United
+                States Cent) Account with low spreads is required to ensure
+                proper EA performance.
               </span>
             </div>
           </div>
@@ -1110,6 +1133,7 @@ function AccountModal({
               email: state.email,
               accountNumber: agreementDetails.accountNumber,
               broker: agreementDetails.broker,
+              currency: agreementDetails.currency,
             }}
             onCancel={() => setAgreementOpen(false)}
             onAgree={() => {
@@ -1827,6 +1851,7 @@ function AdminAccounts() {
           "Account",
           "Server",
           "Type",
+          "Currency",
           "Status",
           "Added",
           "Action",
@@ -1852,6 +1877,7 @@ function AdminAccounts() {
             <td>••••{account.account_number.slice(-4)}</td>
             <td>{account.broker_server}</td>
             <td>{titleCase(account.account_type)}</td>
+            <td>{account.currency}</td>
             <td>
               <StatusBadge status={account.connection_status} />
             </td>
