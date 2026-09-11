@@ -2079,6 +2079,17 @@ h4 {
 .text-link:hover {
   color: var(--text);
 }
+@media (min-width: 981px) {
+  .header-inner {
+    position: relative;
+  }
+  .desktop-nav {
+    position: absolute;
+    left: 50%;
+    margin-left: 0;
+    transform: translateX(-50%);
+  }
+}
 .header-actions {
   display: flex;
   align-items: center;
