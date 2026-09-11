@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   Activity as ActivityIcon,
+  ArrowDownToLine,
+  ArrowUpFromLine,
   AlertCircle,
   AlertTriangle,
   ArrowRight,
@@ -16,6 +18,8 @@ import {
   ChevronRight,
   CircleDollarSign,
   ClipboardList,
+  Copy,
+  CreditCard,
   Gauge,
   Headphones,
   Eye,
@@ -25,6 +29,8 @@ import {
   Menu,
   Plus,
   Search,
+  Send,
+  Sparkles,
   Settings,
   ShieldCheck,
   Star,
@@ -53,8 +59,14 @@ import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import type {
   Activity,
   CashLabNotification,
+  CustomerPlan,
+  FinancialRequest,
+  PerformancePoint,
   Profile,
+  Promotion,
+  ReferralProfile,
   TradingAccount,
+  TradingAccountMetric,
 } from "@/lib/supabase/types";
 
 type AppState = {
@@ -65,12 +77,21 @@ type AppState = {
   accounts: TradingAccount[];
   activities: Activity[];
   notifications: CashLabNotification[];
+  metrics: TradingAccountMetric[];
+  performance: PerformancePoint[];
+  financialRequests: FinancialRequest[];
+  promotions: Promotion[];
+  referral: ReferralProfile | null;
+  plan: CustomerPlan | null;
 };
 
 const clientNav = [
   ["Dashboard", "/dashboard", LayoutDashboard],
   ["Trading Accounts", "/dashboard/accounts", WalletCards],
   ["AI Trading", "/dashboard/ai", TrendingUp],
+  ["AI Agent", "/dashboard/agent", Bot],
+  ["Promotions", "/dashboard/promotions", Sparkles],
+  ["Refer & Earn", "/dashboard/referrals", Users],
   ["AI Research", "/dashboard/research", Bot],
   ["Markets", "/dashboard/markets", BarChart3],
   ["Watchlist", "/dashboard/watchlist", Star],
@@ -142,6 +163,14 @@ export function DashboardExperience() {
         .map((result) => result.error)
         .find(Boolean);
       if (firstError) throw firstError;
+      const [metricResult, performanceResult, financialResult, promotionResult, referralResult, planResult] = await Promise.all([
+        supabase.from("trading_account_metrics").select("*"),
+        supabase.from("account_performance_points").select("*").order("recorded_at", { ascending: true }).limit(500),
+        supabase.from("financial_requests").select("*").order("created_at", { ascending: false }).limit(20),
+        supabase.from("promotions").select("*").order("created_at", { ascending: false }),
+        supabase.from("referral_profiles").select("*").eq("user_id", user.id).maybeSingle(),
+        supabase.from("customer_plans").select("*").eq("user_id", user.id).maybeSingle(),
+      ]);
       setState({
         userId: user.id,
         email: user.email ?? "",
@@ -150,6 +179,12 @@ export function DashboardExperience() {
         accounts: (accountResult.data ?? []) as TradingAccount[],
         activities: (activityResult.data ?? []) as Activity[],
         notifications: (notificationResult.data ?? []) as CashLabNotification[],
+        metrics: (metricResult.data ?? []) as TradingAccountMetric[],
+        performance: (performanceResult.data ?? []) as PerformancePoint[],
+        financialRequests: (financialResult.data ?? []) as FinancialRequest[],
+        promotions: (promotionResult.data ?? []) as Promotion[],
+        referral: (referralResult.data as ReferralProfile | null) ?? null,
+        plan: (planResult.data as CustomerPlan | null) ?? null,
       });
     } catch {
       setLoadError(
@@ -222,6 +257,11 @@ export function DashboardExperience() {
           />
           {!isAdminArea && (
             <NavGroup label="Account" items={accountNav} pathname={pathname} />
+          )}
+          {!isAdminArea && (
+            <Link className="app-upgrade" href="/dashboard/subscription">
+              <Sparkles /> {state.plan?.plan === "pro" && state.plan.status === "active" ? "Pro plan active" : "Upgrade to Pro"}
+            </Link>
           )}
           {!isAdminArea && state.admin && (
             <div className="app-nav-admin">
@@ -328,13 +368,18 @@ function renderPage(
   setState: (state: AppState) => void,
   reload: () => Promise<void>,
 ) {
-  if (pathname === "/dashboard") return <DashboardHome state={state} />;
+  if (pathname === "/dashboard") return <DashboardHome state={state} setState={setState} />;
   if (pathname === "/dashboard/accounts")
     return <AccountsPage state={state} setState={setState} />;
   if (pathname === "/dashboard/profile")
     return <ProfilePage state={state} setState={setState} />;
   if (pathname === "/dashboard/settings")
     return <SettingsPage state={state} setState={setState} />;
+  if (pathname === "/dashboard/ai") return <AITradingPage state={state} />;
+  if (pathname === "/dashboard/agent") return <AIAgentPage state={state} />;
+  if (pathname === "/dashboard/promotions") return <PromotionsPage state={state} />;
+  if (pathname === "/dashboard/referrals") return <ReferralPage state={state} setState={setState} />;
+  if (pathname === "/dashboard/subscription") return <PaymentsPage state={state} />;
   if (pathname === "/admin") return <AdminOverview />;
   if (pathname === "/admin/users") return <AdminUsers />;
   if (pathname.startsWith("/admin/users/"))
@@ -350,7 +395,12 @@ function renderPage(
   return <ComingSoonPage pathname={pathname} />;
 }
 
-function DashboardHome({ state }: { state: AppState }) {
+function DashboardHome({ state, setState }: { state: AppState; setState: (state: AppState) => void }) {
+  const [selectedId, setSelectedId] = useState(state.accounts[0]?.id ?? "");
+  const [moneyAction, setMoneyAction] = useState<"deposit" | "withdrawal" | null>(null);
+  const account = state.accounts.find((item) => item.id === selectedId) ?? state.accounts[0];
+  const metric = state.metrics.find((item) => item.trading_account_id === account?.id);
+  const points = state.performance.filter((item) => item.trading_account_id === account?.id);
   const name =
     state.profile?.full_name?.split(" ")[0] || state.email.split("@")[0];
   const hour = new Date().getHours();
@@ -370,6 +420,7 @@ function DashboardHome({ state }: { state: AppState }) {
           hasAccounts={state.accounts.length > 0}
         />
       )}
+      {account && <AccountWorkspace account={account} metric={metric} selectedId={account.id} accounts={state.accounts} onSelect={setSelectedId} onAction={setMoneyAction} />}
       <section className="metric-grid" aria-label="Account summary">
         <MetricCard
           label="Connected accounts"
@@ -382,21 +433,21 @@ function DashboardHome({ state }: { state: AppState }) {
         />
         <MetricCard
           label="Total balance"
-          value="Not synced"
+          value={money(metric?.balance, metric?.currency)}
           note="MetaTrader integration required"
           icon={<CircleDollarSign />}
           muted
         />
         <MetricCard
           label="Total equity"
-          value="Not synced"
+          value={money(metric?.equity, metric?.currency)}
           note="Connect trading data"
           icon={<TrendingUp />}
           muted
         />
         <MetricCard
           label="Today’s P/L"
-          value="Not synced"
+          value={money(metric?.daily_pl, metric?.currency)}
           note="No fabricated performance"
           icon={<ActivityIcon />}
           muted
@@ -411,10 +462,11 @@ function DashboardHome({ state }: { state: AppState }) {
             </span>
           }
         >
-          <MarketEmpty />
+          <PerformanceChart points={points} />
         </Panel>
-        <AIResearchPanel />
+        <TradingAgentPanel />
       </section>
+      {moneyAction && account && <MoneyRequestModal type={moneyAction} account={account} state={state} setState={setState} onClose={() => setMoneyAction(null)} />}
       <section className="dashboard-split lower">
         <Panel
           title="Trading Accounts"
@@ -430,7 +482,7 @@ function DashboardHome({ state }: { state: AppState }) {
             <MiniEmpty
               icon={<WalletCards />}
               title="No trading accounts yet"
-              text="Add your MT5 or MT5 trading account to start using Cash Lab EA."
+              text="Add your MT4 or MT5 trading account to start using Cash Lab EA."
               href="/dashboard/accounts"
               action="Connect Account"
             />
@@ -443,6 +495,65 @@ function DashboardHome({ state }: { state: AppState }) {
     </>
   );
 }
+
+function AccountWorkspace({ account, metric, accounts, selectedId, onSelect, onAction }: {
+  account: TradingAccount; metric?: TradingAccountMetric; accounts: TradingAccount[]; selectedId: string;
+  onSelect: (id: string) => void; onAction: (type: "deposit" | "withdrawal") => void;
+}) {
+  return <section className="account-workspace">
+    <div>
+      <span className="section-kicker">Selected trading account</span>
+      <select value={selectedId} onChange={(event) => onSelect(event.target.value)} aria-label="Selected trading account">
+        {accounts.map((item) => <option value={item.id} key={item.id}>{item.account_label} · {item.platform} · ••••{item.account_number.slice(-4)}</option>)}
+      </select>
+      <small>{account.broker_name} · {account.broker_server}</small>
+    </div>
+    <div className="account-workspace-status"><StatusBadge status={account.connection_status} /><span>{metric?.synced_at ? `Synced ${formatDate(metric.synced_at, true)}` : "Awaiting approved data connection"}</span></div>
+    <div className="account-workspace-actions">
+      <button className="app-button secondary" onClick={() => onAction("deposit")}><ArrowDownToLine /> Deposit</button>
+      <button className="app-button secondary" onClick={() => onAction("withdrawal")}><ArrowUpFromLine /> Withdraw</button>
+    </div>
+  </section>;
+}
+
+function PerformanceChart({ points }: { points: PerformancePoint[] }) {
+  if (points.length < 2) return <div className="performance-empty"><BarChart3 /><strong>Performance history is not available yet</strong><span>The chart will populate after an approved account connector begins recording account data.</span></div>;
+  const values = points.map((point) => Number(point.equity ?? point.balance ?? 0));
+  const min = Math.min(...values); const max = Math.max(...values); const range = max - min || 1;
+  const path = values.map((value, index) => `${index ? "L" : "M"} ${(index / (values.length - 1)) * 600} ${170 - ((value - min) / range) * 145}`).join(" ");
+  return <div className="performance-chart"><svg viewBox="0 0 600 190" role="img" aria-label="Account performance history"><path d={path} fill="none" stroke="currentColor" strokeWidth="3" vectorEffect="non-scaling-stroke" /></svg><div><span>{formatDate(points[0].recorded_at)}</span><span>{formatDate(points.at(-1)!.recorded_at)}</span></div></div>;
+}
+
+function TradingAgentPanel() {
+  return <Panel title="Trading Agent" action={<span className="status-pill neutral">Backend required</span>}>
+    <p className="panel-subtitle">Ask about the selected account and its recorded performance.</p>
+    <div className="ai-quick-actions">{["Review my performance", "Explain today’s P/L", "Summarize account risk", "What changed recently?"].map((label) => <button key={label} disabled>{label}</button>)}</div>
+    <div className="ai-input"><Bot /><span>Ask Cash Lab AI about this account</span><button disabled aria-label="Send question"><Send /></button></div>
+    <small className="integration-note"><AlertCircle />AI answers remain disabled until a verified AI service is connected.</small>
+  </Panel>;
+}
+
+function MoneyRequestModal({ type, account, state, setState, onClose }: { type: "deposit" | "withdrawal"; account: TradingAccount; state: AppState; setState: (state: AppState) => void; onClose: () => void }) {
+  const [amount, setAmount] = useState(""); const [error, setError] = useState(""); const [saving, setSaving] = useState(false);
+  async function submit(event: FormEvent) { event.preventDefault(); setError(""); const numeric = Number(amount); if (!Number.isFinite(numeric) || numeric <= 0) return setError("Enter a valid amount greater than zero."); setSaving(true);
+    const { data, error: insertError } = await getSupabaseBrowserClient().from("financial_requests").insert({ user_id: state.userId, trading_account_id: account.id, request_type: type, amount: numeric, currency: account.currency, method: "manual_review" }).select("*").single();
+    setSaving(false); if (insertError) return setError("This request could not be submitted. The payment workflow may not be enabled yet.");
+    setState({ ...state, financialRequests: [data as FinancialRequest, ...state.financialRequests] }); onClose();
+  }
+  return <div className="app-modal" role="dialog" aria-modal="true" aria-label={`${type} request`}><div className="app-modal-card compact-modal"><header><div><span className="section-kicker">Manual review</span><h2>{type === "deposit" ? "Deposit request" : "Withdrawal request"}</h2><p>{account.account_label} · {account.currency}</p></div><button onClick={onClose} aria-label="Close"><X /></button></header><form onSubmit={submit}><label className="app-field"><span>Amount ({account.currency})</span><input inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0.00" /></label><Notice>No account balance is changed here. Cash Lab will review this request before any external payment action.</Notice>{error && <InlineMessage>{error}</InlineMessage>}<div className="form-actions"><button type="button" className="app-button secondary" onClick={onClose}>Cancel</button><button className="app-button" disabled={saving}>{saving ? "Submitting…" : "Submit request"}</button></div></form></div></div>;
+}
+
+function AITradingPage({ state }: { state: AppState }) { const account = state.accounts[0]; const metric = state.metrics.find((item) => item.trading_account_id === account?.id); return <><PageIntro eyebrow="Trading automation" title="AI Trading" text="Account-aware controls for the Cash Lab EA." />{account ? <div className="feature-grid"><Panel title={account.account_label}><div className="detail-list"><span>Platform<strong>{account.platform}</strong></span><span>Connection<strong><StatusBadge status={account.connection_status} /></strong></span><span>Balance<strong>{money(metric?.balance, metric?.currency)}</strong></span><span>Last sync<strong>{metric?.synced_at ? formatDate(metric.synced_at, true) : "Not synced"}</strong></span></div></Panel><Panel title="EA controls"><div className="performance-empty"><ShieldCheck /><strong>Execution controls are not enabled</strong><span>An approved MetaTrader execution service is required before settings or live trades can be sent.</span></div></Panel></div> : <MiniEmpty icon={<WalletCards />} title="Connect a trading account first" text="AI Trading requires an MT4 or MT5 account configuration." href="/dashboard/accounts" action="Connect Trading Account" />}</>; }
+
+function AIAgentPage({ state }: { state: AppState }) { const account = state.accounts[0]; return <><PageIntro eyebrow="Account intelligence" title="AI Agent" text={account ? `Selected context: ${account.account_label}` : "Connect an account to provide secure account context."} /><div className="agent-page"><TradingAgentPanel /></div></>; }
+
+function PromotionsPage({ state }: { state: AppState }) { return <><PageIntro eyebrow="Cash Lab offers" title="Promotions" text="Eligible offers published by Cash Lab appear here." />{state.promotions.length ? <div className="feature-grid">{state.promotions.map((promo) => <Panel key={promo.id} title={promo.title}><p className="panel-subtitle">{promo.description}</p>{promo.ends_at && <small>Available until {formatDate(promo.ends_at)}</small>}</Panel>)}</div> : <div className="large-empty"><Sparkles /><h2>No active promotions</h2><p>There are no eligible offers on your account right now.</p></div>}</>; }
+
+function ReferralPage({ state, setState }: { state: AppState; setState: (state: AppState) => void }) { const [message, setMessage] = useState(""); async function create() { const { data, error } = await getSupabaseBrowserClient().rpc("get_or_create_referral_profile"); if (error || !data) return setMessage("Referral access is not enabled yet."); setState({ ...state, referral: data as ReferralProfile }); } const referral = state.referral; const origin = typeof window === "undefined" ? "https://www.cashlab.tech" : window.location.origin; const link = referral ? `${origin}/auth?tab=register&ref=${referral.referral_code}` : ""; return <><PageIntro eyebrow="Referral rewards" title="Refer & Earn" text="Share your personal Cash Lab invitation link and track verified referrals." />{referral ? <div className="feature-grid"><Panel title="Your referral link"><div className="referral-link"><code>{link}</code><button className="app-button secondary" onClick={() => { void navigator.clipboard.writeText(link); setMessage("Referral link copied."); }}><Copy /> Copy</button></div>{message && <InlineMessage>{message}</InlineMessage>}</Panel><Panel title="Referral summary"><div className="detail-list"><span>Code<strong>{referral.referral_code}</strong></span><span>Successful referrals<strong>{referral.successful_referrals}</strong></span><span>Recorded rewards<strong>{money(referral.reward_amount, referral.reward_currency)}</strong></span></div></Panel></div> : <div className="large-empty"><Users /><h2>Create your referral link</h2><p>Your user-scoped code will be stored securely in your Cash Lab account.</p><button className="app-button" onClick={() => void create()}>Create referral link</button>{message && <InlineMessage>{message}</InlineMessage>}</div>}</>; }
+
+function PaymentsPage({ state }: { state: AppState }) { const pro = state.plan?.plan === "pro" && state.plan.status === "active"; return <><PageIntro eyebrow="Account billing" title="Payments" text="Review funding requests and your Cash Lab plan status." /><div className="feature-grid"><Panel title="Plan"><div className="detail-list"><span>Current plan<strong>{pro ? "Pro" : "Standard"}</strong></span><span>Status<strong>{state.plan?.status ?? "Not connected"}</strong></span></div>{!pro && <Notice>Online plan upgrades require an approved payment provider. No charge can be made from this page yet.</Notice>}</Panel><Panel title="Funding requests">{state.financialRequests.length ? <div className="request-list">{state.financialRequests.map((item) => <div key={item.id}><span>{item.request_type === "deposit" ? <ArrowDownToLine /> : <ArrowUpFromLine />}</span><div><strong>{item.request_type === "deposit" ? "Deposit" : "Withdrawal"} · {money(item.amount, item.currency)}</strong><small>{formatDate(item.created_at, true)}</small></div><StatusBadge status={item.status} /></div>)}</div> : <MiniEmpty icon={<CreditCard />} title="No payment requests" text="Deposit and withdrawal requests submitted from the dashboard will appear here." />}</Panel></div></>; }
+
+function money(value?: number | null, currency = "USD") { if (value === null || value === undefined) return "Not synced"; return new Intl.NumberFormat("en-US", { style: "currency", currency: currency === "USC" ? "USD" : currency, maximumFractionDigits: 2 }).format(Number(value)) + (currency === "USC" ? " USC" : ""); }
 
 function Onboarding({
   incomplete,
@@ -2301,7 +2412,7 @@ function Avatar({
 function StatusBadge({
   status,
 }: {
-  status: TradingAccount["connection_status"];
+  status: string;
 }) {
   return (
     <span className={`status-pill ${status}`}>

@@ -31,6 +31,43 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Integrated authenticated workspace */
+.app-upgrade { display:flex; align-items:center; gap:10px; margin:4px 0 20px; padding:12px; border:1px solid rgba(138,92,246,.35); border-radius:10px; color:#d8c8ff; background:linear-gradient(135deg,rgba(76,49,141,.28),rgba(54,209,87,.08)); font-size:13px; font-weight:750; }
+.app-upgrade svg { width:17px; }
+.account-workspace { display:grid; grid-template-columns:minmax(260px,1fr) auto auto; gap:22px; align-items:center; margin-bottom:18px; padding:20px; border:1px solid var(--app-border); border-radius:16px; background:linear-gradient(120deg,rgba(59,38,111,.25),var(--app-card)); }
+.account-workspace select { display:block; width:100%; margin:7px 0; padding:10px 12px; border:1px solid var(--app-border); border-radius:9px; color:inherit; background:var(--app-card-soft); font:inherit; font-weight:700; }
+.account-workspace small,.account-workspace-status span { color:var(--app-muted); font-size:11px; }
+.account-workspace-status { display:grid; justify-items:end; gap:6px; }
+.account-workspace-actions { display:flex; gap:8px; }
+.account-workspace-actions .app-button { min-height:39px; }
+.performance-empty { min-height:230px; display:grid; place-content:center; justify-items:center; gap:10px; padding:30px; text-align:center; color:var(--app-muted); }
+.performance-empty svg { width:34px; color:#42dc63; }
+.performance-empty strong { color:inherit; font-size:15px; }
+.performance-empty span { max-width:440px; font-size:12px; line-height:1.6; }
+.performance-chart { padding:18px 4px 0; color:#5be879; }
+.performance-chart svg { display:block; width:100%; min-height:240px; }
+.performance-chart>div { display:flex; justify-content:space-between; color:var(--app-muted); font-size:10px; }
+.feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.agent-page { max-width:900px; }
+.detail-list { display:grid; gap:2px; }
+.detail-list>span { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:13px 0; border-bottom:1px solid var(--app-border); color:var(--app-muted); font-size:12px; }
+.detail-list>span:last-child { border-bottom:0; }
+.referral-link { display:flex; gap:10px; align-items:center; }
+.referral-link code { min-width:0; flex:1; overflow:hidden; text-overflow:ellipsis; padding:13px; border:1px solid var(--app-border); border-radius:9px; color:#63e77c; background:var(--app-card-soft); }
+.request-list { display:grid; }
+.request-list>div { display:grid; grid-template-columns:34px minmax(0,1fr) auto; gap:10px; align-items:center; padding:12px 0; border-bottom:1px solid var(--app-border); }
+.request-list svg { width:17px; color:#52df6d; }
+.request-list strong,.request-list small { display:block; }
+.request-list strong { font-size:12px; }
+.request-list small { margin-top:3px; color:var(--app-muted); font-size:10px; }
+.compact-modal { width:min(520px,calc(100vw - 28px)); }
+@media (max-width: 800px) {
+  .account-workspace,.feature-grid { grid-template-columns:1fr; }
+  .account-workspace-status { justify-items:start; }
+  .account-workspace-actions { display:grid; grid-template-columns:1fr 1fr; }
+  .referral-link { align-items:stretch; flex-direction:column; }
+}
+
 /* Authenticated Cash Lab application */
 .app-frame {
   --app-bg: #070a0d;
@@ -1290,6 +1327,11 @@ body {
   height: 38px;
   display: grid;
   place-items: center;
+  align-self: center;
+  justify-self: center;
+  padding: 0;
+  text-align: center;
+  line-height: 1;
   overflow: hidden;
   border: 1px solid rgba(83, 225, 108, 0.25);
   border-radius: 10px;

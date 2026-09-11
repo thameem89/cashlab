@@ -62,3 +62,53 @@ export type CashLabNotification = {
   read_at: string | null;
   created_at: string;
 };
+
+export type TradingAccountMetric = {
+  trading_account_id: string;
+  balance: number | null;
+  equity: number | null;
+  floating_pl: number | null;
+  daily_pl: number | null;
+  currency: string;
+  synced_at: string | null;
+};
+
+export type PerformancePoint = {
+  id: string;
+  trading_account_id: string;
+  balance: number | null;
+  equity: number | null;
+  recorded_at: string;
+};
+
+export type FinancialRequest = {
+  id: string;
+  trading_account_id: string;
+  request_type: "deposit" | "withdrawal";
+  amount: number;
+  currency: string;
+  status: "pending" | "approved" | "rejected" | "completed" | "cancelled";
+  created_at: string;
+};
+
+export type Promotion = {
+  id: string;
+  title: string;
+  description: string;
+  starts_at: string | null;
+  ends_at: string | null;
+};
+
+export type ReferralProfile = {
+  user_id: string;
+  referral_code: string;
+  successful_referrals: number;
+  reward_amount: number;
+  reward_currency: string;
+};
+
+export type CustomerPlan = {
+  user_id: string;
+  plan: "standard" | "pro";
+  status: "inactive" | "active" | "past_due" | "cancelled";
+};
