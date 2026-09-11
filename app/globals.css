@@ -2089,6 +2089,9 @@ h4 {
     margin-left: 0;
     transform: translateX(-50%);
   }
+  .header-actions {
+    margin-left: auto;
+  }
 }
 .header-actions {
   display: flex;
