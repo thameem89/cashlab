@@ -1337,12 +1337,15 @@ body {
   border-radius: 10px;
   color: #56e371;
   background: rgba(50, 210, 80, 0.09);
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
 }
 .app-avatar.small {
   width: 34px;
   height: 34px;
+  font-size: 16px;
 }
 .app-avatar.large {
   width: 82px;
