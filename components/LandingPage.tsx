@@ -26,7 +26,7 @@ import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
 const featureIcons = [BrainCircuit, ShieldCheck, SlidersHorizontal, Users];
-const stepIcons = [Link2, Bot, ArrowUpRight];
+const stepIcons = [Link2, Bot, TrendingUp];
 const scoreFactors = [
   { label: "Economic News Events", icon: Newspaper, tone: "neutral" },
   { label: "Market Volatility", icon: BarChart3, tone: "blue" },
