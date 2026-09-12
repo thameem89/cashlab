@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, LayoutDashboard, LogOut, Menu, UserRound, X } from "lucide-react";
+import { LayoutDashboard, LogOut, Menu, UserRound, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
@@ -17,7 +17,7 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [authLoading, setAuthLoading] = useState(true);
-  const [user, setUser] = useState<{ id: string; email: string; name: string } | null>(null);
+  const [user, setUser] = useState<{ id: string; email: string; name: string; avatarPath: string | null } | null>(null);
 
   useEffect(() => {
     const supabase = getSupabaseBrowserClient();
@@ -26,9 +26,9 @@ export function SiteHeader() {
       const { data } = await supabase.auth.getUser();
       if (!mounted) return;
       if (data.user) {
-        const { data: profile } = await supabase.from("profiles").select("full_name,email").eq("id", data.user.id).maybeSingle();
+        const { data: profile } = await supabase.from("profiles").select("full_name,email,avatar_url").eq("id", data.user.id).maybeSingle();
         const name = profile?.full_name?.trim() || data.user.email?.split("@")[0] || "";
-        setUser({ id: data.user.id, email: profile?.email || data.user.email || "", name });
+        setUser({ id: data.user.id, email: profile?.email || data.user.email || "", name, avatarPath: profile?.avatar_url ?? null });
       } else setUser(null);
       setAuthLoading(false);
     }
@@ -46,7 +46,6 @@ export function SiteHeader() {
     setOpen(false);
   }
 
-  const initial = user?.name.trim().charAt(0).toUpperCase() || "C";
 
   return (
     <header className="site-header">
@@ -74,7 +73,7 @@ export function SiteHeader() {
             <Link className="text-link" href="/auth?tab=login">Login</Link>
           </>}
           {!authLoading && user && <details className="site-account">
-            <summary aria-label="Open account menu"><span className="site-account-avatar">{initial}</span><span className="site-account-name">{user.name || user.email}</span><ChevronDown size={15} /></summary>
+            <summary aria-label="Open account menu"><HeaderAvatar user={user} /></summary>
             <div className="site-account-menu">
               <div className="site-account-identity"><strong>{user.name || "Cash Lab member"}</strong><small>{user.email}</small></div>
               <Link href="/dashboard"><LayoutDashboard /> Dashboard</Link>
@@ -113,4 +112,12 @@ export function SiteHeader() {
       </nav>
     </header>
   );
+}
+
+function HeaderAvatar({ user }: { user: { name: string; avatarPath: string | null } }) {
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    if (user.avatarPath) void getSupabaseBrowserClient().storage.from("avatars").createSignedUrl(user.avatarPath, 3600).then(({ data }) => setUrl(data?.signedUrl ?? ""));
+  }, [user.avatarPath]);
+  return <span className="site-account-avatar">{url ? <Image src={url} alt="" width={34} height={34} unoptimized /> : (user.name.trim().charAt(0).toUpperCase() || "C")}</span>;
 }
