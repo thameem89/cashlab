@@ -25,8 +25,10 @@ type AuthMessage = {
 
 export function AuthExperience({
   initialMode,
+  nextPath,
 }: {
   initialMode: "login" | "register";
+  nextPath?: string;
 }) {
   const [mode, setMode] = useState(initialMode);
   const [step, setStep] = useState<AuthStep>("details");
@@ -116,7 +118,7 @@ export function AuthExperience({
             ? "Your Cash Lab account has been verified and created."
             : "You are signed in successfully.",
       });
-      router.replace("/dashboard");
+      router.replace(nextPath ?? "/");
     } catch (error) {
       setMessage({ kind: "error", text: authErrorMessage(error, mode) });
     } finally {
@@ -291,8 +293,8 @@ export function AuthExperience({
                   <MailCheck size={26} />
                 </div>
                 {message && <p role="status">{message.text}</p>}
-                <Link className="button auth-submit" href="/dashboard">
-                  Continue to Dashboard
+                <Link className="button auth-submit" href={nextPath ?? "/"}>
+                  {nextPath ? "Continue" : "Continue to Cash Lab"}
                 </Link>
               </div>
             )}

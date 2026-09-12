@@ -9,10 +9,9 @@ export const metadata = pageMetadata(
 export default async function AuthPage({
   searchParams,
 }: {
-  searchParams: Promise<{ tab?: string }>;
+  searchParams: Promise<{ tab?: string; next?: string }>;
 }) {
-  const { tab } = await searchParams;
-  return (
-    <AuthExperience initialMode={tab === "login" ? "login" : "register"} />
-  );
+  const { tab, next } = await searchParams;
+  const safeNext = next?.startsWith("/") && !next.startsWith("//") ? next : undefined;
+  return <AuthExperience initialMode={tab === "login" ? "login" : "register"} nextPath={safeNext} />;
 }
