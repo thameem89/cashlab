@@ -32,8 +32,6 @@ body {
 }
 
 /* Integrated authenticated workspace */
-.app-upgrade { display:flex; align-items:center; gap:10px; margin:4px 0 20px; padding:12px; border:1px solid rgba(138,92,246,.35); border-radius:10px; color:#d8c8ff; background:linear-gradient(135deg,rgba(76,49,141,.28),rgba(54,209,87,.08)); font-size:13px; font-weight:750; }
-.app-upgrade svg { width:17px; }
 .account-workspace { display:grid; grid-template-columns:minmax(260px,1fr) auto auto; gap:22px; align-items:center; margin-bottom:18px; padding:20px; border:1px solid var(--app-border); border-radius:16px; background:linear-gradient(120deg,rgba(59,38,111,.25),var(--app-card)); }
 .account-workspace select { display:block; width:100%; margin:7px 0; padding:10px 12px; border:1px solid var(--app-border); border-radius:9px; color:inherit; background:var(--app-card-soft); font:inherit; font-weight:700; }
 .account-workspace small,.account-workspace-status span { color:var(--app-muted); font-size:11px; }

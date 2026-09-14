@@ -258,11 +258,6 @@ export function DashboardExperience() {
           {!isAdminArea && (
             <NavGroup label="Account" items={accountNav} pathname={pathname} />
           )}
-          {!isAdminArea && (
-            <Link className="app-upgrade" href="/dashboard/subscription">
-              <Sparkles /> {state.plan?.plan === "pro" && state.plan.status === "active" ? "Pro plan active" : "Upgrade to Pro"}
-            </Link>
-          )}
           {!isAdminArea && state.admin && (
             <div className="app-nav-admin">
               <Link href="/admin">
