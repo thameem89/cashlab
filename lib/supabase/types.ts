@@ -21,6 +21,7 @@ export type Profile = {
   account_notifications: boolean;
   market_alerts: boolean;
   account_status: "active" | "disabled";
+  last_seen_at: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -111,4 +112,44 @@ export type CustomerPlan = {
   user_id: string;
   plan: "standard" | "pro";
   status: "inactive" | "active" | "past_due" | "cancelled";
+};
+
+export type ProfitShareRate = {
+  user_id: string;
+  rate: number;
+  updated_by: string | null;
+  updated_at: string;
+};
+
+export type AccountProfitShareOverride = {
+  trading_account_id: string;
+  rate: number;
+  updated_by: string | null;
+  updated_at: string;
+};
+
+export type CommissionRecord = {
+  id: string;
+  user_id: string;
+  trading_account_id: string;
+  period_start: string;
+  period_end: string;
+  opening_value: number | null;
+  closing_value: number | null;
+  deposits: number;
+  withdrawals: number;
+  gross_trading_profit: number;
+  eligible_profit: number;
+  profit_share_rate: number;
+  commission_amount: number;
+  approved_amount: number | null;
+  currency: string;
+  status: "calculated" | "pending" | "approved" | "paid" | "cancelled" | "adjusted";
+  adjustment_reason: string | null;
+  created_by: string | null;
+  approved_by: string | null;
+  paid_at: string | null;
+  calculated_at: string;
+  created_at: string;
+  notes: string | null;
 };

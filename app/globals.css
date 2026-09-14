@@ -1477,6 +1477,35 @@ body {
 .table-toolbar select {
   width: 180px;
 }
+.admin-rate-banner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid var(--app-border);
+  border-radius: 14px;
+  background: var(--app-card-soft);
+}
+.admin-rate-banner > div { display: grid; gap: 5px; }
+.admin-rate-banner strong { font-size: 34px; color: var(--app-accent); }
+.admin-rate-banner small { color: var(--app-muted); }
+.admin-rate-banner .app-field { width: 180px; }
+.inline-rate { display: inline-flex; align-items: center; gap: 4px; color: var(--app-accent); font-weight: 700; }
+.inline-rate input { width: 72px; padding: 7px 8px; }
+.admin-calculator, .admin-settings-panel { margin-top: 20px; }
+.admin-calculator h2 { margin: 5px 0; }
+.admin-calculator p { color: var(--app-muted); }
+.calculation-result { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+.calculation-result span { display: grid; gap: 5px; padding: 14px; border: 1px solid var(--app-border); border-radius: 10px; color: var(--app-muted); }
+.calculation-result strong { color: var(--app-text); font-size: 20px; }
+.admin-login-card { max-width: 520px; margin: auto; padding: 34px; border: 1px solid var(--app-border); border-radius: 18px; background: var(--app-card); }
+.admin-login-card .auth-brand { display: inline-flex; margin-bottom: 28px; }
+.admin-login-card .auth-heading { margin-bottom: 22px; }
+.admin-login-card .auth-heading .section-kicker { display: inline-flex; align-items: center; gap: 6px; }
+.admin-login-card .auth-heading svg { width: 15px; }
+.auth-switch { display: block; margin-top: 16px; text-align: center; color: var(--app-accent); }
 .data-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--app-border);
@@ -1916,6 +1945,10 @@ body {
   }
 }
 @media (max-width: 640px) {
+  .admin-rate-banner { align-items: stretch; flex-direction: column; gap: 14px; }
+  .admin-rate-banner .app-field { width: 100%; }
+  .calculation-result { grid-template-columns: 1fr; }
+  .admin-login-card { padding: 24px; }
   .app-content {
     padding: 24px 14px 50px;
   }

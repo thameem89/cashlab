@@ -60,6 +60,7 @@ import type {
   Activity,
   CashLabNotification,
   CustomerPlan,
+  CommissionRecord,
   FinancialRequest,
   PerformancePoint,
   Profile,
@@ -108,6 +109,9 @@ const adminNav = [
   ["Overview", "/admin", Gauge],
   ["Users", "/admin/users", Users],
   ["Trading Accounts", "/admin/accounts", BriefcaseBusiness],
+  ["Profit Share", "/admin/profit-share", CircleDollarSign],
+  ["Commissions", "/admin/commissions", ClipboardList],
+  ["Analytics", "/admin/analytics", BarChart3],
   ["Settings", "/admin/settings", Settings],
 ] as const;
 
@@ -127,7 +131,7 @@ export function DashboardExperience() {
       const { data: authData, error: authError } =
         await supabase.auth.getUser();
       if (authError || !authData.user) {
-        router.replace(`/auth?tab=login&next=${encodeURIComponent(pathname)}`);
+        router.replace(pathname.startsWith("/admin") ? "/admin/login" : `/auth?tab=login&next=${encodeURIComponent(pathname)}`);
         return;
       }
       const user = authData.user;
@@ -136,6 +140,8 @@ export function DashboardExperience() {
         router.replace("/dashboard?notice=admin-denied");
         return;
       }
+      // Keep a truthful, authenticated activity timestamp for admin reporting.
+      await supabase.from("profiles").update({ last_seen_at: new Date().toISOString() }).eq("id", user.id);
       const [profileResult, accountResult, activityResult, notificationResult] =
         await Promise.all([
           supabase.from("profiles").select("*").eq("id", user.id).maybeSingle(),
@@ -380,6 +386,10 @@ function renderPage(
   if (pathname.startsWith("/admin/users/"))
     return <AdminUserDetail id={pathname.split("/").pop() ?? ""} />;
   if (pathname === "/admin/accounts") return <AdminAccounts />;
+  if (pathname === "/admin/profit-share") return <AdminProfitShare />;
+  if (pathname === "/admin/commissions") return <AdminCommissions />;
+  if (pathname === "/admin/analytics") return <AdminAnalytics />;
+  if (pathname === "/admin/settings") return <AdminSettings />;
   if (pathname.startsWith("/admin/accounts/"))
     return (
       <AdminAccountDetail
@@ -1681,12 +1691,17 @@ function AdminOverview() {
     mt5: 0,
     pending: 0,
     recent: 0,
+    active: 0,
+    connected: 0,
+    balance: 0,
+    commissions: 0,
+    paid: 0,
   });
   useEffect(() => {
     void (async () => {
       const sb = getSupabaseBrowserClient();
       const week = new Date(Date.now() - 7 * 86400000).toISOString();
-      const [users, accounts, mt4, mt5, pending, recent] = await Promise.all([
+      const [users, accounts, mt4, mt5, pending, recent, active, connected, metrics, commissions, paid] = await Promise.all([
         sb.from("profiles").select("id", { count: "exact", head: true }),
         sb
           .from("trading_accounts")
@@ -1707,6 +1722,11 @@ function AdminOverview() {
           .from("profiles")
           .select("id", { count: "exact", head: true })
           .gte("created_at", week),
+        sb.from("profiles").select("id", { count: "exact", head: true }).gte("last_seen_at", week),
+        sb.from("trading_accounts").select("id", { count: "exact", head: true }).eq("connection_status", "connected"),
+        sb.from("trading_account_metrics").select("balance,equity"),
+        sb.from("commission_records").select("commission_amount"),
+        sb.from("commission_records").select("commission_amount").eq("status", "paid"),
       ]);
       setStats({
         users: users.count ?? 0,
@@ -1715,6 +1735,11 @@ function AdminOverview() {
         mt5: mt5.count ?? 0,
         pending: pending.count ?? 0,
         recent: recent.count ?? 0,
+        active: active.count ?? 0,
+        connected: connected.count ?? 0,
+        balance: (metrics.data ?? []).reduce((sum, row) => sum + Number(row.equity ?? row.balance ?? 0), 0),
+        commissions: (commissions.data ?? []).reduce((sum, row) => sum + Number(row.commission_amount ?? 0), 0),
+        paid: (paid.data ?? []).reduce((sum, row) => sum + Number(row.commission_amount ?? 0), 0),
       });
     })();
   }, []);
@@ -1732,6 +1757,10 @@ function AdminOverview() {
           note={`${stats.recent} new in the last 7 days`}
           icon={<Users />}
         />
+        <MetricCard label="Recently active" value={String(stats.active)} note="Seen in the last 7 days" icon={<ActivityIcon />} />
+        <MetricCard label="Connected accounts" value={String(stats.connected)} note={`${stats.pending} pending`} icon={<ShieldCheck />} />
+        <MetricCard label="Managed value" value={stats.balance ? money(stats.balance, "USD") : "Not synced"} note="Snapshot data only" icon={<CircleDollarSign />} muted />
+        <MetricCard label="Commission total" value={stats.commissions ? money(stats.commissions, "USD") : "Not recorded"} note={`${stats.paid ? money(stats.paid, "USD") : "None"} paid`} icon={<ClipboardList />} muted />
         <MetricCard
           label="Trading accounts"
           value={String(stats.accounts)}
@@ -1792,6 +1821,89 @@ function AdminOverview() {
       </section>
     </>
   );
+}
+
+function AdminProfitShare() {
+  const [rows, setRows] = useState<Array<Profile & { rate: number }>>([]);
+  const [defaultRate, setDefaultRate] = useState(30);
+  const [query, setQuery] = useState("");
+  const [message, setMessage] = useState("");
+  const [saving, setSaving] = useState("");
+  const load = useCallback(async () => {
+    const sb = getSupabaseBrowserClient();
+    const [{ data: profiles }, { data: rates }, { data: setting }] = await Promise.all([
+      sb.from("profiles").select("*").order("created_at", { ascending: false }),
+      sb.from("user_profit_share_rates").select("user_id,rate"),
+      sb.from("admin_settings").select("value_json").eq("key", "profit_share").maybeSingle(),
+    ]);
+    const configured = Number((setting?.value_json as { default_rate?: number } | null)?.default_rate ?? 30);
+    setDefaultRate(configured);
+    const byUser = new Map((rates ?? []).map((item) => [item.user_id, Number(item.rate)]));
+    setRows(((profiles ?? []) as Profile[]).map((profile) => ({ ...profile, rate: byUser.get(profile.id) ?? configured })));
+  }, []);
+  useEffect(() => { void load(); }, [load]);
+  async function saveRate(userId: string, rate: number) {
+    setSaving(userId); setMessage("");
+    const sb = getSupabaseBrowserClient();
+    const { data: auth } = await sb.auth.getUser();
+    const { error } = await sb.from("user_profit_share_rates").upsert({ user_id: userId, rate, updated_by: auth.user?.id });
+    if (!error) {
+      await sb.from("admin_audit_log").insert({ admin_user_id: auth.user?.id, action: "profit_share_rate_changed", target_user_id: userId, new_value: { rate } });
+      setMessage("Profit-share rate saved.");
+      setRows((items) => items.map((item) => item.id === userId ? { ...item, rate } : item));
+    } else setMessage("The rate could not be saved.");
+    setSaving("");
+  }
+  async function saveDefault(value: number) {
+    const next = Math.max(0, Math.min(100, value)); setDefaultRate(next);
+    const { data: auth } = await getSupabaseBrowserClient().auth.getUser();
+    await getSupabaseBrowserClient().from("admin_settings").upsert({ key: "profit_share", value_json: { default_rate: next, currency_policy: "separate" }, updated_by: auth.user?.id });
+    setRows((items) => items.map((item) => item.rate === defaultRate ? { ...item, rate: next } : item));
+    setMessage("Default rate saved.");
+  }
+  const visible = rows.filter((row) => !query.trim() || `${row.full_name ?? ""} ${row.email}`.toLowerCase().includes(query.trim().toLowerCase()));
+  return <><PageIntro eyebrow="Revenue operations" title="Profit Share" text="Configure customer rates and keep every change auditable." /><section className="admin-rate-banner"><div><span className="section-kicker">Default customer rate</span><strong>{defaultRate}%</strong><small>Used when an account has no override.</small></div><label className="app-field"><span>Default rate (%)</span><input type="number" min="0" max="100" step="0.01" value={defaultRate} onChange={(e) => setDefaultRate(Number(e.target.value))} onBlur={() => void saveDefault(defaultRate)} /></label></section><div className="table-toolbar"><label><Search /><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search customer name or email" /></label></div><DataTable headers={["Customer", "Email", "Accounts", "Rate", "Updated"]}>{visible.map((row) => <tr key={row.id}><td><strong>{row.full_name || "Profile incomplete"}</strong></td><td>{row.email}</td><td><Link className="table-action" href={`/admin/users/${row.id}`}>View account <ChevronRight /></Link></td><td><label className="inline-rate"><input aria-label={`Profit share for ${row.email}`} type="number" min="0" max="100" step="0.01" value={row.rate} onChange={(e) => setRows((items) => items.map((item) => item.id === row.id ? { ...item, rate: Number(e.target.value) } : item))} onBlur={() => void saveRate(row.id, row.rate)} /> %</label></td><td>{formatDate(row.updated_at, true)}{saving === row.id && " · Saving…"}</td></tr>)}</DataTable>{!visible.length && <TableEmpty text="No customers match this search." />}{message && <InlineMessage>{message}</InlineMessage>}</>;
+}
+
+function AdminCommissions() {
+  const [records, setRecords] = useState<CommissionRecord[]>([]);
+  const [filter, setFilter] = useState("all");
+  const [message, setMessage] = useState("");
+  const load = useCallback(async () => {
+    const { data } = await getSupabaseBrowserClient().from("commission_records").select("*").order("created_at", { ascending: false }).limit(100);
+    setRecords((data ?? []) as CommissionRecord[]);
+  }, []);
+  useEffect(() => { void load(); }, [load]);
+  async function updateStatus(id: string, status: CommissionRecord["status"]) {
+    const { data: auth } = await getSupabaseBrowserClient().auth.getUser();
+    const patch = status === "paid" ? { status, paid_at: new Date().toISOString() } : { status, approved_by: auth.user?.id };
+    const { error } = await getSupabaseBrowserClient().from("commission_records").update(patch).eq("id", id);
+    if (error) setMessage("Commission status could not be updated."); else { setMessage("Commission updated."); void load(); }
+  }
+  const visible = filter === "all" ? records : records.filter((record) => record.status === filter);
+  return <><PageIntro eyebrow="Revenue operations" title="Commissions" text="Review calculated profit shares before approving or paying them." /><div className="table-toolbar"><select value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="Commission status"><option value="all">All statuses</option>{["calculated", "pending", "approved", "paid", "adjusted", "cancelled"].map((status) => <option key={status} value={status}>{titleCase(status)}</option>)}</select></div><DataTable headers={["Period", "Account", "Eligible Profit", "Rate", "Commission", "Status", "Actions"]}>{visible.map((record) => <tr key={record.id}><td>{record.period_start} – {record.period_end}</td><td>••••{record.trading_account_id.slice(-6)}</td><td>{money(record.eligible_profit, record.currency)}</td><td>{record.profit_share_rate}%</td><td>{money(record.approved_amount ?? record.commission_amount, record.currency)}</td><td><StatusBadge status={record.status} /></td><td><div className="admin-actions"><button disabled={record.status === "paid"} onClick={() => void updateStatus(record.id, "approved")}>Approve</button><button disabled={record.status !== "approved"} onClick={() => void updateStatus(record.id, "paid")}>Mark paid</button></div></td></tr>)}</DataTable>{!visible.length && <TableEmpty text="No commission records are available yet." />}{message && <InlineMessage>{message}</InlineMessage>}<CommissionCalculator /></>;
+}
+
+function CommissionCalculator() {
+  const [profit, setProfit] = useState("");
+  const [rate, setRate] = useState("30");
+  const eligible = Math.max(Number(profit) || 0, 0);
+  const commission = eligible * Math.max(0, Math.min(Number(rate) || 0, 100)) / 100;
+  return <section className="app-panel admin-calculator"><div><span className="section-kicker">Transparent calculation</span><h2>Profit Share Calculator</h2><p>Enter verified realized trading profit only. Deposits, withdrawals, and unrealized P/L are excluded.</p></div><div className="app-form-grid"><label className="app-field"><span>Eligible realized profit (USD)</span><input type="number" min="0" step="0.01" value={profit} onChange={(e) => setProfit(e.target.value)} placeholder="Not synced" /></label><label className="app-field"><span>Profit-share %</span><input type="number" min="0" max="100" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} /></label></div><div className="calculation-result"><span>Eligible profit<strong>{money(eligible, "USD")}</strong></span><span>Commission<strong>{money(commission, "USD")}</strong></span><span>Remaining profit<strong>{money(eligible - commission, "USD")}</strong></span></div></section>;
+}
+
+function AdminAnalytics() {
+  const [data, setData] = useState({ users: 0, accounts: 0, connected: 0, profit: 0, commissions: 0, paid: 0 });
+  useEffect(() => { void (async () => { const sb = getSupabaseBrowserClient(); const [u, a, c, p, cr, paid] = await Promise.all([sb.from("profiles").select("id", { count: "exact", head: true }), sb.from("trading_accounts").select("id", { count: "exact", head: true }), sb.from("trading_accounts").select("id", { count: "exact", head: true }).eq("connection_status", "connected"), sb.from("account_performance_points").select("balance,equity"), sb.from("commission_records").select("commission_amount"), sb.from("commission_records").select("commission_amount").eq("status", "paid")]); setData({ users: u.count ?? 0, accounts: a.count ?? 0, connected: c.count ?? 0, profit: (p.data ?? []).reduce((sum, item) => sum + Number(item.equity ?? item.balance ?? 0), 0), commissions: (cr.data ?? []).reduce((sum, item) => sum + Number(item.commission_amount ?? 0), 0), paid: (paid.data ?? []).reduce((sum, item) => sum + Number(item.commission_amount ?? 0), 0) }); })(); }, []);
+  return <><PageIntro eyebrow="Business intelligence" title="Analytics" text="Aggregates are shown from synchronized records only; currencies remain separate when no conversion exists." /><section className="metric-grid admin-metrics"><MetricCard label="Total customers" value={String(data.users)} note="Registered profiles" icon={<Users />} /><MetricCard label="Trading accounts" value={String(data.accounts)} note={`${data.connected} connected`} icon={<BriefcaseBusiness />} /><MetricCard label="Recorded account values" value={data.profit ? money(data.profit, "USD") : "Not synced"} note="Balance/equity snapshots, not profit" icon={<TrendingUp />} muted /><MetricCard label="Commission calculated" value={data.commissions ? money(data.commissions, "USD") : "Not recorded"} note={`${data.paid ? money(data.paid, "USD") : "None"} paid`} icon={<CircleDollarSign />} /></section><Panel title="Data availability"><div className="performance-empty"><BarChart3 /><strong>Real trading performance depends on the MetaTrader bridge</strong><span>Cash Lab will show balance, equity, and realized profit only after approved provider sync records are available.</span></div></Panel></>;
+}
+
+function AdminSettings() {
+  const [rate, setRate] = useState("30");
+  const [message, setMessage] = useState("");
+  useEffect(() => { void (async () => { const { data } = await getSupabaseBrowserClient().from("admin_settings").select("value_json").eq("key", "profit_share").maybeSingle(); const value = (data?.value_json as { default_rate?: number } | null)?.default_rate; if (value !== undefined) setRate(String(value)); })(); }, []);
+  async function save(event: FormEvent<HTMLFormElement>) { event.preventDefault(); const value = Math.max(0, Math.min(100, Number(rate) || 0)); const { data: auth } = await getSupabaseBrowserClient().auth.getUser(); const { error } = await getSupabaseBrowserClient().from("admin_settings").upsert({ key: "profit_share", value_json: { default_rate: value, currency_policy: "separate" }, updated_by: auth.user?.id }); setMessage(error ? "Settings could not be saved." : "Settings saved."); }
+  return <><PageIntro eyebrow="Administration" title="Settings" text="Central defaults for commission operations and data handling." /><section className="app-panel admin-settings-panel"><form onSubmit={save}><label className="app-field"><span>Default profit-share rate (%)</span><input type="number" min="0" max="100" step="0.01" value={rate} onChange={(e) => setRate(e.target.value)} /></label><Notice>Commission calculations preserve the account currency and never include deposits, withdrawals, or unrealized floating profit as eligible profit.</Notice><button className="app-button">Save settings</button>{message && <InlineMessage>{message}</InlineMessage>}</form><div className="security-setting"><ShieldCheck /><div><strong>Role-based access</strong><span>Admin pages and financial records are protected by the Supabase admin role and RLS policies.</span></div></div></section></>;
 }
 
 function AdminUsers() {
