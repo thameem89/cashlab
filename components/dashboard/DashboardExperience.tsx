@@ -603,21 +603,31 @@ function MetricCard({
   note,
   icon,
   muted,
+  href,
 }: {
   label: string;
   value: string;
   note: string;
   icon: ReactNode;
   muted?: boolean;
+  href?: string;
 }) {
-  return (
-    <article className="metric-card">
+  const content = (
+    <>
       <div className="metric-icon">{icon}</div>
       <span>{label}</span>
       <strong className={muted ? "metric-muted" : ""}>{value}</strong>
       <small>{note}</small>
-    </article>
+    </>
   );
+  if (href) {
+    return (
+      <Link href={href} className="metric-card metric-card-link">
+        {content}
+      </Link>
+    );
+  }
+  return <article className="metric-card">{content}</article>;
 }
 
 function Panel({
@@ -1756,28 +1766,32 @@ function AdminOverview() {
           value={String(stats.users)}
           note={`${stats.recent} new in the last 7 days`}
           icon={<Users />}
+          href="/admin/users"
         />
-        <MetricCard label="Recently active" value={String(stats.active)} note="Seen in the last 7 days" icon={<ActivityIcon />} />
-        <MetricCard label="Connected accounts" value={String(stats.connected)} note={`${stats.pending} pending`} icon={<ShieldCheck />} />
-        <MetricCard label="Managed value" value={stats.balance ? money(stats.balance, "USD") : "Not synced"} note="Snapshot data only" icon={<CircleDollarSign />} muted />
-        <MetricCard label="Commission total" value={stats.commissions ? money(stats.commissions, "USD") : "Not recorded"} note={`${stats.paid ? money(stats.paid, "USD") : "None"} paid`} icon={<ClipboardList />} muted />
+        <MetricCard label="Recently active" value={String(stats.active)} note="Seen in the last 7 days" icon={<ActivityIcon />} href="/admin/users" />
+        <MetricCard label="Connected accounts" value={String(stats.connected)} note={`${stats.pending} pending`} icon={<ShieldCheck />} href="/admin/accounts" />
+        <MetricCard label="Managed value" value={stats.balance ? money(stats.balance, "USD") : "Not synced"} note="Snapshot data only" icon={<CircleDollarSign />} muted href="/admin/analytics" />
+        <MetricCard label="Commission total" value={stats.commissions ? money(stats.commissions, "USD") : "Not recorded"} note={`${stats.paid ? money(stats.paid, "USD") : "None"} paid`} icon={<ClipboardList />} muted href="/admin/commissions" />
         <MetricCard
           label="Trading accounts"
           value={String(stats.accounts)}
           note={`${stats.pending} pending connection`}
           icon={<BriefcaseBusiness />}
+          href="/admin/accounts"
         />
         <MetricCard
           label="MT4 accounts"
           value={String(stats.mt4)}
           note="Configuration records"
           icon={<WalletCards />}
+          href="/admin/accounts?platform=MT4"
         />
         <MetricCard
           label="MT5 accounts"
           value={String(stats.mt5)}
           note="Configuration records"
           icon={<WalletCards />}
+          href="/admin/accounts?platform=MT5"
         />
       </section>
       <section className="dashboard-split">
@@ -2003,6 +2017,11 @@ function AdminAccounts() {
   const [filter, setFilter] = useState("all");
   const [page, setPage] = useState(0);
   const pageSize = 20;
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const platform = params.get("platform");
+    if (platform === "MT4" || platform === "MT5") setFilter(platform);
+  }, []);
   useEffect(() => {
     void (async () => {
       let q = getSupabaseBrowserClient()
