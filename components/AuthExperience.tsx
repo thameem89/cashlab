@@ -118,7 +118,7 @@ export function AuthExperience({
             ? "Your Cash Lab account has been verified and created."
             : "You are signed in successfully.",
       });
-      router.replace(nextPath ?? "/");
+      router.replace(nextPath ?? "/dashboard");
     } catch (error) {
       setMessage({ kind: "error", text: authErrorMessage(error, mode) });
     } finally {
@@ -293,8 +293,8 @@ export function AuthExperience({
                   <MailCheck size={26} />
                 </div>
                 {message && <p role="status">{message.text}</p>}
-                <Link className="button auth-submit" href={nextPath ?? "/"}>
-                  {nextPath ? "Continue" : "Continue to Cash Lab"}
+                <Link className="button auth-submit" href={nextPath ?? "/dashboard"}>
+                  {nextPath ? "Continue" : "Continue to Dashboard"}
                 </Link>
               </div>
             )}
